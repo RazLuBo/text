@@ -32,13 +32,14 @@ namespace QuanLySoTietKiem
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TKtextBox1 = new System.Windows.Forms.TextBox();
-            this.TKtextBox2 = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.TKcomboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TKtextBox3 = new System.Windows.Forms.TextBox();
             this.TKbutton1 = new System.Windows.Forms.Button();
             this.TKbutton2 = new System.Windows.Forms.Button();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -74,19 +75,20 @@ namespace QuanLySoTietKiem
             this.label3.TabIndex = 2;
             this.label3.Text = "Chức Vụ: ";
             // 
-            // TKtextBox1
+            // tbUsername
             // 
-            this.TKtextBox1.Location = new System.Drawing.Point(175, 45);
-            this.TKtextBox1.Name = "TKtextBox1";
-            this.TKtextBox1.Size = new System.Drawing.Size(177, 22);
-            this.TKtextBox1.TabIndex = 3;
+            this.tbUsername.Location = new System.Drawing.Point(175, 45);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(177, 22);
+            this.tbUsername.TabIndex = 3;
             // 
-            // TKtextBox2
+            // tbPassword
             // 
-            this.TKtextBox2.Location = new System.Drawing.Point(175, 147);
-            this.TKtextBox2.Name = "TKtextBox2";
-            this.TKtextBox2.Size = new System.Drawing.Size(177, 22);
-            this.TKtextBox2.TabIndex = 4;
+            this.tbPassword.Location = new System.Drawing.Point(175, 147);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(177, 22);
+            this.tbPassword.TabIndex = 4;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // TKcomboBox1
             // 
@@ -124,6 +126,7 @@ namespace QuanLySoTietKiem
             this.TKbutton1.TabIndex = 8;
             this.TKbutton1.Text = "Thêm";
             this.TKbutton1.UseVisualStyleBackColor = false;
+            this.TKbutton1.Click += new System.EventHandler(this.TKbutton1_Click);
             // 
             // TKbutton2
             // 
@@ -137,6 +140,14 @@ namespace QuanLySoTietKiem
             this.TKbutton2.UseVisualStyleBackColor = false;
             this.TKbutton2.Click += new System.EventHandler(this.TKbutton2_Click);
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(12, 424);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
+            this.StatusLabel.TabIndex = 10;
+            // 
             // faccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,13 +155,14 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.TKbutton2);
             this.Controls.Add(this.TKbutton1);
             this.Controls.Add(this.TKtextBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TKcomboBox1);
-            this.Controls.Add(this.TKtextBox2);
-            this.Controls.Add(this.TKtextBox1);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -166,12 +178,13 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TKtextBox1;
-        private System.Windows.Forms.TextBox TKtextBox2;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.ComboBox TKcomboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TKtextBox3;
         private System.Windows.Forms.Button TKbutton1;
         private System.Windows.Forms.Button TKbutton2;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }
