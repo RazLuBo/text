@@ -344,23 +344,26 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE proc [dbo].[insertSoTietKiem] 
+alter proc [dbo].[insertSoTietKiem] 
 @maSo varchar(50), @maNV varchar(50), @maKH varchar(50), @maLS varchar(50), @loaiSo varchar(50), @ngayMoSo smallDatetime, @ngayHetHan smallDatetime, @tienGoi money
 as
 begin 
-	Declare @countMaSo int;
+	Declare @countMaSo int
 	select @countMaSo = COUNT (*) from SOTIETKIEM where MaSo = @maSo
-	declare @countLS int;
-	select @countLS = COUNT (*) from DOANHTHU where MaLS = @maLS
-	if(@countMaSo = 0 and @countLS = 1)
+	
+	if(@countMaSo = 0)
 	begin
 		insert into SOTIETKIEM(MaSo, MaNV, MaKH, MaLS, LoaiSo, NgayMoSo, NgayHetHan, TienGoi)
 		values (
 			@maSo, @maNV, @maKH, @maLS, @loaiSo, @ngayMoSo, @ngayHetHan, @tienGoi
 		)
 		update DOANHTHU
-		set SoMo = SoMo + 1, TongThu = TongThu + @tienGoi, ChenhLechThuChi = TongThu - TongChi
+		set SoMo = SoMo + 1, TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
 		where @maLS = MaLS
+
+		update KHACHHANG
+		set SoDu = SoDu + @tienGoi
+		where @maKH = MaKH
 	end
 end;
 GO
@@ -424,11 +427,7 @@ begin
 		where @maKH = MaKH
 
 		update DOANHTHU
-		set TongThu = TongThu + @tienGoi
-		where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
-
-		update DOANHTHU
-		set ChenhLechThuChi = TongThu - TongChi
+		set TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
 		where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
 	end
 end;
@@ -467,11 +466,7 @@ begin
 		where @maKH = MaKH
 
 		update DOANHTHU
-		set TongChi = TongChi + @tienRut, ChenhLechThuChi = TongThu - TongChi
-		where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
-
-		update DOANHTHU
-		set ChenhLechThuChi = TongThu - TongChi
+		set TongChi = TongChi + @tienRut, ChenhLechThuChi = ChenhLechThuChi - @tienRut
 		where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
 	end
 
@@ -495,3 +490,24 @@ begin
 	select * from NHANVIEN where @maNV = MaNV
 end;
 GO
+
+select * from DOANHTHU
+
+CREATE proc insertDoanhThu
+@maLS varchar(50), @loaiSo varchar(50), @ngay smalldatetime
+as
+begin
+	declare @count int
+	select @count = count(*) from DOANHTHU where @maLS = MaLS and @ngay = Ngay
+	if(@count = 0)
+	begin
+		insert into DOANHTHU (MaLS, LoaiSo, TongThu, TongChi, ChenhLechThuChi, SoMo, SoDong, ChenhLechSoMD, Ngay)
+		values (
+			@maLS, @loaiSo, 0, 0, 0, 0, 0, 0, @ngay
+		)
+	end
+end;
+go
+select count (*) from KHACHHANG where MaKH = '01'
+
+select * from DOANHTHU where DAY(Ngay) = 10 and MONTH(Ngay) = 6 and YEAR(Ngay) = 2021 and MaLS

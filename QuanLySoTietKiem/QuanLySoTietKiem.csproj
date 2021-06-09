@@ -49,6 +49,7 @@
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DoanhThuDAO.cs" />
     <Compile Include="DAO\ExecuteQuery.cs" />
     <Compile Include="DAO\GuiTienDAO.cs" />
     <Compile Include="DAO\RutTienDAO.cs" />

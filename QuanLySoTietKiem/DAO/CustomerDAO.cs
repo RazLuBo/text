@@ -14,10 +14,16 @@ namespace QuanLySoTietKiem.DAO
             return ExecuteQuery.ExecuteNoneQuery("insertCustomer @maKH , @hoTen , @diaChi , @sDT , @cmnd , @soDu", new object[] { id, hoten, diachi, sdt, cmnd, sodu }) == 1;
         }
 
-        public static DataTable GetCustomerInfo(int id)
+        public static DataTable GetCustomerInfo(string id)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
             return ExecuteQuery.ExecuteReader("searchCustomer @maKH", new object[] { id });
+        }
+
+        public static bool CheckCustomer(string id)
+        {
+            ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
+            return (int)ExecuteQuery.ExecuteScalar("select count (*) from KHACHHANG where MaKH = @maKH", new object[] { id }) == 1;
         }
 
         public static DataTable GetAllCustomerInfo()

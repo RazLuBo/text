@@ -26,6 +26,12 @@ namespace QuanLySoTietKiem
         private void btMoSo_Click(object sender, EventArgs e)
         {
             string idLS = cbLoaiSo.SelectedIndex.ToString();
+            if (!DAO.CustomerDAO.CheckCustomer(tbMaKH.Text))
+                DAO.CustomerDAO.insertCustomer(tbMaKH.Text, tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, 0);
+
+            if (!DAO.DoanhThuDAO.CheckDoanhThu(idLS))
+                DAO.DoanhThuDAO.insertDoanhThu(idLS, cbLoaiSo.SelectedItem.ToString(), dtMoSo.Value);
+            
             if (DAO.SoTietKiemDAO.insertSoTietKiem(tbMaSo.Text, tbMaNV.Text, tbMaKH.Text, idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
             {
                 this.Close();

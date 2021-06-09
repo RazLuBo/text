@@ -10,7 +10,7 @@ namespace QuanLySoTietKiem.DAO
     {
         public static bool insertRutTien(string id, string idNV, string idKH, string idMaSo, DateTime ngayRut, double tienRut)
         {
-            return ExecuteQuery.ExecuteNoneQuery("insertRutTien @maRT , @maNV , @maKH , @maSo , @ngayRut , @tienRut", new object[] { id, idNV, idKH, idMaSo, ngayRut, tienRut }) == 4;
+            return ExecuteQuery.ExecuteNoneQuery("insertRutTien @maRT , @maNV , @maKH , @maSo , @ngayRut , @tienRut", new object[] { id, idNV, idKH, idMaSo, ngayRut, tienRut }) == 3;
         }
     }
 }

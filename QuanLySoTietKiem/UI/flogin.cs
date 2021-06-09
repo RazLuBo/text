@@ -90,7 +90,7 @@ namespace QuanLySoTietKiem
         {
             if (e.KeyCode.ToString() == "Return")
             {
-                SendKeys.Send("{TAB}");
+                tbPassword.Focus();
             }
         }
     }

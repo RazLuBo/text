@@ -61,6 +61,8 @@ namespace QuanLySoTietKiem
             this.dtMoSo = new System.Windows.Forms.DateTimePicker();
             this.dtHetHan = new System.Windows.Forms.DateTimePicker();
             this.StatusLabel = new System.Windows.Forms.Label();
+            this.tbSdt = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btExit
@@ -98,14 +100,14 @@ namespace QuanLySoTietKiem
             // 
             // tbMaNV
             // 
-            this.tbMaNV.Location = new System.Drawing.Point(574, 410);
+            this.tbMaNV.Location = new System.Drawing.Point(574, 353);
             this.tbMaNV.Name = "tbMaNV";
             this.tbMaNV.Size = new System.Drawing.Size(113, 22);
             this.tbMaNV.TabIndex = 15;
             // 
             // tbTenNV
             // 
-            this.tbTenNV.Location = new System.Drawing.Point(574, 350);
+            this.tbTenNV.Location = new System.Drawing.Point(574, 293);
             this.tbTenNV.Name = "tbTenNV";
             this.tbTenNV.Size = new System.Drawing.Size(214, 22);
             this.tbTenNV.TabIndex = 14;
@@ -115,7 +117,7 @@ namespace QuanLySoTietKiem
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(479, 410);
+            this.label12.Location = new System.Drawing.Point(479, 353);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 23);
             this.label12.TabIndex = 13;
@@ -126,7 +128,7 @@ namespace QuanLySoTietKiem
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(479, 353);
+            this.label11.Location = new System.Drawing.Point(479, 296);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 12;
@@ -266,7 +268,7 @@ namespace QuanLySoTietKiem
             // 
             this.tbTenKH.Location = new System.Drawing.Point(192, 296);
             this.tbTenKH.Name = "tbTenKH";
-            this.tbTenKH.Size = new System.Drawing.Size(214, 22);
+            this.tbTenKH.Size = new System.Drawing.Size(245, 22);
             this.tbTenKH.TabIndex = 12;
             // 
             // label9
@@ -284,7 +286,7 @@ namespace QuanLySoTietKiem
             // 
             this.tbCmnd.Location = new System.Drawing.Point(192, 412);
             this.tbCmnd.Name = "tbCmnd";
-            this.tbCmnd.Size = new System.Drawing.Size(211, 22);
+            this.tbCmnd.Size = new System.Drawing.Size(245, 22);
             this.tbCmnd.TabIndex = 14;
             // 
             // label10
@@ -302,7 +304,7 @@ namespace QuanLySoTietKiem
             // 
             this.tbDiaChi.Location = new System.Drawing.Point(192, 478);
             this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(275, 22);
+            this.tbDiaChi.Size = new System.Drawing.Size(245, 22);
             this.tbDiaChi.TabIndex = 16;
             // 
             // label7
@@ -331,7 +333,7 @@ namespace QuanLySoTietKiem
             // 
             this.tbMaKH.Location = new System.Drawing.Point(192, 355);
             this.tbMaKH.Name = "tbMaKH";
-            this.tbMaKH.Size = new System.Drawing.Size(214, 22);
+            this.tbMaKH.Size = new System.Drawing.Size(245, 22);
             this.tbMaKH.TabIndex = 38;
             // 
             // label16
@@ -373,6 +375,24 @@ namespace QuanLySoTietKiem
             this.StatusLabel.Size = new System.Drawing.Size(0, 22);
             this.StatusLabel.TabIndex = 43;
             // 
+            // tbSdt
+            // 
+            this.tbSdt.Location = new System.Drawing.Point(574, 478);
+            this.tbSdt.Name = "tbSdt";
+            this.tbSdt.Size = new System.Drawing.Size(171, 22);
+            this.tbSdt.TabIndex = 45;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(479, 477);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 22);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "SĐT:";
+            // 
             // fopen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,6 +400,8 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 594);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.dtHetHan);
             this.Controls.Add(this.dtMoSo);
@@ -453,5 +475,7 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.DateTimePicker dtMoSo;
         private System.Windows.Forms.DateTimePicker dtHetHan;
         private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.TextBox tbSdt;
+        private System.Windows.Forms.Label label17;
     }
 }

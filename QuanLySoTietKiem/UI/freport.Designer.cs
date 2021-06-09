@@ -33,28 +33,31 @@ namespace QuanLySoTietKiem
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.BCnbutton2 = new System.Windows.Forms.Button();
-            this.BCNcomboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BCNdataGridView = new System.Windows.Forms.DataGridView();
+            this.dataDay = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.BCTbutton2 = new System.Windows.Forms.Button();
             this.BCTbutton1 = new System.Windows.Forms.Button();
-            this.BCTtextBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BCTtextBox3 = new System.Windows.Forms.TextBox();
-            this.BCTtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbBCT_Nam = new System.Windows.Forms.TextBox();
+            this.tbBCT_Thang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BCTdataGridView = new System.Windows.Forms.DataGridView();
+            this.dataMonth = new System.Windows.Forms.DataGridView();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BCNdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDay)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BCTdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMonth)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,11 +71,11 @@ namespace QuanLySoTietKiem
             // 
             this.tabPage1.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.dateTime);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.BCnbutton2);
-            this.tabPage1.Controls.Add(this.BCNcomboBox1);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.BCNdataGridView);
+            this.tabPage1.Controls.Add(this.dataDay);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -83,6 +86,7 @@ namespace QuanLySoTietKiem
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(645, 73);
             this.button1.Name = "button1";
@@ -94,20 +98,14 @@ namespace QuanLySoTietKiem
             // 
             // BCnbutton2
             // 
+            this.BCnbutton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BCnbutton2.Location = new System.Drawing.Point(441, 73);
             this.BCnbutton2.Name = "BCnbutton2";
             this.BCnbutton2.Size = new System.Drawing.Size(122, 33);
             this.BCnbutton2.TabIndex = 3;
             this.BCnbutton2.Text = "Kiểm Tra";
             this.BCnbutton2.UseVisualStyleBackColor = true;
-            // 
-            // BCNcomboBox1
-            // 
-            this.BCNcomboBox1.FormattingEnabled = true;
-            this.BCNcomboBox1.Location = new System.Drawing.Point(142, 48);
-            this.BCNcomboBox1.Name = "BCNcomboBox1";
-            this.BCNcomboBox1.Size = new System.Drawing.Size(155, 31);
-            this.BCNcomboBox1.TabIndex = 2;
+            this.BCnbutton2.Click += new System.EventHandler(this.freport_Load);
             // 
             // label1
             // 
@@ -119,29 +117,32 @@ namespace QuanLySoTietKiem
             this.label1.TabIndex = 1;
             this.label1.Text = "Ngày: ";
             // 
-            // BCNdataGridView
+            // dataDay
             // 
-            this.BCNdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BCNdataGridView.Location = new System.Drawing.Point(0, 121);
-            this.BCNdataGridView.Name = "BCNdataGridView";
-            this.BCNdataGridView.RowHeadersWidth = 51;
-            this.BCNdataGridView.RowTemplate.Height = 24;
-            this.BCNdataGridView.Size = new System.Drawing.Size(801, 299);
-            this.BCNdataGridView.TabIndex = 0;
+            this.dataDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataDay.Location = new System.Drawing.Point(0, 121);
+            this.dataDay.Name = "dataDay";
+            this.dataDay.RowHeadersWidth = 51;
+            this.dataDay.RowTemplate.Height = 24;
+            this.dataDay.Size = new System.Drawing.Size(801, 299);
+            this.dataDay.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.cbLoaiSo);
             this.tabPage2.Controls.Add(this.BCTbutton2);
             this.tabPage2.Controls.Add(this.BCTbutton1);
-            this.tabPage2.Controls.Add(this.BCTtextBox2);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.BCTtextBox3);
-            this.tabPage2.Controls.Add(this.BCTtextBox1);
+            this.tabPage2.Controls.Add(this.tbBCT_Nam);
+            this.tabPage2.Controls.Add(this.tbBCT_Thang);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.BCTdataGridView);
+            this.tabPage2.Controls.Add(this.dataMonth);
             this.tabPage2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
@@ -170,13 +171,7 @@ namespace QuanLySoTietKiem
             this.BCTbutton1.TabIndex = 8;
             this.BCTbutton1.Text = "Kiểm Tra";
             this.BCTbutton1.UseVisualStyleBackColor = true;
-            // 
-            // BCTtextBox2
-            // 
-            this.BCTtextBox2.Location = new System.Drawing.Point(124, 89);
-            this.BCTtextBox2.Name = "BCTtextBox2";
-            this.BCTtextBox2.Size = new System.Drawing.Size(162, 30);
-            this.BCTtextBox2.TabIndex = 7;
+            this.BCTbutton1.Click += new System.EventHandler(this.freport_Load);
             // 
             // label4
             // 
@@ -188,19 +183,19 @@ namespace QuanLySoTietKiem
             this.label4.TabIndex = 6;
             this.label4.Text = "Loại Sổ: ";
             // 
-            // BCTtextBox3
+            // tbBCT_Nam
             // 
-            this.BCTtextBox3.Location = new System.Drawing.Point(446, 26);
-            this.BCTtextBox3.Name = "BCTtextBox3";
-            this.BCTtextBox3.Size = new System.Drawing.Size(92, 30);
-            this.BCTtextBox3.TabIndex = 5;
+            this.tbBCT_Nam.Location = new System.Drawing.Point(446, 26);
+            this.tbBCT_Nam.Name = "tbBCT_Nam";
+            this.tbBCT_Nam.Size = new System.Drawing.Size(92, 30);
+            this.tbBCT_Nam.TabIndex = 5;
             // 
-            // BCTtextBox1
+            // tbBCT_Thang
             // 
-            this.BCTtextBox1.Location = new System.Drawing.Point(124, 26);
-            this.BCTtextBox1.Name = "BCTtextBox1";
-            this.BCTtextBox1.Size = new System.Drawing.Size(92, 30);
-            this.BCTtextBox1.TabIndex = 4;
+            this.tbBCT_Thang.Location = new System.Drawing.Point(124, 26);
+            this.tbBCT_Thang.Name = "tbBCT_Thang";
+            this.tbBCT_Thang.Size = new System.Drawing.Size(92, 30);
+            this.tbBCT_Thang.TabIndex = 4;
             // 
             // label3
             // 
@@ -222,15 +217,37 @@ namespace QuanLySoTietKiem
             this.label2.TabIndex = 2;
             this.label2.Text = "Tháng: ";
             // 
-            // BCTdataGridView
+            // dataMonth
             // 
-            this.BCTdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BCTdataGridView.Location = new System.Drawing.Point(0, 153);
-            this.BCTdataGridView.Name = "BCTdataGridView";
-            this.BCTdataGridView.RowHeadersWidth = 51;
-            this.BCTdataGridView.RowTemplate.Height = 24;
-            this.BCTdataGridView.Size = new System.Drawing.Size(801, 264);
-            this.BCTdataGridView.TabIndex = 0;
+            this.dataMonth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMonth.Location = new System.Drawing.Point(0, 153);
+            this.dataMonth.Name = "dataMonth";
+            this.dataMonth.RowHeadersWidth = 51;
+            this.dataMonth.RowTemplate.Height = 24;
+            this.dataMonth.Size = new System.Drawing.Size(801, 264);
+            this.dataMonth.TabIndex = 0;
+            // 
+            // dateTime
+            // 
+            this.dateTime.CustomFormat = "\"dd/MM/yyyy\"";
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTime.Location = new System.Drawing.Point(131, 50);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(200, 30);
+            this.dateTime.TabIndex = 11;
+            this.dateTime.ValueChanged += new System.EventHandler(this.freport_Load);
+            // 
+            // cbLoaiSo
+            // 
+            this.cbLoaiSo.FormattingEnabled = true;
+            this.cbLoaiSo.Items.AddRange(new object[] {
+            "Kì hạn 3 tháng",
+            "Kì hạn 6 tháng",
+            "Không kỳ hạn"});
+            this.cbLoaiSo.Location = new System.Drawing.Point(124, 89);
+            this.cbLoaiSo.Name = "cbLoaiSo";
+            this.cbLoaiSo.Size = new System.Drawing.Size(236, 30);
+            this.cbLoaiSo.TabIndex = 23;
             // 
             // freport
             // 
@@ -243,13 +260,14 @@ namespace QuanLySoTietKiem
             this.Name = "freport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "freport";
+            this.Load += new System.EventHandler(this.freport_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BCNdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDay)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BCTdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMonth)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,19 +277,19 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView BCNdataGridView;
+        private System.Windows.Forms.DataGridView dataDay;
         private System.Windows.Forms.Button BCnbutton2;
-        private System.Windows.Forms.ComboBox BCNcomboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BCTbutton1;
-        private System.Windows.Forms.TextBox BCTtextBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox BCTtextBox3;
-        private System.Windows.Forms.TextBox BCTtextBox1;
+        private System.Windows.Forms.TextBox tbBCT_Nam;
+        private System.Windows.Forms.TextBox tbBCT_Thang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView BCTdataGridView;
+        private System.Windows.Forms.DataGridView dataMonth;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BCTbutton2;
+        private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.ComboBox cbLoaiSo;
     }
 }
