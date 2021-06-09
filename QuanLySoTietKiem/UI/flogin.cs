@@ -31,7 +31,7 @@ namespace QuanLySoTietKiem
             }    
         }
 
-        private async void LoginButton_ClickAsync(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             if (tbUsername.Text == "Tên đăng nhập" || tbUsername.Text == "")
             {
@@ -56,6 +56,7 @@ namespace QuanLySoTietKiem
                     fmanage f = new fmanage();
                     this.Hide();
                     f.ShowDialog();
+                    StatusLabel.Text = "";
                     this.Show();
                     tbUsername.ReadOnly = true;
                     tbPassword.ReadOnly = true;
@@ -77,6 +78,20 @@ namespace QuanLySoTietKiem
             
         }
 
-       
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode.ToString()== "Return")
+            {
+                this.LoginButton_Click(sender, new EventArgs());
+            }
+        }
+
+        private void tbUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Return")
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

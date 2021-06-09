@@ -88,10 +88,10 @@ namespace QuanLySoTietKiem
             this.LoginButton.Location = new System.Drawing.Point(126, 356);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(131, 37);
-            this.LoginButton.TabIndex = 2;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Đăng Nhập";
             this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_ClickAsync);
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // panel3
             // 
@@ -120,8 +120,9 @@ namespace QuanLySoTietKiem
             this.tbPassword.Location = new System.Drawing.Point(164, 29);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(235, 22);
-            this.tbPassword.TabIndex = 1;
+            this.tbPassword.TabIndex = 2;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // panel2
             // 
@@ -151,6 +152,7 @@ namespace QuanLySoTietKiem
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(235, 22);
             this.tbUsername.TabIndex = 1;
+            this.tbUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUsername_KeyDown);
             // 
             // flogin
             // 
@@ -161,6 +163,7 @@ namespace QuanLySoTietKiem
             this.ClientSize = new System.Drawing.Size(680, 456);
             this.Controls.Add(this.DangNhap);
             this.Name = "flogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.flogin_FormClosing);
             this.DangNhap.ResumeLayout(false);

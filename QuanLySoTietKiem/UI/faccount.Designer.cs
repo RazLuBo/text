@@ -80,14 +80,14 @@ namespace QuanLySoTietKiem
             this.tbUsername.Location = new System.Drawing.Point(175, 45);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(177, 22);
-            this.tbUsername.TabIndex = 3;
+            this.tbUsername.TabIndex = 0;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(175, 147);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(177, 22);
-            this.tbPassword.TabIndex = 4;
+            this.tbPassword.TabIndex = 1;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
             // TKcomboBox1
@@ -96,7 +96,7 @@ namespace QuanLySoTietKiem
             this.TKcomboBox1.Location = new System.Drawing.Point(175, 249);
             this.TKcomboBox1.Name = "TKcomboBox1";
             this.TKcomboBox1.Size = new System.Drawing.Size(177, 24);
-            this.TKcomboBox1.TabIndex = 5;
+            this.TKcomboBox1.TabIndex = 2;
             // 
             // label4
             // 
@@ -114,7 +114,7 @@ namespace QuanLySoTietKiem
             this.TKtextBox3.Location = new System.Drawing.Point(619, 249);
             this.TKtextBox3.Name = "TKtextBox3";
             this.TKtextBox3.Size = new System.Drawing.Size(143, 22);
-            this.TKtextBox3.TabIndex = 7;
+            this.TKtextBox3.TabIndex = 3;
             // 
             // TKbutton1
             // 
@@ -123,7 +123,7 @@ namespace QuanLySoTietKiem
             this.TKbutton1.Location = new System.Drawing.Point(414, 362);
             this.TKbutton1.Name = "TKbutton1";
             this.TKbutton1.Size = new System.Drawing.Size(107, 30);
-            this.TKbutton1.TabIndex = 8;
+            this.TKbutton1.TabIndex = 4;
             this.TKbutton1.Text = "Thêm";
             this.TKbutton1.UseVisualStyleBackColor = false;
             this.TKbutton1.Click += new System.EventHandler(this.TKbutton1_Click);
@@ -135,7 +135,7 @@ namespace QuanLySoTietKiem
             this.TKbutton2.Location = new System.Drawing.Point(619, 362);
             this.TKbutton2.Name = "TKbutton2";
             this.TKbutton2.Size = new System.Drawing.Size(107, 30);
-            this.TKbutton2.TabIndex = 9;
+            this.TKbutton2.TabIndex = 5;
             this.TKbutton2.Text = "Thoát";
             this.TKbutton2.UseVisualStyleBackColor = false;
             this.TKbutton2.Click += new System.EventHandler(this.TKbutton2_Click);
@@ -167,6 +167,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "faccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TÀI KHOẢN";
             this.ResumeLayout(false);
             this.PerformLayout();

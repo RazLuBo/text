@@ -21,5 +21,16 @@ namespace QuanLySoTietKiem
         {
             this.Close();
         }
+
+        private void fstaff_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = DAO.StaffDAO.listNhanVien();
+        }
+
+        private void TTSbutton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

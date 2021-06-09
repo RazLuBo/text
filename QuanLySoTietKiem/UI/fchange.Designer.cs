@@ -101,7 +101,7 @@ namespace QuanLySoTietKiem
             this.TKtextBox1.Location = new System.Drawing.Point(181, 100);
             this.TKtextBox1.Name = "TKtextBox1";
             this.TKtextBox1.Size = new System.Drawing.Size(154, 22);
-            this.TKtextBox1.TabIndex = 4;
+            this.TKtextBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -315,6 +315,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TKcomboBox1);
             this.Name = "fchange";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fchange";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -108,6 +108,7 @@ namespace QuanLySoTietKiem
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button5.FlatAppearance.BorderSize = 2;
@@ -172,6 +173,7 @@ namespace QuanLySoTietKiem
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button8.FlatAppearance.BorderSize = 2;
@@ -205,6 +207,7 @@ namespace QuanLySoTietKiem
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "fmanage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sổ Tiết Kiệm";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.fmanage_Load);

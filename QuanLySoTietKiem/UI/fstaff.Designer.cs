@@ -29,31 +29,31 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.NVtextBox4 = new System.Windows.Forms.TextBox();
+            this.tbCmnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.NVtextBox5 = new System.Windows.Forms.TextBox();
+            this.tbSdt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TTSbutton3 = new System.Windows.Forms.Button();
             this.TTSbutton2 = new System.Windows.Forms.Button();
-            this.NVtextBox3 = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.NVtextBox2 = new System.Windows.Forms.TextBox();
+            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TTSbutton1 = new System.Windows.Forms.Button();
-            this.NVtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // NVtextBox4
+            // tbCmnd
             // 
-            this.NVtextBox4.Location = new System.Drawing.Point(187, 228);
-            this.NVtextBox4.Name = "NVtextBox4";
-            this.NVtextBox4.Size = new System.Drawing.Size(184, 22);
-            this.NVtextBox4.TabIndex = 48;
+            this.tbCmnd.Location = new System.Drawing.Point(187, 228);
+            this.tbCmnd.Name = "tbCmnd";
+            this.tbCmnd.Size = new System.Drawing.Size(184, 22);
+            this.tbCmnd.TabIndex = 48;
             // 
             // label7
             // 
@@ -66,12 +66,12 @@ namespace QuanLySoTietKiem
             this.label7.TabIndex = 47;
             this.label7.Text = "CMNN/Hộ Chiếu: ";
             // 
-            // NVtextBox5
+            // tbSdt
             // 
-            this.NVtextBox5.Location = new System.Drawing.Point(592, 165);
-            this.NVtextBox5.Name = "NVtextBox5";
-            this.NVtextBox5.Size = new System.Drawing.Size(139, 22);
-            this.NVtextBox5.TabIndex = 46;
+            this.tbSdt.Location = new System.Drawing.Point(592, 165);
+            this.tbSdt.Name = "tbSdt";
+            this.tbSdt.Size = new System.Drawing.Size(139, 22);
+            this.tbSdt.TabIndex = 46;
             // 
             // label6
             // 
@@ -101,15 +101,15 @@ namespace QuanLySoTietKiem
             this.TTSbutton2.Name = "TTSbutton2";
             this.TTSbutton2.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton2.TabIndex = 43;
-            this.TTSbutton2.Text = "Sữa";
+            this.TTSbutton2.Text = "Sửa";
             this.TTSbutton2.UseVisualStyleBackColor = true;
             // 
-            // NVtextBox3
+            // tbDiaChi
             // 
-            this.NVtextBox3.Location = new System.Drawing.Point(187, 165);
-            this.NVtextBox3.Name = "NVtextBox3";
-            this.NVtextBox3.Size = new System.Drawing.Size(184, 22);
-            this.NVtextBox3.TabIndex = 40;
+            this.tbDiaChi.Location = new System.Drawing.Point(187, 165);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(184, 22);
+            this.tbDiaChi.TabIndex = 40;
             // 
             // label4
             // 
@@ -122,12 +122,12 @@ namespace QuanLySoTietKiem
             this.label4.TabIndex = 39;
             this.label4.Text = "Địa Chỉ: ";
             // 
-            // NVtextBox2
+            // tbTenNV
             // 
-            this.NVtextBox2.Location = new System.Drawing.Point(187, 109);
-            this.NVtextBox2.Name = "NVtextBox2";
-            this.NVtextBox2.Size = new System.Drawing.Size(184, 22);
-            this.NVtextBox2.TabIndex = 38;
+            this.tbTenNV.Location = new System.Drawing.Point(187, 109);
+            this.tbTenNV.Name = "tbTenNV";
+            this.tbTenNV.Size = new System.Drawing.Size(184, 22);
+            this.tbTenNV.TabIndex = 38;
             // 
             // label3
             // 
@@ -161,13 +161,14 @@ namespace QuanLySoTietKiem
             this.TTSbutton1.TabIndex = 35;
             this.TTSbutton1.Text = "Tìm Kiếm";
             this.TTSbutton1.UseVisualStyleBackColor = true;
+            this.TTSbutton1.Click += new System.EventHandler(this.TTSbutton1_Click);
             // 
-            // NVtextBox1
+            // tbID
             // 
-            this.NVtextBox1.Location = new System.Drawing.Point(165, 9);
-            this.NVtextBox1.Name = "NVtextBox1";
-            this.NVtextBox1.Size = new System.Drawing.Size(100, 22);
-            this.NVtextBox1.TabIndex = 34;
+            this.tbID.Location = new System.Drawing.Point(165, 9);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(100, 22);
+            this.tbID.TabIndex = 34;
             // 
             // label1
             // 
@@ -209,23 +210,25 @@ namespace QuanLySoTietKiem
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 563);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.NVtextBox4);
+            this.Controls.Add(this.tbCmnd);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.NVtextBox5);
+            this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TTSbutton3);
             this.Controls.Add(this.TTSbutton2);
-            this.Controls.Add(this.NVtextBox3);
+            this.Controls.Add(this.tbDiaChi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.NVtextBox2);
+            this.Controls.Add(this.tbTenNV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TTSbutton1);
-            this.Controls.Add(this.NVtextBox1);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "fstaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NHÂN VIÊN";
+            this.Load += new System.EventHandler(this.fstaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,19 +237,19 @@ namespace QuanLySoTietKiem
 
         #endregion
 
-        private System.Windows.Forms.TextBox NVtextBox4;
+        private System.Windows.Forms.TextBox tbCmnd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox NVtextBox5;
+        private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button TTSbutton3;
         private System.Windows.Forms.Button TTSbutton2;
-        private System.Windows.Forms.TextBox NVtextBox3;
+        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox NVtextBox2;
+        private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button TTSbutton1;
-        private System.Windows.Forms.TextBox NVtextBox1;
+        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;

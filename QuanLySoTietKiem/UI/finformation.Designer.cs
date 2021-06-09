@@ -31,19 +31,19 @@ namespace QuanLySoTietKiem
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.TTStextBox1 = new System.Windows.Forms.TextBox();
+            this.tbMaSo = new System.Windows.Forms.TextBox();
             this.TTSbutton1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TTStextBox2 = new System.Windows.Forms.TextBox();
+            this.tbTenChuSo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TTStextBox3 = new System.Windows.Forms.TextBox();
+            this.tbLoaiSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TTStextBox5 = new System.Windows.Forms.TextBox();
+            this.tbSoDu = new System.Windows.Forms.TextBox();
             this.TTSbutton2 = new System.Windows.Forms.Button();
             this.TTSbutton3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.TTStextBox4 = new System.Windows.Forms.TextBox();
+            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.TTSbutton4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -69,12 +69,12 @@ namespace QuanLySoTietKiem
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Sổ: ";
             // 
-            // TTStextBox1
+            // tbMaSo
             // 
-            this.TTStextBox1.Location = new System.Drawing.Point(131, 19);
-            this.TTStextBox1.Name = "TTStextBox1";
-            this.TTStextBox1.Size = new System.Drawing.Size(100, 22);
-            this.TTStextBox1.TabIndex = 2;
+            this.tbMaSo.Location = new System.Drawing.Point(131, 19);
+            this.tbMaSo.Name = "tbMaSo";
+            this.tbMaSo.Size = new System.Drawing.Size(100, 22);
+            this.tbMaSo.TabIndex = 2;
             // 
             // TTSbutton1
             // 
@@ -85,6 +85,7 @@ namespace QuanLySoTietKiem
             this.TTSbutton1.TabIndex = 3;
             this.TTSbutton1.Text = "Tìm Kiếm";
             this.TTSbutton1.UseVisualStyleBackColor = true;
+            this.TTSbutton1.Click += new System.EventHandler(this.TTSbutton1_Click);
             // 
             // label2
             // 
@@ -108,12 +109,12 @@ namespace QuanLySoTietKiem
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên Chủ Sổ: ";
             // 
-            // TTStextBox2
+            // tbTenChuSo
             // 
-            this.TTStextBox2.Location = new System.Drawing.Point(131, 105);
-            this.TTStextBox2.Name = "TTStextBox2";
-            this.TTStextBox2.Size = new System.Drawing.Size(184, 22);
-            this.TTStextBox2.TabIndex = 6;
+            this.tbTenChuSo.Location = new System.Drawing.Point(131, 105);
+            this.tbTenChuSo.Name = "tbTenChuSo";
+            this.tbTenChuSo.Size = new System.Drawing.Size(184, 22);
+            this.tbTenChuSo.TabIndex = 6;
             // 
             // label4
             // 
@@ -126,13 +127,13 @@ namespace QuanLySoTietKiem
             this.label4.TabIndex = 7;
             this.label4.Text = "Loại Sổ: ";
             // 
-            // TTStextBox3
+            // tbLoaiSo
             // 
-            this.TTStextBox3.Location = new System.Drawing.Point(131, 184);
-            this.TTStextBox3.Name = "TTStextBox3";
-            this.TTStextBox3.Size = new System.Drawing.Size(184, 22);
-            this.TTStextBox3.TabIndex = 8;
-            this.TTStextBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tbLoaiSo.Location = new System.Drawing.Point(131, 184);
+            this.tbLoaiSo.Name = "tbLoaiSo";
+            this.tbLoaiSo.Size = new System.Drawing.Size(184, 22);
+            this.tbLoaiSo.TabIndex = 8;
+            this.tbLoaiSo.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -145,12 +146,12 @@ namespace QuanLySoTietKiem
             this.label5.TabIndex = 9;
             this.label5.Text = "Số Dư Tài khoản: ";
             // 
-            // TTStextBox5
+            // tbSoDu
             // 
-            this.TTStextBox5.Location = new System.Drawing.Point(582, 183);
-            this.TTStextBox5.Name = "TTStextBox5";
-            this.TTStextBox5.Size = new System.Drawing.Size(139, 22);
-            this.TTStextBox5.TabIndex = 10;
+            this.tbSoDu.Location = new System.Drawing.Point(582, 183);
+            this.tbSoDu.Name = "tbSoDu";
+            this.tbSoDu.Size = new System.Drawing.Size(139, 22);
+            this.tbSoDu.TabIndex = 10;
             // 
             // TTSbutton2
             // 
@@ -184,12 +185,12 @@ namespace QuanLySoTietKiem
             this.label6.TabIndex = 13;
             this.label6.Text = "NV Mở Sổ: ";
             // 
-            // TTStextBox4
+            // tbTenNV
             // 
-            this.TTStextBox4.Location = new System.Drawing.Point(582, 104);
-            this.TTStextBox4.Name = "TTStextBox4";
-            this.TTStextBox4.Size = new System.Drawing.Size(139, 22);
-            this.TTStextBox4.TabIndex = 14;
+            this.tbTenNV.Location = new System.Drawing.Point(582, 104);
+            this.tbTenNV.Name = "tbTenNV";
+            this.tbTenNV.Size = new System.Drawing.Size(139, 22);
+            this.tbTenNV.TabIndex = 14;
             // 
             // TTSbutton4
             // 
@@ -210,23 +211,25 @@ namespace QuanLySoTietKiem
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.TTSbutton4);
-            this.Controls.Add(this.TTStextBox4);
+            this.Controls.Add(this.tbTenNV);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TTSbutton3);
             this.Controls.Add(this.TTSbutton2);
-            this.Controls.Add(this.TTStextBox5);
+            this.Controls.Add(this.tbSoDu);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TTStextBox3);
+            this.Controls.Add(this.tbLoaiSo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TTStextBox2);
+            this.Controls.Add(this.tbTenChuSo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TTSbutton1);
-            this.Controls.Add(this.TTStextBox1);
+            this.Controls.Add(this.tbMaSo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "finformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÔNG TIN SỔ";
+            this.Load += new System.EventHandler(this.finformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,19 +240,19 @@ namespace QuanLySoTietKiem
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TTStextBox1;
+        private System.Windows.Forms.TextBox tbMaSo;
         private System.Windows.Forms.Button TTSbutton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TTStextBox2;
+        private System.Windows.Forms.TextBox tbTenChuSo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TTStextBox3;
+        private System.Windows.Forms.TextBox tbLoaiSo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TTStextBox5;
+        private System.Windows.Forms.TextBox tbSoDu;
         private System.Windows.Forms.Button TTSbutton2;
         private System.Windows.Forms.Button TTSbutton3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TTStextBox4;
+        private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Button TTSbutton4;
     }
 }

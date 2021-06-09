@@ -44,47 +44,53 @@ namespace QuanLySoTietKiem
             this.MSbutton3 = new System.Windows.Forms.Button();
             this.GDtabControl = new System.Windows.Forms.TabControl();
             this.GTtabPage1 = new System.Windows.Forms.TabPage();
+            this.tbMaKH_G = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtNgayGui = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.GTbutton3 = new System.Windows.Forms.Button();
             this.GTbutton2 = new System.Windows.Forms.Button();
-            this.GTbutton1 = new System.Windows.Forms.Button();
+            this.btGuiTien = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.GTtextBox6 = new System.Windows.Forms.TextBox();
-            this.GTtextBox7 = new System.Windows.Forms.TextBox();
+            this.tbMaNV_G = new System.Windows.Forms.TextBox();
+            this.tbTenNV_G = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.GTtextBox5 = new System.Windows.Forms.TextBox();
-            this.GTtextBox4 = new System.Windows.Forms.TextBox();
-            this.GTtextBox3 = new System.Windows.Forms.TextBox();
-            this.GTtextBox2 = new System.Windows.Forms.TextBox();
-            this.GTtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbTenKH_G = new System.Windows.Forms.TextBox();
+            this.tbTienGui = new System.Windows.Forms.TextBox();
+            this.tbMaGui = new System.Windows.Forms.TextBox();
+            this.tbMaSo_G = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.GDtabPage2 = new System.Windows.Forms.TabPage();
+            this.tbMaKH_R = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtNgayRut = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RTbutton3 = new System.Windows.Forms.Button();
             this.RTbutton2 = new System.Windows.Forms.Button();
-            this.RTbutton1 = new System.Windows.Forms.Button();
+            this.btRutTien = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.RTtextBox6 = new System.Windows.Forms.TextBox();
-            this.RTtextBox7 = new System.Windows.Forms.TextBox();
+            this.tbMaNV_R = new System.Windows.Forms.TextBox();
+            this.tbTenNV_R = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.RTtextBox5 = new System.Windows.Forms.TextBox();
-            this.RTtextBox4 = new System.Windows.Forms.TextBox();
-            this.RTtextBox3 = new System.Windows.Forms.TextBox();
-            this.RTtextBox2 = new System.Windows.Forms.TextBox();
-            this.RTtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbTenKH_R = new System.Windows.Forms.TextBox();
+            this.tbTienRut = new System.Windows.Forms.TextBox();
+            this.tbMaRut = new System.Windows.Forms.TextBox();
+            this.tbMaSo_R = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.StatusLabel_R = new System.Windows.Forms.Label();
+            this.StatusLabel_G = new System.Windows.Forms.Label();
             this.GDtabControl.SuspendLayout();
             this.GTtabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -222,14 +228,17 @@ namespace QuanLySoTietKiem
             // 
             this.GTtabPage1.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.GTtabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GTtabPage1.Controls.Add(this.StatusLabel_G);
+            this.GTtabPage1.Controls.Add(this.tbMaKH_G);
+            this.GTtabPage1.Controls.Add(this.label3);
+            this.GTtabPage1.Controls.Add(this.dtNgayGui);
             this.GTtabPage1.Controls.Add(this.label1);
             this.GTtabPage1.Controls.Add(this.panel5);
             this.GTtabPage1.Controls.Add(this.panel4);
-            this.GTtabPage1.Controls.Add(this.GTtextBox5);
-            this.GTtabPage1.Controls.Add(this.GTtextBox4);
-            this.GTtabPage1.Controls.Add(this.GTtextBox3);
-            this.GTtabPage1.Controls.Add(this.GTtextBox2);
-            this.GTtabPage1.Controls.Add(this.GTtextBox1);
+            this.GTtabPage1.Controls.Add(this.tbTenKH_G);
+            this.GTtabPage1.Controls.Add(this.tbTienGui);
+            this.GTtabPage1.Controls.Add(this.tbMaGui);
+            this.GTtabPage1.Controls.Add(this.tbMaSo_G);
             this.GTtabPage1.Controls.Add(this.label18);
             this.GTtabPage1.Controls.Add(this.label16);
             this.GTtabPage1.Controls.Add(this.label15);
@@ -243,6 +252,30 @@ namespace QuanLySoTietKiem
             this.GTtabPage1.TabIndex = 0;
             this.GTtabPage1.Text = "Gởi Tiền";
             this.GTtabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbMaKH_G
+            // 
+            this.tbMaKH_G.Location = new System.Drawing.Point(135, 392);
+            this.tbMaKH_G.Name = "tbMaKH_G";
+            this.tbMaKH_G.Size = new System.Drawing.Size(189, 30);
+            this.tbMaKH_G.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 400);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 22);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Mã KH:";
+            // 
+            // dtNgayGui
+            // 
+            this.dtNgayGui.Location = new System.Drawing.Point(466, 106);
+            this.dtNgayGui.Name = "dtNgayGui";
+            this.dtNgayGui.Size = new System.Drawing.Size(293, 30);
+            this.dtNgayGui.TabIndex = 33;
             // 
             // label1
             // 
@@ -259,7 +292,7 @@ namespace QuanLySoTietKiem
             // 
             this.panel5.Controls.Add(this.GTbutton3);
             this.panel5.Controls.Add(this.GTbutton2);
-            this.panel5.Controls.Add(this.GTbutton1);
+            this.panel5.Controls.Add(this.btGuiTien);
             this.panel5.Location = new System.Drawing.Point(401, 392);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(374, 113);
@@ -286,20 +319,21 @@ namespace QuanLySoTietKiem
             this.GTbutton2.Text = "Nhập lại";
             this.GTbutton2.UseVisualStyleBackColor = true;
             // 
-            // GTbutton1
+            // btGuiTien
             // 
-            this.GTbutton1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTbutton1.Location = new System.Drawing.Point(6, 59);
-            this.GTbutton1.Name = "GTbutton1";
-            this.GTbutton1.Size = new System.Drawing.Size(105, 31);
-            this.GTbutton1.TabIndex = 0;
-            this.GTbutton1.Text = "Gởi Tiền";
-            this.GTbutton1.UseVisualStyleBackColor = true;
+            this.btGuiTien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuiTien.Location = new System.Drawing.Point(6, 59);
+            this.btGuiTien.Name = "btGuiTien";
+            this.btGuiTien.Size = new System.Drawing.Size(105, 31);
+            this.btGuiTien.TabIndex = 0;
+            this.btGuiTien.Text = "Gởi Tiền";
+            this.btGuiTien.UseVisualStyleBackColor = true;
+            this.btGuiTien.Click += new System.EventHandler(this.btGuiTien_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.GTtextBox6);
-            this.panel4.Controls.Add(this.GTtextBox7);
+            this.panel4.Controls.Add(this.tbMaNV_G);
+            this.panel4.Controls.Add(this.tbTenNV_G);
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Location = new System.Drawing.Point(345, 264);
@@ -307,19 +341,19 @@ namespace QuanLySoTietKiem
             this.panel4.Size = new System.Drawing.Size(389, 122);
             this.panel4.TabIndex = 30;
             // 
-            // GTtextBox6
+            // tbMaNV_G
             // 
-            this.GTtextBox6.Location = new System.Drawing.Point(135, 3);
-            this.GTtextBox6.Name = "GTtextBox6";
-            this.GTtextBox6.Size = new System.Drawing.Size(113, 30);
-            this.GTtextBox6.TabIndex = 15;
+            this.tbMaNV_G.Location = new System.Drawing.Point(135, 3);
+            this.tbMaNV_G.Name = "tbMaNV_G";
+            this.tbMaNV_G.Size = new System.Drawing.Size(113, 30);
+            this.tbMaNV_G.TabIndex = 15;
             // 
-            // GTtextBox7
+            // tbTenNV_G
             // 
-            this.GTtextBox7.Location = new System.Drawing.Point(135, 75);
-            this.GTtextBox7.Name = "GTtextBox7";
-            this.GTtextBox7.Size = new System.Drawing.Size(214, 30);
-            this.GTtextBox7.TabIndex = 14;
+            this.tbTenNV_G.Location = new System.Drawing.Point(135, 75);
+            this.tbTenNV_G.Name = "tbTenNV_G";
+            this.tbTenNV_G.Size = new System.Drawing.Size(214, 30);
+            this.tbTenNV_G.TabIndex = 14;
             // 
             // label19
             // 
@@ -341,40 +375,33 @@ namespace QuanLySoTietKiem
             this.label20.TabIndex = 12;
             this.label20.Text = "Tên NV: ";
             // 
-            // GTtextBox5
+            // tbTenKH_G
             // 
-            this.GTtextBox5.Location = new System.Drawing.Point(135, 342);
-            this.GTtextBox5.Name = "GTtextBox5";
-            this.GTtextBox5.Size = new System.Drawing.Size(189, 30);
-            this.GTtextBox5.TabIndex = 29;
+            this.tbTenKH_G.Location = new System.Drawing.Point(135, 342);
+            this.tbTenKH_G.Name = "tbTenKH_G";
+            this.tbTenKH_G.Size = new System.Drawing.Size(189, 30);
+            this.tbTenKH_G.TabIndex = 29;
             // 
-            // GTtextBox4
+            // tbTienGui
             // 
-            this.GTtextBox4.Location = new System.Drawing.Point(135, 193);
-            this.GTtextBox4.Name = "GTtextBox4";
-            this.GTtextBox4.Size = new System.Drawing.Size(161, 30);
-            this.GTtextBox4.TabIndex = 26;
+            this.tbTienGui.Location = new System.Drawing.Point(135, 193);
+            this.tbTienGui.Name = "tbTienGui";
+            this.tbTienGui.Size = new System.Drawing.Size(161, 30);
+            this.tbTienGui.TabIndex = 26;
             // 
-            // GTtextBox3
+            // tbMaGui
             // 
-            this.GTtextBox3.Location = new System.Drawing.Point(503, 100);
-            this.GTtextBox3.Name = "GTtextBox3";
-            this.GTtextBox3.Size = new System.Drawing.Size(161, 30);
-            this.GTtextBox3.TabIndex = 23;
+            this.tbMaGui.Location = new System.Drawing.Point(95, 109);
+            this.tbMaGui.Name = "tbMaGui";
+            this.tbMaGui.Size = new System.Drawing.Size(104, 30);
+            this.tbMaGui.TabIndex = 21;
             // 
-            // GTtextBox2
+            // tbMaSo_G
             // 
-            this.GTtextBox2.Location = new System.Drawing.Point(95, 109);
-            this.GTtextBox2.Name = "GTtextBox2";
-            this.GTtextBox2.Size = new System.Drawing.Size(104, 30);
-            this.GTtextBox2.TabIndex = 21;
-            // 
-            // GTtextBox1
-            // 
-            this.GTtextBox1.Location = new System.Drawing.Point(95, 16);
-            this.GTtextBox1.Name = "GTtextBox1";
-            this.GTtextBox1.Size = new System.Drawing.Size(104, 30);
-            this.GTtextBox1.TabIndex = 19;
+            this.tbMaSo_G.Location = new System.Drawing.Point(95, 16);
+            this.tbMaSo_G.Name = "tbMaSo_G";
+            this.tbMaSo_G.Size = new System.Drawing.Size(104, 30);
+            this.tbMaSo_G.TabIndex = 19;
             // 
             // label18
             // 
@@ -400,7 +427,7 @@ namespace QuanLySoTietKiem
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(348, 107);
+            this.label15.Location = new System.Drawing.Point(348, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(98, 22);
             this.label15.TabIndex = 22;
@@ -431,14 +458,17 @@ namespace QuanLySoTietKiem
             this.GDtabPage2.BackColor = System.Drawing.Color.Transparent;
             this.GDtabPage2.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.GDtabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GDtabPage2.Controls.Add(this.StatusLabel_R);
+            this.GDtabPage2.Controls.Add(this.tbMaKH_R);
+            this.GDtabPage2.Controls.Add(this.label4);
+            this.GDtabPage2.Controls.Add(this.dtNgayRut);
             this.GDtabPage2.Controls.Add(this.label2);
             this.GDtabPage2.Controls.Add(this.panel6);
             this.GDtabPage2.Controls.Add(this.panel7);
-            this.GDtabPage2.Controls.Add(this.RTtextBox5);
-            this.GDtabPage2.Controls.Add(this.RTtextBox4);
-            this.GDtabPage2.Controls.Add(this.RTtextBox3);
-            this.GDtabPage2.Controls.Add(this.RTtextBox2);
-            this.GDtabPage2.Controls.Add(this.RTtextBox1);
+            this.GDtabPage2.Controls.Add(this.tbTenKH_R);
+            this.GDtabPage2.Controls.Add(this.tbTienRut);
+            this.GDtabPage2.Controls.Add(this.tbMaRut);
+            this.GDtabPage2.Controls.Add(this.tbMaSo_R);
             this.GDtabPage2.Controls.Add(this.label23);
             this.GDtabPage2.Controls.Add(this.label25);
             this.GDtabPage2.Controls.Add(this.label26);
@@ -452,6 +482,32 @@ namespace QuanLySoTietKiem
             this.GDtabPage2.Size = new System.Drawing.Size(786, 544);
             this.GDtabPage2.TabIndex = 1;
             this.GDtabPage2.Text = "Rút Tiền";
+            // 
+            // tbMaKH_R
+            // 
+            this.tbMaKH_R.Location = new System.Drawing.Point(135, 392);
+            this.tbMaKH_R.Name = "tbMaKH_R";
+            this.tbMaKH_R.Size = new System.Drawing.Size(189, 30);
+            this.tbMaKH_R.TabIndex = 48;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 400);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 22);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Mã KH:";
+            // 
+            // dtNgayRut
+            // 
+            this.dtNgayRut.CustomFormat = "\"dd-MM-yyyy\"";
+            this.dtNgayRut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayRut.Location = new System.Drawing.Point(449, 106);
+            this.dtNgayRut.Name = "dtNgayRut";
+            this.dtNgayRut.Size = new System.Drawing.Size(293, 30);
+            this.dtNgayRut.TabIndex = 46;
             // 
             // label2
             // 
@@ -468,7 +524,7 @@ namespace QuanLySoTietKiem
             // 
             this.panel6.Controls.Add(this.RTbutton3);
             this.panel6.Controls.Add(this.RTbutton2);
-            this.panel6.Controls.Add(this.RTbutton1);
+            this.panel6.Controls.Add(this.btRutTien);
             this.panel6.Location = new System.Drawing.Point(401, 392);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(374, 113);
@@ -495,20 +551,21 @@ namespace QuanLySoTietKiem
             this.RTbutton2.Text = "Nhập lại";
             this.RTbutton2.UseVisualStyleBackColor = true;
             // 
-            // RTbutton1
+            // btRutTien
             // 
-            this.RTbutton1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RTbutton1.Location = new System.Drawing.Point(6, 59);
-            this.RTbutton1.Name = "RTbutton1";
-            this.RTbutton1.Size = new System.Drawing.Size(105, 31);
-            this.RTbutton1.TabIndex = 0;
-            this.RTbutton1.Text = "Rút Tiền";
-            this.RTbutton1.UseVisualStyleBackColor = true;
+            this.btRutTien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRutTien.Location = new System.Drawing.Point(6, 59);
+            this.btRutTien.Name = "btRutTien";
+            this.btRutTien.Size = new System.Drawing.Size(105, 31);
+            this.btRutTien.TabIndex = 0;
+            this.btRutTien.Text = "Rút Tiền";
+            this.btRutTien.UseVisualStyleBackColor = true;
+            this.btRutTien.Click += new System.EventHandler(this.btRutTien_Click);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.RTtextBox6);
-            this.panel7.Controls.Add(this.RTtextBox7);
+            this.panel7.Controls.Add(this.tbMaNV_R);
+            this.panel7.Controls.Add(this.tbTenNV_R);
             this.panel7.Controls.Add(this.label21);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Location = new System.Drawing.Point(345, 264);
@@ -516,19 +573,19 @@ namespace QuanLySoTietKiem
             this.panel7.Size = new System.Drawing.Size(389, 122);
             this.panel7.TabIndex = 44;
             // 
-            // RTtextBox6
+            // tbMaNV_R
             // 
-            this.RTtextBox6.Location = new System.Drawing.Point(135, 3);
-            this.RTtextBox6.Name = "RTtextBox6";
-            this.RTtextBox6.Size = new System.Drawing.Size(113, 30);
-            this.RTtextBox6.TabIndex = 15;
+            this.tbMaNV_R.Location = new System.Drawing.Point(135, 3);
+            this.tbMaNV_R.Name = "tbMaNV_R";
+            this.tbMaNV_R.Size = new System.Drawing.Size(113, 30);
+            this.tbMaNV_R.TabIndex = 15;
             // 
-            // RTtextBox7
+            // tbTenNV_R
             // 
-            this.RTtextBox7.Location = new System.Drawing.Point(135, 75);
-            this.RTtextBox7.Name = "RTtextBox7";
-            this.RTtextBox7.Size = new System.Drawing.Size(214, 30);
-            this.RTtextBox7.TabIndex = 14;
+            this.tbTenNV_R.Location = new System.Drawing.Point(135, 75);
+            this.tbTenNV_R.Name = "tbTenNV_R";
+            this.tbTenNV_R.Size = new System.Drawing.Size(214, 30);
+            this.tbTenNV_R.TabIndex = 14;
             // 
             // label21
             // 
@@ -550,40 +607,33 @@ namespace QuanLySoTietKiem
             this.label22.TabIndex = 12;
             this.label22.Text = "Tên NV: ";
             // 
-            // RTtextBox5
+            // tbTenKH_R
             // 
-            this.RTtextBox5.Location = new System.Drawing.Point(135, 342);
-            this.RTtextBox5.Name = "RTtextBox5";
-            this.RTtextBox5.Size = new System.Drawing.Size(189, 30);
-            this.RTtextBox5.TabIndex = 43;
+            this.tbTenKH_R.Location = new System.Drawing.Point(135, 342);
+            this.tbTenKH_R.Name = "tbTenKH_R";
+            this.tbTenKH_R.Size = new System.Drawing.Size(189, 30);
+            this.tbTenKH_R.TabIndex = 43;
             // 
-            // RTtextBox4
+            // tbTienRut
             // 
-            this.RTtextBox4.Location = new System.Drawing.Point(135, 193);
-            this.RTtextBox4.Name = "RTtextBox4";
-            this.RTtextBox4.Size = new System.Drawing.Size(161, 30);
-            this.RTtextBox4.TabIndex = 40;
+            this.tbTienRut.Location = new System.Drawing.Point(135, 193);
+            this.tbTienRut.Name = "tbTienRut";
+            this.tbTienRut.Size = new System.Drawing.Size(161, 30);
+            this.tbTienRut.TabIndex = 40;
             // 
-            // RTtextBox3
+            // tbMaRut
             // 
-            this.RTtextBox3.Location = new System.Drawing.Point(503, 100);
-            this.RTtextBox3.Name = "RTtextBox3";
-            this.RTtextBox3.Size = new System.Drawing.Size(161, 30);
-            this.RTtextBox3.TabIndex = 37;
+            this.tbMaRut.Location = new System.Drawing.Point(95, 109);
+            this.tbMaRut.Name = "tbMaRut";
+            this.tbMaRut.Size = new System.Drawing.Size(104, 30);
+            this.tbMaRut.TabIndex = 35;
             // 
-            // RTtextBox2
+            // tbMaSo_R
             // 
-            this.RTtextBox2.Location = new System.Drawing.Point(95, 109);
-            this.RTtextBox2.Name = "RTtextBox2";
-            this.RTtextBox2.Size = new System.Drawing.Size(104, 30);
-            this.RTtextBox2.TabIndex = 35;
-            // 
-            // RTtextBox1
-            // 
-            this.RTtextBox1.Location = new System.Drawing.Point(95, 16);
-            this.RTtextBox1.Name = "RTtextBox1";
-            this.RTtextBox1.Size = new System.Drawing.Size(104, 30);
-            this.RTtextBox1.TabIndex = 33;
+            this.tbMaSo_R.Location = new System.Drawing.Point(95, 16);
+            this.tbMaSo_R.Name = "tbMaSo_R";
+            this.tbMaSo_R.Size = new System.Drawing.Size(104, 30);
+            this.tbMaSo_R.TabIndex = 33;
             // 
             // label23
             // 
@@ -609,7 +659,7 @@ namespace QuanLySoTietKiem
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(348, 107);
+            this.label26.Location = new System.Drawing.Point(348, 109);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(95, 22);
             this.label26.TabIndex = 36;
@@ -635,6 +685,24 @@ namespace QuanLySoTietKiem
             this.label28.TabIndex = 32;
             this.label28.Text = "Mã Sổ: ";
             // 
+            // StatusLabel_R
+            // 
+            this.StatusLabel_R.AutoSize = true;
+            this.StatusLabel_R.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel_R.Location = new System.Drawing.Point(6, 514);
+            this.StatusLabel_R.Name = "StatusLabel_R";
+            this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel_R.TabIndex = 49;
+            // 
+            // StatusLabel_G
+            // 
+            this.StatusLabel_G.AutoSize = true;
+            this.StatusLabel_G.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel_G.Location = new System.Drawing.Point(6, 514);
+            this.StatusLabel_G.Name = "StatusLabel_G";
+            this.StatusLabel_G.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel_G.TabIndex = 36;
+            // 
             // ftransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -644,6 +712,7 @@ namespace QuanLySoTietKiem
             this.ClientSize = new System.Drawing.Size(789, 573);
             this.Controls.Add(this.GDtabControl);
             this.Name = "ftransaction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GIAO DỊCH";
             this.GDtabControl.ResumeLayout(false);
             this.GTtabPage1.ResumeLayout(false);
@@ -679,17 +748,16 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button GTbutton3;
         private System.Windows.Forms.Button GTbutton2;
-        private System.Windows.Forms.Button GTbutton1;
+        private System.Windows.Forms.Button btGuiTien;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox GTtextBox6;
-        private System.Windows.Forms.TextBox GTtextBox7;
+        private System.Windows.Forms.TextBox tbMaNV_G;
+        private System.Windows.Forms.TextBox tbTenNV_G;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox GTtextBox5;
-        private System.Windows.Forms.TextBox GTtextBox4;
-        private System.Windows.Forms.TextBox GTtextBox3;
-        private System.Windows.Forms.TextBox GTtextBox2;
-        private System.Windows.Forms.TextBox GTtextBox1;
+        private System.Windows.Forms.TextBox tbTenKH_G;
+        private System.Windows.Forms.TextBox tbTienGui;
+        private System.Windows.Forms.TextBox tbMaGui;
+        private System.Windows.Forms.TextBox tbMaSo_G;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -699,17 +767,16 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button RTbutton3;
         private System.Windows.Forms.Button RTbutton2;
-        private System.Windows.Forms.Button RTbutton1;
+        private System.Windows.Forms.Button btRutTien;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox RTtextBox6;
-        private System.Windows.Forms.TextBox RTtextBox7;
+        private System.Windows.Forms.TextBox tbMaNV_R;
+        private System.Windows.Forms.TextBox tbTenNV_R;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox RTtextBox5;
-        private System.Windows.Forms.TextBox RTtextBox4;
-        private System.Windows.Forms.TextBox RTtextBox3;
-        private System.Windows.Forms.TextBox RTtextBox2;
-        private System.Windows.Forms.TextBox RTtextBox1;
+        private System.Windows.Forms.TextBox tbTenKH_R;
+        private System.Windows.Forms.TextBox tbTienRut;
+        private System.Windows.Forms.TextBox tbMaRut;
+        private System.Windows.Forms.TextBox tbMaSo_R;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -717,5 +784,13 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbMaKH_G;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtNgayGui;
+        private System.Windows.Forms.DateTimePicker dtNgayRut;
+        private System.Windows.Forms.TextBox tbMaKH_R;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label StatusLabel_G;
+        private System.Windows.Forms.Label StatusLabel_R;
     }
 }

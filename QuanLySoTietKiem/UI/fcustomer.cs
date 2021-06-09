@@ -31,5 +31,16 @@ namespace QuanLySoTietKiem
         {
             this.Close();
         }
+
+        private void fcustomer_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = DAO.CustomerDAO.GetAllCustomerInfo();
+        }
+
+        private void KHSbutton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

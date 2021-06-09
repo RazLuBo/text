@@ -29,33 +29,33 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.KHtextBox5 = new System.Windows.Forms.TextBox();
+            this.tbSdt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.KHSbutton3 = new System.Windows.Forms.Button();
             this.KHSbutton2 = new System.Windows.Forms.Button();
-            this.KHtextBox4 = new System.Windows.Forms.TextBox();
+            this.tbSodu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.KHtextBox3 = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.KHtextBox2 = new System.Windows.Forms.TextBox();
+            this.tbTenKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.KHSbutton1 = new System.Windows.Forms.Button();
-            this.KHtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbMaKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.KHtextBox6 = new System.Windows.Forms.TextBox();
+            this.tbCmnd = new System.Windows.Forms.TextBox();
             this.KHbutton4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // KHtextBox5
+            // tbSdt
             // 
-            this.KHtextBox5.Location = new System.Drawing.Point(582, 134);
-            this.KHtextBox5.Name = "KHtextBox5";
-            this.KHtextBox5.Size = new System.Drawing.Size(139, 22);
-            this.KHtextBox5.TabIndex = 29;
+            this.tbSdt.Location = new System.Drawing.Point(582, 134);
+            this.tbSdt.Name = "tbSdt";
+            this.tbSdt.Size = new System.Drawing.Size(139, 22);
+            this.tbSdt.TabIndex = 29;
             // 
             // label6
             // 
@@ -85,15 +85,15 @@ namespace QuanLySoTietKiem
             this.KHSbutton2.Name = "KHSbutton2";
             this.KHSbutton2.Size = new System.Drawing.Size(112, 30);
             this.KHSbutton2.TabIndex = 26;
-            this.KHSbutton2.Text = "Sữa";
+            this.KHSbutton2.Text = "Sửa";
             this.KHSbutton2.UseVisualStyleBackColor = true;
             // 
-            // KHtextBox4
+            // tbSodu
             // 
-            this.KHtextBox4.Location = new System.Drawing.Point(582, 190);
-            this.KHtextBox4.Name = "KHtextBox4";
-            this.KHtextBox4.Size = new System.Drawing.Size(139, 22);
-            this.KHtextBox4.TabIndex = 25;
+            this.tbSodu.Location = new System.Drawing.Point(582, 190);
+            this.tbSodu.Name = "tbSodu";
+            this.tbSodu.Size = new System.Drawing.Size(139, 22);
+            this.tbSodu.TabIndex = 25;
             // 
             // label5
             // 
@@ -106,12 +106,12 @@ namespace QuanLySoTietKiem
             this.label5.TabIndex = 24;
             this.label5.Text = "Số Dư Tài khoản: ";
             // 
-            // KHtextBox3
+            // tbDiaChi
             // 
-            this.KHtextBox3.Location = new System.Drawing.Point(189, 191);
-            this.KHtextBox3.Name = "KHtextBox3";
-            this.KHtextBox3.Size = new System.Drawing.Size(184, 22);
-            this.KHtextBox3.TabIndex = 23;
+            this.tbDiaChi.Location = new System.Drawing.Point(189, 191);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(184, 22);
+            this.tbDiaChi.TabIndex = 23;
             // 
             // label4
             // 
@@ -124,12 +124,12 @@ namespace QuanLySoTietKiem
             this.label4.TabIndex = 22;
             this.label4.Text = "Địa Chỉ: ";
             // 
-            // KHtextBox2
+            // tbTenKH
             // 
-            this.KHtextBox2.Location = new System.Drawing.Point(189, 135);
-            this.KHtextBox2.Name = "KHtextBox2";
-            this.KHtextBox2.Size = new System.Drawing.Size(184, 22);
-            this.KHtextBox2.TabIndex = 21;
+            this.tbTenKH.Location = new System.Drawing.Point(189, 135);
+            this.tbTenKH.Name = "tbTenKH";
+            this.tbTenKH.Size = new System.Drawing.Size(184, 22);
+            this.tbTenKH.TabIndex = 21;
             // 
             // label3
             // 
@@ -162,13 +162,14 @@ namespace QuanLySoTietKiem
             this.KHSbutton1.TabIndex = 18;
             this.KHSbutton1.Text = "Tìm Kiếm";
             this.KHSbutton1.UseVisualStyleBackColor = true;
+            this.KHSbutton1.Click += new System.EventHandler(this.KHSbutton1_Click);
             // 
-            // KHtextBox1
+            // tbMaKH
             // 
-            this.KHtextBox1.Location = new System.Drawing.Point(189, 35);
-            this.KHtextBox1.Name = "KHtextBox1";
-            this.KHtextBox1.Size = new System.Drawing.Size(100, 22);
-            this.KHtextBox1.TabIndex = 17;
+            this.tbMaKH.Location = new System.Drawing.Point(189, 35);
+            this.tbMaKH.Name = "tbMaKH";
+            this.tbMaKH.Size = new System.Drawing.Size(100, 22);
+            this.tbMaKH.TabIndex = 17;
             // 
             // label1
             // 
@@ -202,12 +203,12 @@ namespace QuanLySoTietKiem
             this.label7.TabIndex = 30;
             this.label7.Text = "CMNN/Hộ Chiếu: ";
             // 
-            // KHtextBox6
+            // tbCmnd
             // 
-            this.KHtextBox6.Location = new System.Drawing.Point(189, 253);
-            this.KHtextBox6.Name = "KHtextBox6";
-            this.KHtextBox6.Size = new System.Drawing.Size(184, 22);
-            this.KHtextBox6.TabIndex = 31;
+            this.tbCmnd.Location = new System.Drawing.Point(189, 253);
+            this.tbCmnd.Name = "tbCmnd";
+            this.tbCmnd.Size = new System.Drawing.Size(184, 22);
+            this.tbCmnd.TabIndex = 31;
             // 
             // KHbutton4
             // 
@@ -228,25 +229,27 @@ namespace QuanLySoTietKiem
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 568);
             this.Controls.Add(this.KHbutton4);
-            this.Controls.Add(this.KHtextBox6);
+            this.Controls.Add(this.tbCmnd);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.KHtextBox5);
+            this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.KHSbutton3);
             this.Controls.Add(this.KHSbutton2);
-            this.Controls.Add(this.KHtextBox4);
+            this.Controls.Add(this.tbSodu);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.KHtextBox3);
+            this.Controls.Add(this.tbDiaChi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.KHtextBox2);
+            this.Controls.Add(this.tbTenKH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.KHSbutton1);
-            this.Controls.Add(this.KHtextBox1);
+            this.Controls.Add(this.tbMaKH);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "fcustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KHÁCH HÀNG";
+            this.Load += new System.EventHandler(this.fcustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,23 +258,23 @@ namespace QuanLySoTietKiem
 
         #endregion
 
-        private System.Windows.Forms.TextBox KHtextBox5;
+        private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button KHSbutton3;
         private System.Windows.Forms.Button KHSbutton2;
-        private System.Windows.Forms.TextBox KHtextBox4;
+        private System.Windows.Forms.TextBox tbSodu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox KHtextBox3;
+        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox KHtextBox2;
+        private System.Windows.Forms.TextBox tbTenKH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button KHSbutton1;
-        private System.Windows.Forms.TextBox KHtextBox1;
+        private System.Windows.Forms.TextBox tbMaKH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox KHtextBox6;
+        private System.Windows.Forms.TextBox tbCmnd;
         private System.Windows.Forms.Button KHbutton4;
     }
 }

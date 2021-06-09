@@ -29,47 +29,50 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.MSbutton3 = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
             this.MSbutton2 = new System.Windows.Forms.Button();
-            this.MSbutton1 = new System.Windows.Forms.Button();
-            this.MStextBox10 = new System.Windows.Forms.TextBox();
-            this.MStextBox9 = new System.Windows.Forms.TextBox();
+            this.btMoSo = new System.Windows.Forms.Button();
+            this.tbMaNV = new System.Windows.Forms.TextBox();
+            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.MStextBox5 = new System.Windows.Forms.TextBox();
+            this.tbTienGoi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.MStextBox4 = new System.Windows.Forms.TextBox();
-            this.MStextBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.MScomboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.MStextBox2 = new System.Windows.Forms.TextBox();
+            this.tbLaiSuat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.MStextBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.MMStextBox1 = new System.Windows.Forms.TextBox();
+            this.tbMaSo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.MStextBox6 = new System.Windows.Forms.TextBox();
+            this.tbTenKH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.MStextBox7 = new System.Windows.Forms.TextBox();
+            this.tbCmnd = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.MStextBox8 = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.tbMaKH = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dtMoSo = new System.Windows.Forms.DateTimePicker();
+            this.dtHetHan = new System.Windows.Forms.DateTimePicker();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // MSbutton3
+            // btExit
             // 
-            this.MSbutton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MSbutton3.Location = new System.Drawing.Point(686, 528);
-            this.MSbutton3.Name = "MSbutton3";
-            this.MSbutton3.Size = new System.Drawing.Size(105, 31);
-            this.MSbutton3.TabIndex = 2;
-            this.MSbutton3.Text = "Thoát";
-            this.MSbutton3.UseVisualStyleBackColor = true;
-            this.MSbutton3.Click += new System.EventHandler(this.MSbutton3_Click);
+            this.btExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExit.Location = new System.Drawing.Point(686, 528);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(105, 31);
+            this.btExit.TabIndex = 2;
+            this.btExit.Text = "Thoát";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // MSbutton2
             // 
@@ -82,30 +85,30 @@ namespace QuanLySoTietKiem
             this.MSbutton2.UseVisualStyleBackColor = true;
             this.MSbutton2.Click += new System.EventHandler(this.MSbutton2_Click);
             // 
-            // MSbutton1
+            // btMoSo
             // 
-            this.MSbutton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MSbutton1.Location = new System.Drawing.Point(442, 528);
-            this.MSbutton1.Name = "MSbutton1";
-            this.MSbutton1.Size = new System.Drawing.Size(105, 31);
-            this.MSbutton1.TabIndex = 0;
-            this.MSbutton1.Text = "Mở Sổ";
-            this.MSbutton1.UseVisualStyleBackColor = true;
-            this.MSbutton1.Click += new System.EventHandler(this.MSbutton1_Click);
+            this.btMoSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMoSo.Location = new System.Drawing.Point(442, 528);
+            this.btMoSo.Name = "btMoSo";
+            this.btMoSo.Size = new System.Drawing.Size(105, 31);
+            this.btMoSo.TabIndex = 0;
+            this.btMoSo.Text = "Mở Sổ";
+            this.btMoSo.UseVisualStyleBackColor = true;
+            this.btMoSo.Click += new System.EventHandler(this.btMoSo_Click);
             // 
-            // MStextBox10
+            // tbMaNV
             // 
-            this.MStextBox10.Location = new System.Drawing.Point(574, 410);
-            this.MStextBox10.Name = "MStextBox10";
-            this.MStextBox10.Size = new System.Drawing.Size(113, 22);
-            this.MStextBox10.TabIndex = 15;
+            this.tbMaNV.Location = new System.Drawing.Point(574, 410);
+            this.tbMaNV.Name = "tbMaNV";
+            this.tbMaNV.Size = new System.Drawing.Size(113, 22);
+            this.tbMaNV.TabIndex = 15;
             // 
-            // MStextBox9
+            // tbTenNV
             // 
-            this.MStextBox9.Location = new System.Drawing.Point(574, 350);
-            this.MStextBox9.Name = "MStextBox9";
-            this.MStextBox9.Size = new System.Drawing.Size(214, 22);
-            this.MStextBox9.TabIndex = 14;
+            this.tbTenNV.Location = new System.Drawing.Point(574, 350);
+            this.tbTenNV.Name = "tbTenNV";
+            this.tbTenNV.Size = new System.Drawing.Size(214, 22);
+            this.tbTenNV.TabIndex = 14;
             // 
             // label12
             // 
@@ -129,12 +132,12 @@ namespace QuanLySoTietKiem
             this.label11.TabIndex = 12;
             this.label11.Text = "Tên NV: ";
             // 
-            // MStextBox5
+            // tbTienGoi
             // 
-            this.MStextBox5.Location = new System.Drawing.Point(192, 237);
-            this.MStextBox5.Name = "MStextBox5";
-            this.MStextBox5.Size = new System.Drawing.Size(164, 22);
-            this.MStextBox5.TabIndex = 28;
+            this.tbTienGoi.Location = new System.Drawing.Point(192, 237);
+            this.tbTienGoi.Name = "tbTienGoi";
+            this.tbTienGoi.Size = new System.Drawing.Size(164, 22);
+            this.tbTienGoi.TabIndex = 28;
             // 
             // label6
             // 
@@ -146,20 +149,6 @@ namespace QuanLySoTietKiem
             this.label6.Size = new System.Drawing.Size(118, 22);
             this.label6.TabIndex = 27;
             this.label6.Text = "Số Tiền Gởi: ";
-            // 
-            // MStextBox4
-            // 
-            this.MStextBox4.Location = new System.Drawing.Point(624, 175);
-            this.MStextBox4.Name = "MStextBox4";
-            this.MStextBox4.Size = new System.Drawing.Size(164, 22);
-            this.MStextBox4.TabIndex = 26;
-            // 
-            // MStextBox3
-            // 
-            this.MStextBox3.Location = new System.Drawing.Point(192, 175);
-            this.MStextBox3.Name = "MStextBox3";
-            this.MStextBox3.Size = new System.Drawing.Size(164, 22);
-            this.MStextBox3.TabIndex = 25;
             // 
             // label5
             // 
@@ -183,13 +172,18 @@ namespace QuanLySoTietKiem
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày Mở Sổ: ";
             // 
-            // MScomboBox1
+            // cbLoaiSo
             // 
-            this.MScomboBox1.FormattingEnabled = true;
-            this.MScomboBox1.Location = new System.Drawing.Point(192, 109);
-            this.MScomboBox1.Name = "MScomboBox1";
-            this.MScomboBox1.Size = new System.Drawing.Size(262, 24);
-            this.MScomboBox1.TabIndex = 22;
+            this.cbLoaiSo.FormattingEnabled = true;
+            this.cbLoaiSo.Items.AddRange(new object[] {
+            "Kì hạn 3 tháng",
+            "Kì hạn 6 tháng",
+            "Không kỳ hạn"});
+            this.cbLoaiSo.Location = new System.Drawing.Point(192, 109);
+            this.cbLoaiSo.Name = "cbLoaiSo";
+            this.cbLoaiSo.Size = new System.Drawing.Size(262, 24);
+            this.cbLoaiSo.TabIndex = 22;
+            this.cbLoaiSo.SelectedIndexChanged += new System.EventHandler(this.cbLoaiSo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -202,12 +196,13 @@ namespace QuanLySoTietKiem
             this.label3.TabIndex = 21;
             this.label3.Text = "Lãi Suất:  ";
             // 
-            // MStextBox2
+            // tbLaiSuat
             // 
-            this.MStextBox2.Location = new System.Drawing.Point(624, 108);
-            this.MStextBox2.Name = "MStextBox2";
-            this.MStextBox2.Size = new System.Drawing.Size(72, 22);
-            this.MStextBox2.TabIndex = 20;
+            this.tbLaiSuat.Location = new System.Drawing.Point(624, 108);
+            this.tbLaiSuat.Name = "tbLaiSuat";
+            this.tbLaiSuat.ReadOnly = true;
+            this.tbLaiSuat.Size = new System.Drawing.Size(72, 22);
+            this.tbLaiSuat.TabIndex = 20;
             // 
             // label2
             // 
@@ -248,31 +243,31 @@ namespace QuanLySoTietKiem
             this.label13.TabIndex = 34;
             this.label13.Text = "Mã Sổ: ";
             // 
-            // MMStextBox1
+            // tbMaSo
             // 
-            this.MMStextBox1.Location = new System.Drawing.Point(192, 47);
-            this.MMStextBox1.Name = "MMStextBox1";
-            this.MMStextBox1.Size = new System.Drawing.Size(101, 22);
-            this.MMStextBox1.TabIndex = 35;
+            this.tbMaSo.Location = new System.Drawing.Point(192, 47);
+            this.tbMaSo.Name = "tbMaSo";
+            this.tbMaSo.Size = new System.Drawing.Size(101, 22);
+            this.tbMaSo.TabIndex = 35;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 354);
+            this.label8.Location = new System.Drawing.Point(19, 295);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 22);
             this.label8.TabIndex = 11;
             this.label8.Text = "Tên KH: ";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // MStextBox6
+            // tbTenKH
             // 
-            this.MStextBox6.Location = new System.Drawing.Point(192, 351);
-            this.MStextBox6.Name = "MStextBox6";
-            this.MStextBox6.Size = new System.Drawing.Size(214, 22);
-            this.MStextBox6.TabIndex = 12;
+            this.tbTenKH.Location = new System.Drawing.Point(192, 296);
+            this.tbTenKH.Name = "tbTenKH";
+            this.tbTenKH.Size = new System.Drawing.Size(214, 22);
+            this.tbTenKH.TabIndex = 12;
             // 
             // label9
             // 
@@ -285,30 +280,30 @@ namespace QuanLySoTietKiem
             this.label9.TabIndex = 13;
             this.label9.Text = "CMNN/Hộ Chiếu: ";
             // 
-            // MStextBox7
+            // tbCmnd
             // 
-            this.MStextBox7.Location = new System.Drawing.Point(195, 411);
-            this.MStextBox7.Name = "MStextBox7";
-            this.MStextBox7.Size = new System.Drawing.Size(211, 22);
-            this.MStextBox7.TabIndex = 14;
+            this.tbCmnd.Location = new System.Drawing.Point(192, 412);
+            this.tbCmnd.Name = "tbCmnd";
+            this.tbCmnd.Size = new System.Drawing.Size(211, 22);
+            this.tbCmnd.TabIndex = 14;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 481);
+            this.label10.Location = new System.Drawing.Point(19, 478);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 22);
             this.label10.TabIndex = 15;
             this.label10.Text = "Địa chỉ: ";
             // 
-            // MStextBox8
+            // tbDiaChi
             // 
-            this.MStextBox8.Location = new System.Drawing.Point(131, 478);
-            this.MStextBox8.Name = "MStextBox8";
-            this.MStextBox8.Size = new System.Drawing.Size(275, 22);
-            this.MStextBox8.TabIndex = 16;
+            this.tbDiaChi.Location = new System.Drawing.Point(192, 478);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(275, 22);
+            this.tbDiaChi.TabIndex = 16;
             // 
             // label7
             // 
@@ -332,39 +327,88 @@ namespace QuanLySoTietKiem
             this.label14.TabIndex = 37;
             this.label14.Text = "% ";
             // 
+            // tbMaKH
+            // 
+            this.tbMaKH.Location = new System.Drawing.Point(192, 355);
+            this.tbMaKH.Name = "tbMaKH";
+            this.tbMaKH.Size = new System.Drawing.Size(214, 22);
+            this.tbMaKH.TabIndex = 38;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(19, 354);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 22);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Mã KH: ";
+            // 
+            // dtMoSo
+            // 
+            this.dtMoSo.CustomFormat = "\"dd-MM-yyyy\"";
+            this.dtMoSo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtMoSo.Location = new System.Drawing.Point(192, 178);
+            this.dtMoSo.Name = "dtMoSo";
+            this.dtMoSo.Size = new System.Drawing.Size(164, 22);
+            this.dtMoSo.TabIndex = 41;
+            // 
+            // dtHetHan
+            // 
+            this.dtHetHan.CustomFormat = "\"dd-MM-yyyy\"";
+            this.dtHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtHetHan.Location = new System.Drawing.Point(624, 177);
+            this.dtHetHan.Name = "dtHetHan";
+            this.dtHetHan.Size = new System.Drawing.Size(167, 22);
+            this.dtHetHan.TabIndex = 42;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.StatusLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.Location = new System.Drawing.Point(12, 563);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel.TabIndex = 43;
+            // 
             // fopen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(803, 594);
+            this.ClientSize = new System.Drawing.Size(864, 594);
+            this.Controls.Add(this.StatusLabel);
+            this.Controls.Add(this.dtHetHan);
+            this.Controls.Add(this.dtMoSo);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.tbMaKH);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.MSbutton3);
-            this.Controls.Add(this.MStextBox10);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.tbMaNV);
             this.Controls.Add(this.MSbutton2);
-            this.Controls.Add(this.MStextBox8);
-            this.Controls.Add(this.MSbutton1);
+            this.Controls.Add(this.tbDiaChi);
+            this.Controls.Add(this.btMoSo);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.MStextBox9);
-            this.Controls.Add(this.MMStextBox1);
+            this.Controls.Add(this.tbTenNV);
+            this.Controls.Add(this.tbMaSo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.MStextBox7);
+            this.Controls.Add(this.tbCmnd);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.MStextBox6);
+            this.Controls.Add(this.tbTenKH);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.MStextBox5);
+            this.Controls.Add(this.tbTienGoi);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.MStextBox4);
-            this.Controls.Add(this.MStextBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.MScomboBox1);
+            this.Controls.Add(this.cbLoaiSo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.MStextBox2);
+            this.Controls.Add(this.tbLaiSuat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.MStextBox1);
             this.Controls.Add(this.label1);
@@ -377,34 +421,37 @@ namespace QuanLySoTietKiem
         }
 
         #endregion
-        private System.Windows.Forms.Button MSbutton3;
+        private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button MSbutton2;
-        private System.Windows.Forms.Button MSbutton1;
-        private System.Windows.Forms.TextBox MStextBox10;
-        private System.Windows.Forms.TextBox MStextBox9;
+        private System.Windows.Forms.Button btMoSo;
+        private System.Windows.Forms.TextBox tbMaNV;
+        private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox MStextBox5;
+        private System.Windows.Forms.TextBox tbTienGoi;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox MStextBox4;
-        private System.Windows.Forms.TextBox MStextBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox MScomboBox1;
+        private System.Windows.Forms.ComboBox cbLoaiSo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox MStextBox2;
+        private System.Windows.Forms.TextBox tbLaiSuat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox MStextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox MMStextBox1;
+        private System.Windows.Forms.TextBox tbMaSo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox MStextBox6;
+        private System.Windows.Forms.TextBox tbTenKH;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox MStextBox7;
+        private System.Windows.Forms.TextBox tbCmnd;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox MStextBox8;
+        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbMaKH;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker dtMoSo;
+        private System.Windows.Forms.DateTimePicker dtHetHan;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }

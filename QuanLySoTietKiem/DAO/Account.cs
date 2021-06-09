@@ -40,10 +40,5 @@ namespace QuanLySoTietKiem.DAO
             int data = ExecuteQuery.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { DisplayName, Username, EncryptedPass, Type });
             return data == 1;
         }
-
-        public static DataTable GetStaffInfor(string Username)
-        {
-            return ExecuteQuery.ExecuteReader("QLKS_GetStaffInfo @Username", new object[] { Username });
-        }
     }
 }
