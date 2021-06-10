@@ -8,9 +8,13 @@ namespace QuanLySoTietKiem.DAO
 {
     public class GuiTienDAO
     {
-        public static bool insertGoiTien(string id, string idNV, string idKH, string idMaSo, DateTime ngayGoi, double tienGoi)
+        private static GuiTienDAO instance;
+
+        public static GuiTienDAO Instance { get { if (instance == null) instance = new GuiTienDAO(); return instance; } set => instance = value; }
+
+        public bool insertGoiTien(string idNV, string idKH, string idMaSo, DateTime ngayGoi, double tienGoi)
         {
-            return ExecuteQuery.ExecuteNoneQuery("insertGoiTien @maGT , @maNV , @maKH , @maSo , @ngayGoi , @tienGoi", new object[] { id, idNV, idKH, idMaSo, ngayGoi, tienGoi }) == 3;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertGoiTien @maNV , @maKH , @maSo , @ngayGoi , @tienGoi", new object[] { idNV, idKH, idMaSo, ngayGoi, tienGoi }) == 3;
         }
     }
 }

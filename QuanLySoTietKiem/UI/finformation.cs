@@ -15,6 +15,7 @@ namespace QuanLySoTietKiem
         public finformation()
         {
             InitializeComponent();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -34,8 +35,12 @@ namespace QuanLySoTietKiem
 
         private void finformation_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = DAO.SoTietKiemDAO.listSoTietKiem();
+            LoadSoTietKiem();
+        }
+
+        private void LoadSoTietKiem()
+        {
+            dataGridView1.DataSource = DAO.SoTietKiemDAO.Instance.listSoTietKiem();
         }
 
         private void TTSbutton1_Click(object sender, EventArgs e)

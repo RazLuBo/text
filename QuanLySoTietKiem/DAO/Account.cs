@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace QuanLySoTietKiem.DAO
 {
-    public static class Account
+    public class Account
     {
-        public static string Encrypt(string text)
+        private static Account instance;
+
+        public static Account Instance { get { if (instance == null) instance = new Account(); return instance; } set => instance = value; }
+
+        public string Encrypt(string text)
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
@@ -19,25 +23,25 @@ namespace QuanLySoTietKiem.DAO
                 return Convert.ToBase64String(data);
             }
         }
-        public static bool Login(string Username, string Password)
+        public bool Login(string Username, string Password)
         {
             string EncryptedPass = Encrypt(Password);
-            int data = (int)ExecuteQuery.ExecuteScalar("searchAccount @tenDN , @matKhau", new object[] { Username, EncryptedPass });
+            int data = (int)ExecuteQuery.Instance.ExecuteScalar("searchAccount @tenDN , @matKhau", new object[] { Username, EncryptedPass });
             return data == 1;
         }
-        public static int ChangePassword(string Username, string oldPass, string newPass)
+        public int ChangePassword(string Username, string oldPass, string newPass)
         {
             string EncryptedOldPass = Encrypt(oldPass);
             string EncryptedNewPass = Encrypt(newPass);
-            return ExecuteQuery.ExecuteNoneQuery("QLKS_ChangePassword @Username , @OldPassword , @NewPassword",
+            return ExecuteQuery.Instance.ExecuteNoneQuery("QLKS_ChangePassword @Username , @OldPassword , @NewPassword",
                 new object[] { Username, EncryptedOldPass, EncryptedNewPass });
         }
 
-        public static bool insertAccount(string Username, string Password, string DisplayName = null, int Type = 1)
+        public bool insertAccount(string Username, string Password, string DisplayName = null, int Type = 1)
         {
             string EncryptedPass = Encrypt(Password);
             if (DisplayName == null) DisplayName = Username;
-            int data = ExecuteQuery.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { DisplayName, Username, EncryptedPass, Type });
+            int data = ExecuteQuery.Instance.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { DisplayName, Username, EncryptedPass, Type });
             return data == 1;
         }
     }

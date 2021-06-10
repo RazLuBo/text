@@ -44,6 +44,7 @@ namespace QuanLySoTietKiem
             this.MSbutton3 = new System.Windows.Forms.Button();
             this.GDtabControl = new System.Windows.Forms.TabControl();
             this.GTtabPage1 = new System.Windows.Forms.TabPage();
+            this.StatusLabel_G = new System.Windows.Forms.Label();
             this.tbMaKH_G = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtNgayGui = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +68,7 @@ namespace QuanLySoTietKiem
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.GDtabPage2 = new System.Windows.Forms.TabPage();
+            this.StatusLabel_R = new System.Windows.Forms.Label();
             this.tbMaKH_R = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtNgayRut = new System.Windows.Forms.DateTimePicker();
@@ -89,8 +91,6 @@ namespace QuanLySoTietKiem
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.StatusLabel_R = new System.Windows.Forms.Label();
-            this.StatusLabel_G = new System.Windows.Forms.Label();
             this.GDtabControl.SuspendLayout();
             this.GTtabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -217,11 +217,12 @@ namespace QuanLySoTietKiem
             // 
             this.GDtabControl.Controls.Add(this.GTtabPage1);
             this.GDtabControl.Controls.Add(this.GDtabPage2);
+            this.GDtabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GDtabControl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GDtabControl.Location = new System.Drawing.Point(-3, -4);
+            this.GDtabControl.Location = new System.Drawing.Point(0, 0);
             this.GDtabControl.Name = "GDtabControl";
             this.GDtabControl.SelectedIndex = 0;
-            this.GDtabControl.Size = new System.Drawing.Size(794, 580);
+            this.GDtabControl.Size = new System.Drawing.Size(789, 573);
             this.GDtabControl.TabIndex = 1;
             // 
             // GTtabPage1
@@ -248,10 +249,19 @@ namespace QuanLySoTietKiem
             this.GTtabPage1.Location = new System.Drawing.Point(4, 32);
             this.GTtabPage1.Name = "GTtabPage1";
             this.GTtabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.GTtabPage1.Size = new System.Drawing.Size(786, 544);
+            this.GTtabPage1.Size = new System.Drawing.Size(781, 537);
             this.GTtabPage1.TabIndex = 0;
             this.GTtabPage1.Text = "Gởi Tiền";
             this.GTtabPage1.UseVisualStyleBackColor = true;
+            // 
+            // StatusLabel_G
+            // 
+            this.StatusLabel_G.AutoSize = true;
+            this.StatusLabel_G.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel_G.Location = new System.Drawing.Point(6, 514);
+            this.StatusLabel_G.Name = "StatusLabel_G";
+            this.StatusLabel_G.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel_G.TabIndex = 36;
             // 
             // tbMaKH_G
             // 
@@ -272,7 +282,9 @@ namespace QuanLySoTietKiem
             // 
             // dtNgayGui
             // 
-            this.dtNgayGui.Location = new System.Drawing.Point(466, 106);
+            this.dtNgayGui.CustomFormat = "\"dd-MM-yyyy\"";
+            this.dtNgayGui.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayGui.Location = new System.Drawing.Point(441, 106);
             this.dtNgayGui.Name = "dtNgayGui";
             this.dtNgayGui.Size = new System.Drawing.Size(293, 30);
             this.dtNgayGui.TabIndex = 33;
@@ -479,9 +491,18 @@ namespace QuanLySoTietKiem
             this.GDtabPage2.Location = new System.Drawing.Point(4, 32);
             this.GDtabPage2.Name = "GDtabPage2";
             this.GDtabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.GDtabPage2.Size = new System.Drawing.Size(786, 544);
+            this.GDtabPage2.Size = new System.Drawing.Size(781, 537);
             this.GDtabPage2.TabIndex = 1;
             this.GDtabPage2.Text = "Rút Tiền";
+            // 
+            // StatusLabel_R
+            // 
+            this.StatusLabel_R.AutoSize = true;
+            this.StatusLabel_R.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel_R.Location = new System.Drawing.Point(6, 514);
+            this.StatusLabel_R.Name = "StatusLabel_R";
+            this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel_R.TabIndex = 49;
             // 
             // tbMaKH_R
             // 
@@ -504,7 +525,7 @@ namespace QuanLySoTietKiem
             // 
             this.dtNgayRut.CustomFormat = "\"dd-MM-yyyy\"";
             this.dtNgayRut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayRut.Location = new System.Drawing.Point(449, 106);
+            this.dtNgayRut.Location = new System.Drawing.Point(441, 106);
             this.dtNgayRut.Name = "dtNgayRut";
             this.dtNgayRut.Size = new System.Drawing.Size(293, 30);
             this.dtNgayRut.TabIndex = 46;
@@ -684,24 +705,6 @@ namespace QuanLySoTietKiem
             this.label28.Size = new System.Drawing.Size(76, 23);
             this.label28.TabIndex = 32;
             this.label28.Text = "Mã Sổ: ";
-            // 
-            // StatusLabel_R
-            // 
-            this.StatusLabel_R.AutoSize = true;
-            this.StatusLabel_R.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel_R.Location = new System.Drawing.Point(6, 514);
-            this.StatusLabel_R.Name = "StatusLabel_R";
-            this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
-            this.StatusLabel_R.TabIndex = 49;
-            // 
-            // StatusLabel_G
-            // 
-            this.StatusLabel_G.AutoSize = true;
-            this.StatusLabel_G.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel_G.Location = new System.Drawing.Point(6, 514);
-            this.StatusLabel_G.Name = "StatusLabel_G";
-            this.StatusLabel_G.Size = new System.Drawing.Size(0, 22);
-            this.StatusLabel_G.TabIndex = 36;
             // 
             // ftransaction
             // 

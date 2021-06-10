@@ -12,6 +12,8 @@ namespace QuanLySoTietKiem
 {
     public partial class freport : Form
     {
+        BindingSource listReportDay = new BindingSource();
+        BindingSource listReportMonth = new BindingSource();
         public freport()
         {
             InitializeComponent();
@@ -29,22 +31,35 @@ namespace QuanLySoTietKiem
             this.Close();
         }
 
+        private void LoadDoanhThuNgay()
+        {
+            dataDay.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuNgay(dtDay.Value);
+        }
+
+        private void LoadDoanhThuThang()
+        {
+            dataMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThang(dtMonth.Value);
+        }
+
+        private void LoadDoanhThuThangLoaiSo()
+        {
+            dataMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThangLoaiSo(dtMonth.Value, cbLoaiSo.SelectedIndex.ToString());
+        }
+
         private void freport_Load(object sender, EventArgs e)
         {
-            switch (tabControl1.SelectedIndex)
-            {
-                case 0:
-                    dataDay.DataSource = DAO.DoanhThuDAO.GetDoanhThuNgay(dateTime.Value);
-                    break;
-                case 1:
-                    if (cbLoaiSo.SelectedIndex == -1)
-                        dataMonth.DataSource = DAO.DoanhThuDAO.GetDoanhThuThang(
-                            Convert.ToInt32(tbBCT_Thang.Text), Convert.ToInt32(tbBCT_Nam.Text));
-                    else
-                        dataMonth.DataSource = DAO.DoanhThuDAO.GetDoanhThuThangLoaiSo(
-                            Convert.ToInt32(tbBCT_Thang.Text), Convert.ToInt32(tbBCT_Nam.Text), cbLoaiSo.SelectedIndex.ToString());
-                    break;
-            }
+            dataDay.DataSource = listReportDay;
+            dataMonth.DataSource = listReportMonth;
+            LoadDoanhThuNgay();
+            LoadDoanhThuThang();
+        }
+
+        private void cbLoaiSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLoaiSo.SelectedIndex != -1)
+                LoadDoanhThuThangLoaiSo();
+            else
+                LoadDoanhThuThang();
         }
     }
 }

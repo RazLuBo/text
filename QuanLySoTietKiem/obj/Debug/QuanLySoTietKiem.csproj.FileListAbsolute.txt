@@ -34,7 +34,6 @@ C:\Users\PC\source\repos\QuanLySoTietKiem1\QuanLySoTietKiem\obj\Debug\QuanLySoTi
 D:\Github\text\QuanLySoTietKiem\bin\Debug\QuanLySoTietKiem.exe.config
 D:\Github\text\QuanLySoTietKiem\bin\Debug\QuanLySoTietKiem.exe
 D:\Github\text\QuanLySoTietKiem\bin\Debug\QuanLySoTietKiem.pdb
-D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.csprojAssemblyReference.cache
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.faccount.resources
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.fchange.resources
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.fcustomer.resources
@@ -50,3 +49,4 @@ D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.csproj.GenerateResour
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.csproj.CoreCompileInputs.cache
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.exe
 D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.pdb
+D:\Github\text\QuanLySoTietKiem\obj\Debug\QuanLySoTietKiem.csprojAssemblyReference.cache

@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace QuanLySoTietKiem.DAO
 {
-    public static class ExecuteQuery
+    public class ExecuteQuery
     {
-        public static DataTable ExecuteReader(string Query, object[] ParamList = null)
+        private static ExecuteQuery instance;
+
+        public static ExecuteQuery Instance { get { if (instance == null) instance = new ExecuteQuery(); return instance; } set => instance = value; }
+
+        public DataTable ExecuteReader(string Query, object[] ParamList = null)
         {
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
@@ -23,7 +27,7 @@ namespace QuanLySoTietKiem.DAO
             }
             return data;
         }
-        public static int ExecuteNoneQuery(string Query, object[] ParamList = null)
+        public int ExecuteNoneQuery(string Query, object[] ParamList = null)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
             {
@@ -33,7 +37,7 @@ namespace QuanLySoTietKiem.DAO
                 return command.ExecuteNonQuery();
             }
         }
-        public static object ExecuteScalar(string Query, object[] ParamList = null)
+        public object ExecuteScalar(string Query, object[] ParamList = null)
         {
             object data = new object();
             using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
@@ -45,7 +49,7 @@ namespace QuanLySoTietKiem.DAO
             }
             return data;
         }
-        private static void AddParameter(string Query, SqlCommand command, object[] ParamList)
+        private void AddParameter(string Query, SqlCommand command, object[] ParamList)
         {
             if (ParamList != null)
             {

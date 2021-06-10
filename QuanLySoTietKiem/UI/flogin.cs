@@ -48,7 +48,7 @@ namespace QuanLySoTietKiem
             }
             try
             {
-                bool LoginSuccessful = DAO.Account.Login(tbUsername.Text, tbPassword.Text);
+                bool LoginSuccessful = DAO.Account.Instance.Login(tbUsername.Text, tbPassword.Text);
                 if (LoginSuccessful)
                 {
                     LoginButton.Focus();

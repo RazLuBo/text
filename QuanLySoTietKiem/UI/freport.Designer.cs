@@ -31,21 +31,19 @@ namespace QuanLySoTietKiem
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtDay = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.BCnbutton2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataDay = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtMonth = new System.Windows.Forms.DateTimePicker();
+            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.BCTbutton2 = new System.Windows.Forms.Button();
             this.BCTbutton1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbBCT_Nam = new System.Windows.Forms.TextBox();
-            this.tbBCT_Thang = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataMonth = new System.Windows.Forms.DataGridView();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
-            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDay)).BeginInit();
@@ -71,7 +69,7 @@ namespace QuanLySoTietKiem
             // 
             this.tabPage1.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.dateTime);
+            this.tabPage1.Controls.Add(this.dtDay);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.BCnbutton2);
             this.tabPage1.Controls.Add(this.label1);
@@ -83,6 +81,15 @@ namespace QuanLySoTietKiem
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NGÀY";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dtDay
+            // 
+            this.dtDay.CustomFormat = "\"dd-MM-yyyy\"";
+            this.dtDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDay.Location = new System.Drawing.Point(131, 50);
+            this.dtDay.Name = "dtDay";
+            this.dtDay.Size = new System.Drawing.Size(200, 30);
+            this.dtDay.TabIndex = 11;
             // 
             // button1
             // 
@@ -105,7 +112,6 @@ namespace QuanLySoTietKiem
             this.BCnbutton2.TabIndex = 3;
             this.BCnbutton2.Text = "Kiểm Tra";
             this.BCnbutton2.UseVisualStyleBackColor = true;
-            this.BCnbutton2.Click += new System.EventHandler(this.freport_Load);
             // 
             // label1
             // 
@@ -134,13 +140,11 @@ namespace QuanLySoTietKiem
             // 
             this.tabPage2.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.dtMonth);
             this.tabPage2.Controls.Add(this.cbLoaiSo);
             this.tabPage2.Controls.Add(this.BCTbutton2);
             this.tabPage2.Controls.Add(this.BCTbutton1);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.tbBCT_Nam);
-            this.tabPage2.Controls.Add(this.tbBCT_Thang);
-            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.dataMonth);
             this.tabPage2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,6 +155,28 @@ namespace QuanLySoTietKiem
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "THÁNG";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dtMonth
+            // 
+            this.dtMonth.CustomFormat = "\"MM-yyyy\"";
+            this.dtMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtMonth.Location = new System.Drawing.Point(124, 28);
+            this.dtMonth.Name = "dtMonth";
+            this.dtMonth.Size = new System.Drawing.Size(116, 30);
+            this.dtMonth.TabIndex = 24;
+            // 
+            // cbLoaiSo
+            // 
+            this.cbLoaiSo.FormattingEnabled = true;
+            this.cbLoaiSo.Items.AddRange(new object[] {
+            "Kì hạn 3 tháng",
+            "Kì hạn 6 tháng",
+            "Không kỳ hạn"});
+            this.cbLoaiSo.Location = new System.Drawing.Point(124, 89);
+            this.cbLoaiSo.Name = "cbLoaiSo";
+            this.cbLoaiSo.Size = new System.Drawing.Size(236, 30);
+            this.cbLoaiSo.TabIndex = 23;
+            this.cbLoaiSo.SelectedIndexChanged += new System.EventHandler(this.cbLoaiSo_SelectedIndexChanged);
             // 
             // BCTbutton2
             // 
@@ -171,7 +197,6 @@ namespace QuanLySoTietKiem
             this.BCTbutton1.TabIndex = 8;
             this.BCTbutton1.Text = "Kiểm Tra";
             this.BCTbutton1.UseVisualStyleBackColor = true;
-            this.BCTbutton1.Click += new System.EventHandler(this.freport_Load);
             // 
             // label4
             // 
@@ -182,30 +207,6 @@ namespace QuanLySoTietKiem
             this.label4.Size = new System.Drawing.Size(86, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Loại Sổ: ";
-            // 
-            // tbBCT_Nam
-            // 
-            this.tbBCT_Nam.Location = new System.Drawing.Point(446, 26);
-            this.tbBCT_Nam.Name = "tbBCT_Nam";
-            this.tbBCT_Nam.Size = new System.Drawing.Size(92, 30);
-            this.tbBCT_Nam.TabIndex = 5;
-            // 
-            // tbBCT_Thang
-            // 
-            this.tbBCT_Thang.Location = new System.Drawing.Point(124, 26);
-            this.tbBCT_Thang.Name = "tbBCT_Thang";
-            this.tbBCT_Thang.Size = new System.Drawing.Size(92, 30);
-            this.tbBCT_Thang.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Năm: ";
             // 
             // label2
             // 
@@ -226,28 +227,6 @@ namespace QuanLySoTietKiem
             this.dataMonth.RowTemplate.Height = 24;
             this.dataMonth.Size = new System.Drawing.Size(801, 264);
             this.dataMonth.TabIndex = 0;
-            // 
-            // dateTime
-            // 
-            this.dateTime.CustomFormat = "\"dd/MM/yyyy\"";
-            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime.Location = new System.Drawing.Point(131, 50);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(200, 30);
-            this.dateTime.TabIndex = 11;
-            this.dateTime.ValueChanged += new System.EventHandler(this.freport_Load);
-            // 
-            // cbLoaiSo
-            // 
-            this.cbLoaiSo.FormattingEnabled = true;
-            this.cbLoaiSo.Items.AddRange(new object[] {
-            "Kì hạn 3 tháng",
-            "Kì hạn 6 tháng",
-            "Không kỳ hạn"});
-            this.cbLoaiSo.Location = new System.Drawing.Point(124, 89);
-            this.cbLoaiSo.Name = "cbLoaiSo";
-            this.cbLoaiSo.Size = new System.Drawing.Size(236, 30);
-            this.cbLoaiSo.TabIndex = 23;
             // 
             // freport
             // 
@@ -282,14 +261,12 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BCTbutton1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbBCT_Nam;
-        private System.Windows.Forms.TextBox tbBCT_Thang;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataMonth;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BCTbutton2;
-        private System.Windows.Forms.DateTimePicker dateTime;
+        private System.Windows.Forms.DateTimePicker dtDay;
         private System.Windows.Forms.ComboBox cbLoaiSo;
+        private System.Windows.Forms.DateTimePicker dtMonth;
     }
 }

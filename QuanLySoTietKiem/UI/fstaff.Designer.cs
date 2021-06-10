@@ -29,22 +29,26 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbCmnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TTSbutton3 = new System.Windows.Forms.Button();
-            this.TTSbutton2 = new System.Windows.Forms.Button();
+            this.btRemove = new System.Windows.Forms.Button();
+            this.btModify = new System.Windows.Forms.Button();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbTenNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TTSbutton1 = new System.Windows.Forms.Button();
+            this.btSearch = new System.Windows.Forms.Button();
             this.tbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,25 +88,27 @@ namespace QuanLySoTietKiem
             this.label6.TabIndex = 45;
             this.label6.Text = "Số Điện Thoại: ";
             // 
-            // TTSbutton3
+            // btRemove
             // 
-            this.TTSbutton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton3.Location = new System.Drawing.Point(531, 267);
-            this.TTSbutton3.Name = "TTSbutton3";
-            this.TTSbutton3.Size = new System.Drawing.Size(112, 30);
-            this.TTSbutton3.TabIndex = 44;
-            this.TTSbutton3.Text = "Xóa";
-            this.TTSbutton3.UseVisualStyleBackColor = true;
+            this.btRemove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRemove.Location = new System.Drawing.Point(531, 266);
+            this.btRemove.Name = "btRemove";
+            this.btRemove.Size = new System.Drawing.Size(112, 30);
+            this.btRemove.TabIndex = 44;
+            this.btRemove.Text = "Xóa";
+            this.btRemove.UseVisualStyleBackColor = true;
+            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
             // 
-            // TTSbutton2
+            // btModify
             // 
-            this.TTSbutton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton2.Location = new System.Drawing.Point(398, 266);
-            this.TTSbutton2.Name = "TTSbutton2";
-            this.TTSbutton2.Size = new System.Drawing.Size(112, 30);
-            this.TTSbutton2.TabIndex = 43;
-            this.TTSbutton2.Text = "Sửa";
-            this.TTSbutton2.UseVisualStyleBackColor = true;
+            this.btModify.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btModify.Location = new System.Drawing.Point(398, 266);
+            this.btModify.Name = "btModify";
+            this.btModify.Size = new System.Drawing.Size(112, 30);
+            this.btModify.TabIndex = 43;
+            this.btModify.Text = "Sửa";
+            this.btModify.UseVisualStyleBackColor = true;
+            this.btModify.Click += new System.EventHandler(this.btModify_Click);
             // 
             // tbDiaChi
             // 
@@ -152,16 +158,16 @@ namespace QuanLySoTietKiem
             this.label2.TabIndex = 36;
             this.label2.Text = "Thông Tin: ";
             // 
-            // TTSbutton1
+            // btSearch
             // 
-            this.TTSbutton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton1.Location = new System.Drawing.Point(294, 1);
-            this.TTSbutton1.Name = "TTSbutton1";
-            this.TTSbutton1.Size = new System.Drawing.Size(112, 30);
-            this.TTSbutton1.TabIndex = 35;
-            this.TTSbutton1.Text = "Tìm Kiếm";
-            this.TTSbutton1.UseVisualStyleBackColor = true;
-            this.TTSbutton1.Click += new System.EventHandler(this.TTSbutton1_Click);
+            this.btSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSearch.Location = new System.Drawing.Point(298, 6);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(112, 30);
+            this.btSearch.TabIndex = 35;
+            this.btSearch.Text = "Tìm Kiếm";
+            this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // tbID
             // 
@@ -175,7 +181,7 @@ namespace QuanLySoTietKiem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 33;
@@ -190,17 +196,45 @@ namespace QuanLySoTietKiem
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(796, 247);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             // 
-            // button1
+            // btExit
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(666, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 30);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExit.Location = new System.Drawing.Point(666, 266);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(112, 30);
+            this.btExit.TabIndex = 49;
+            this.btExit.Text = "Thoát";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(259, 266);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(112, 30);
+            this.btAdd.TabIndex = 50;
+            this.btAdd.Text = "Thêm";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.StatusLabel.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.StatusLabel.Location = new System.Drawing.Point(153, 56);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 19);
+            this.StatusLabel.TabIndex = 51;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fstaff
             // 
@@ -209,19 +243,21 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 563);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.StatusLabel);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.btExit);
             this.Controls.Add(this.tbCmnd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TTSbutton3);
-            this.Controls.Add(this.TTSbutton2);
+            this.Controls.Add(this.btRemove);
+            this.Controls.Add(this.btModify);
             this.Controls.Add(this.tbDiaChi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbTenNV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TTSbutton1);
+            this.Controls.Add(this.btSearch);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -241,17 +277,20 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button TTSbutton3;
-        private System.Windows.Forms.Button TTSbutton2;
+        private System.Windows.Forms.Button btRemove;
+        private System.Windows.Forms.Button btModify;
         private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button TTSbutton1;
+        private System.Windows.Forms.Button btSearch;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

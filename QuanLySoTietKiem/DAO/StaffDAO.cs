@@ -7,21 +7,37 @@ using System.Threading.Tasks;
 
 namespace QuanLySoTietKiem.DAO
 {
-    class StaffDAO
+    public class StaffDAO
     {
-        public static bool insertStaff(string id, string hoten, string diachi, string sdt, string cmnd)
-        {
-            return ExecuteQuery.ExecuteNoneQuery("insertStaff @maNV , @hoTen , @diaChi , @sDT , @cmnd", new object[] { id, hoten, diachi, sdt, cmnd }) == 1;
+        private static StaffDAO instance;
+
+        public static StaffDAO Instance { 
+            get {
+                if (instance == null)
+                    instance = new StaffDAO();
+                return instance; 
+            } 
+            private set => instance = value; 
         }
 
-        public static DataTable listNhanVien()
+        public bool insertStaff(string hoten, string diachi, string sdt, string cmnd)
         {
-            return ExecuteQuery.ExecuteReader("select * from NHANVIEN");
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertStaff @hoTen , @diaChi , @sDT , @cmnd", new object[] {hoten, diachi, sdt, cmnd }) == 1;
         }
 
-        public static DataTable GetStaffInfor(string id)
+        public DataTable listNhanVien()
         {
-            return ExecuteQuery.ExecuteReader("GetStaffInfo @maNV", new object[] { id });
+            return ExecuteQuery.Instance.ExecuteReader("select * from NHANVIEN where LamViec = 1");
+        }
+
+        public DataTable GetStaffInfor(string id)
+        {
+            return ExecuteQuery.Instance.ExecuteReader("GetStaffInfo @maNV", new object[] { id });
+        }
+
+        public bool removeStaff(DTO.Staff staff)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery("removeStaff @maNV", new object[] { staff.ID }) == 1;
         }
     }
 }

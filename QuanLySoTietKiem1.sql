@@ -52,7 +52,7 @@ GO
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/10/2021 1:26:17 AM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/11/2021 12:17:43 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -65,6 +65,7 @@ CREATE TABLE [dbo].[NHANVIEN](
 	[DiaChi] [varchar](100) NOT NULL,
 	[SDT] [varchar](20) NOT NULL,
 	[CMNN_or_HoChieu] [varchar](50) NOT NULL,
+	[LamViec] [bit] NULL,
  CONSTRAINT [NhanVien_pk] PRIMARY KEY CLUSTERED 
 (
 	[MaNV] ASC
@@ -378,22 +379,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-create proc [dbo].[insertStaff] 
-@maNV varchar(50), @hoTen varchar(50), @diaChi varchar(50), @sdt varchar(50), @cmnd varchar(50)
+alter proc [dbo].[insertStaff] 
+@hoTen varchar(50), @diaChi varchar(50), @sdt varchar(50), @cmnd varchar(50)
 as
 begin
-Declare @countCus int;
-	Declare @money money;
-
-	select @countCus = COUNT (*) from NHANVIEN k where k.MaNV = @maNV
-
-	if(@countCus = 0)
-	begin
-		insert into NHANVIEN(MaNV, HoTen, DiaChi, SDT, CMNN_or_HoChieu)
-		values (
-			@maNV, @hoTen, @diaChi, @sdt, @cmnd
-		);
-	end
+	insert into NHANVIEN(HoTen, DiaChi, SDT, CMNN_or_HoChieu, LamViec)
+	values (
+		@hoTen, @diaChi, @sdt, @cmnd, 1
+	);
 end;
 GO
 
@@ -508,6 +501,19 @@ begin
 	end
 end;
 go
-select count (*) from KHACHHANG where MaKH = '01'
 
-select * from DOANHTHU where DAY(Ngay) = 10 and MONTH(Ngay) = 6 and YEAR(Ngay) = 2021 and MaLS
+select * from NHANVIEN
+
+delete from NHANVIEN where MaNV = '01'
+
+create proc removeStaff
+@maNV varchar(50)
+as 
+begin
+	update NHANVIEN
+	set LamViec = 0
+	where MaNV = @maNV
+end;
+go
+
+

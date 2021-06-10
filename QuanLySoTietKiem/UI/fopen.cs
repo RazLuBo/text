@@ -26,13 +26,22 @@ namespace QuanLySoTietKiem
         private void btMoSo_Click(object sender, EventArgs e)
         {
             string idLS = cbLoaiSo.SelectedIndex.ToString();
-            if (!DAO.CustomerDAO.CheckCustomer(tbMaKH.Text))
-                DAO.CustomerDAO.insertCustomer(tbMaKH.Text, tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, 0);
+            int idCus = -1;
+            if (!DAO.CustomerDAO.Instance.CheckCustomer(tbMaKH.Text))
+            {
+                DAO.CustomerDAO.Instance.insertCustomer(tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, 0);
+                idCus = DAO.CustomerDAO.Instance.GetIdNewCustomer();
+            }
+            else
+                idCus = Convert.ToInt32(tbMaKH.Text);
 
-            if (!DAO.DoanhThuDAO.CheckDoanhThu(idLS))
-                DAO.DoanhThuDAO.insertDoanhThu(idLS, cbLoaiSo.SelectedItem.ToString(), dtMoSo.Value);
-            
-            if (DAO.SoTietKiemDAO.insertSoTietKiem(tbMaSo.Text, tbMaNV.Text, tbMaKH.Text, idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
+            if (!DAO.DoanhThuDAO.Instance.CheckDoanhThu(idLS))
+            {
+                DAO.DoanhThuDAO.Instance.insertDoanhThu(cbLoaiSo.SelectedItem.ToString(), dtMoSo.Value);
+                idLS = DAO.DoanhThuDAO.Instance.GetIdNewLS().ToString();
+            }
+
+            if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(tbMaNV.Text, idCus.ToString(), idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
             {
                 this.Close();
             }

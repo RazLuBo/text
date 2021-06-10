@@ -8,9 +8,13 @@ namespace QuanLySoTietKiem.DAO
 {
     public class RutTienDAO
     {
-        public static bool insertRutTien(string id, string idNV, string idKH, string idMaSo, DateTime ngayRut, double tienRut)
+        private static RutTienDAO instance;
+
+        public static RutTienDAO Instance { get { if (instance == null) instance = new RutTienDAO(); return instance; } set => instance = value; }
+
+        public bool insertRutTien(string idNV, string idKH, string idMaSo, DateTime ngayRut, double tienRut)
         {
-            return ExecuteQuery.ExecuteNoneQuery("insertRutTien @maRT , @maNV , @maKH , @maSo , @ngayRut , @tienRut", new object[] { id, idNV, idKH, idMaSo, ngayRut, tienRut }) == 3;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertRutTien @maNV , @maKH , @maSo , @ngayRut , @tienRut", new object[] { idNV, idKH, idMaSo, ngayRut, tienRut }) == 3;
         }
     }
 }

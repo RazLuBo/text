@@ -9,30 +9,39 @@ namespace QuanLySoTietKiem.DAO
 {
     public class DoanhThuDAO
     {
-        public static bool insertDoanhThu(string id, string loai, DateTime day)
+        private static DoanhThuDAO instance;
+
+        public static DoanhThuDAO Instance { get { if (instance == null) instance = new DoanhThuDAO(); return instance; } set => instance = value; }
+
+        public bool insertDoanhThu(string loai, DateTime day)
         {
-            return ExecuteQuery.ExecuteNoneQuery("insertDoanhThu @maLS , @loaiSo , @ngay", new object[] { id, loai, day }) == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertDoanhThu @loaiSo , @ngay", new object[] { loai, day }) == 1;
         }
 
-        public static bool CheckDoanhThu(string id)
+        public int GetIdNewLS()
+        {
+            return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaLS) FROM [dbo].[DOANHTHU]");
+        }
+
+        public bool CheckDoanhThu(string id)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
-            return (int)ExecuteQuery.ExecuteScalar("select count (*) from DOANHTHU where MaLS = @maLS", new object[] { id }) == 1;
+            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from DOANHTHU where MaLS = @maLS", new object[] { id }) == 1;
         }
 
-        public static DataTable GetDoanhThuNgay(DateTime day)
+        public DataTable GetDoanhThuNgay(DateTime day)
         {
-            return ExecuteQuery.ExecuteReader("select * from DOANHTHU where DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
+            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
         }
 
-        public static DataTable GetDoanhThuThang(int thang, int nam)
+        public DataTable GetDoanhThuThang(DateTime dt)
         {
-            return ExecuteQuery.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { thang, nam });
+            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { dt.Month, dt.Year });
         }
 
-        public static DataTable GetDoanhThuThangLoaiSo(int thang, int nam, string idLS)
+        public DataTable GetDoanhThuThangLoaiSo(DateTime dt, string idLS)
         {
-            return ExecuteQuery.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam and MaLS = @idLS", new object[] { thang, nam, idLS });
+            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam and MaLS = @idLS", new object[] { dt.Month, dt.Year, idLS });
         }
     }
 }

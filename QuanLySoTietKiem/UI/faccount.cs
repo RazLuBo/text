@@ -36,7 +36,7 @@ namespace QuanLySoTietKiem
                 tbPassword.Focus();
                 return;
             }
-            if(DAO.Account.insertAccount(tbUsername.Text, tbPassword.Text))
+            if(DAO.Account.Instance.insertAccount(tbUsername.Text, tbPassword.Text))
                 this.Close();
             else
             {
