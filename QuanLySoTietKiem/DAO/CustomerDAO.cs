@@ -15,12 +15,17 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertCustomer(string hoten, string diachi, string sdt, string cmnd, double sodu)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertCustomer @hoTen , @diaChi , @sDT , @cmnd , @soDu", new object[] { hoten, diachi, sdt, cmnd, sodu }) == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertCustomer @hoTen , @diaChi , @sDT , @cmnd , @soDu", new object[] { hoten, diachi, sdt, cmnd, sodu }) > 0;
         }
 
         public int GetIdNewCustomer()
         {
             return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaKH) FROM [dbo].[KHACHHANG]");
+        }
+
+        public bool DeleteCustomer(int id)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE KHACHHANG where MaKH =" + id) > 0;
         }
 
         public DataTable GetCustomerInfo(string id)
@@ -32,7 +37,7 @@ namespace QuanLySoTietKiem.DAO
         public bool CheckCustomer(string id)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
-            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from KHACHHANG where MaKH = @maKH", new object[] { id }) == 1;
+            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from KHACHHANG where MaKH = @maKH", new object[] { id }) > 0;
         }
 
         public DataTable GetAllCustomerInfo()

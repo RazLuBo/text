@@ -108,7 +108,7 @@ namespace QuanLySoTietKiem
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 186);
+            this.label3.Location = new System.Drawing.Point(12, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 22);
             this.label3.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace QuanLySoTietKiem
             // 
             // TKtextBox2
             // 
-            this.TKtextBox2.Location = new System.Drawing.Point(181, 184);
+            this.TKtextBox2.Location = new System.Drawing.Point(181, 187);
             this.TKtextBox2.Name = "TKtextBox2";
             this.TKtextBox2.Size = new System.Drawing.Size(100, 22);
             this.TKtextBox2.TabIndex = 6;
@@ -128,7 +128,7 @@ namespace QuanLySoTietKiem
             "Ngày",
             "Tháng",
             "Năm"});
-            this.TKcomboBox2.Location = new System.Drawing.Point(319, 182);
+            this.TKcomboBox2.Location = new System.Drawing.Point(319, 187);
             this.TKcomboBox2.Name = "TKcomboBox2";
             this.TKcomboBox2.Size = new System.Drawing.Size(81, 24);
             this.TKcomboBox2.TabIndex = 7;
@@ -189,7 +189,7 @@ namespace QuanLySoTietKiem
             "Ngày ",
             "Tháng",
             "Năm"});
-            this.TKcomboBox3.Location = new System.Drawing.Point(319, 266);
+            this.TKcomboBox3.Location = new System.Drawing.Point(319, 269);
             this.TKcomboBox3.Name = "TKcomboBox3";
             this.TKcomboBox3.Size = new System.Drawing.Size(81, 24);
             this.TKcomboBox3.TabIndex = 13;
@@ -218,7 +218,7 @@ namespace QuanLySoTietKiem
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(512, 186);
+            this.label8.Location = new System.Drawing.Point(512, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 22);
             this.label8.TabIndex = 16;
@@ -226,7 +226,7 @@ namespace QuanLySoTietKiem
             // 
             // TKtextBox6
             // 
-            this.TKtextBox6.Location = new System.Drawing.Point(729, 186);
+            this.TKtextBox6.Location = new System.Drawing.Point(729, 187);
             this.TKtextBox6.Name = "TKtextBox6";
             this.TKtextBox6.Size = new System.Drawing.Size(122, 22);
             this.TKtextBox6.TabIndex = 17;
@@ -270,7 +270,7 @@ namespace QuanLySoTietKiem
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 34);
             this.button3.TabIndex = 21;
-            this.button3.Text = "Sữa";
+            this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -315,7 +315,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TKcomboBox1);
             this.Name = "fchange";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fchange";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -237,7 +237,7 @@ namespace QuanLySoTietKiem
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "freport";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "freport";
             this.Load += new System.EventHandler(this.freport_Load);
             this.tabControl1.ResumeLayout(false);

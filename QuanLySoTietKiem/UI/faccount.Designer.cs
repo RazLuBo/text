@@ -167,7 +167,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "faccount";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÀI KHOẢN";
             this.ResumeLayout(false);
             this.PerformLayout();

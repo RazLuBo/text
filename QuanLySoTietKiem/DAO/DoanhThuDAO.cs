@@ -15,7 +15,7 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertDoanhThu(string loai, DateTime day)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertDoanhThu @loaiSo , @ngay", new object[] { loai, day }) == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertDoanhThu @loaiSo , @ngay", new object[] { loai, day }) > 0;
         }
 
         public int GetIdNewLS()

@@ -45,6 +45,7 @@ namespace QuanLySoTietKiem
             this.label6 = new System.Windows.Forms.Label();
             this.tbTenNV = new System.Windows.Forms.TextBox();
             this.TTSbutton4 = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace QuanLySoTietKiem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 1;
@@ -71,15 +72,16 @@ namespace QuanLySoTietKiem
             // 
             // tbMaSo
             // 
-            this.tbMaSo.Location = new System.Drawing.Point(131, 19);
+            this.tbMaSo.Location = new System.Drawing.Point(131, 62);
             this.tbMaSo.Name = "tbMaSo";
+            this.tbMaSo.ReadOnly = true;
             this.tbMaSo.Size = new System.Drawing.Size(100, 22);
             this.tbMaSo.TabIndex = 2;
             // 
             // TTSbutton1
             // 
             this.TTSbutton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton1.Location = new System.Drawing.Point(288, 12);
+            this.TTSbutton1.Location = new System.Drawing.Point(306, 9);
             this.TTSbutton1.Name = "TTSbutton1";
             this.TTSbutton1.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton1.TabIndex = 3;
@@ -92,7 +94,7 @@ namespace QuanLySoTietKiem
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Location = new System.Drawing.Point(12, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 4;
@@ -103,7 +105,7 @@ namespace QuanLySoTietKiem
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 105);
+            this.label3.Location = new System.Drawing.Point(12, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 22);
             this.label3.TabIndex = 5;
@@ -111,7 +113,7 @@ namespace QuanLySoTietKiem
             // 
             // tbTenChuSo
             // 
-            this.tbTenChuSo.Location = new System.Drawing.Point(131, 105);
+            this.tbTenChuSo.Location = new System.Drawing.Point(131, 121);
             this.tbTenChuSo.Name = "tbTenChuSo";
             this.tbTenChuSo.Size = new System.Drawing.Size(184, 22);
             this.tbTenChuSo.TabIndex = 6;
@@ -121,7 +123,7 @@ namespace QuanLySoTietKiem
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 184);
+            this.label4.Location = new System.Drawing.Point(12, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 7;
@@ -129,7 +131,7 @@ namespace QuanLySoTietKiem
             // 
             // tbLoaiSo
             // 
-            this.tbLoaiSo.Location = new System.Drawing.Point(131, 184);
+            this.tbLoaiSo.Location = new System.Drawing.Point(131, 183);
             this.tbLoaiSo.Name = "tbLoaiSo";
             this.tbLoaiSo.Size = new System.Drawing.Size(184, 22);
             this.tbLoaiSo.TabIndex = 8;
@@ -140,7 +142,7 @@ namespace QuanLySoTietKiem
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(421, 184);
+            this.label5.Location = new System.Drawing.Point(421, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 22);
             this.label5.TabIndex = 9;
@@ -150,6 +152,7 @@ namespace QuanLySoTietKiem
             // 
             this.tbSoDu.Location = new System.Drawing.Point(582, 183);
             this.tbSoDu.Name = "tbSoDu";
+            this.tbSoDu.ReadOnly = true;
             this.tbSoDu.Size = new System.Drawing.Size(139, 22);
             this.tbSoDu.TabIndex = 10;
             // 
@@ -160,7 +163,7 @@ namespace QuanLySoTietKiem
             this.TTSbutton2.Name = "TTSbutton2";
             this.TTSbutton2.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton2.TabIndex = 11;
-            this.TTSbutton2.Text = "Sữa";
+            this.TTSbutton2.Text = "Sửa";
             this.TTSbutton2.UseVisualStyleBackColor = true;
             // 
             // TTSbutton3
@@ -179,7 +182,7 @@ namespace QuanLySoTietKiem
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(421, 104);
+            this.label6.Location = new System.Drawing.Point(421, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 22);
             this.label6.TabIndex = 13;
@@ -187,7 +190,7 @@ namespace QuanLySoTietKiem
             // 
             // tbTenNV
             // 
-            this.tbTenNV.Location = new System.Drawing.Point(582, 104);
+            this.tbTenNV.Location = new System.Drawing.Point(582, 121);
             this.tbTenNV.Name = "tbTenNV";
             this.tbTenNV.Size = new System.Drawing.Size(139, 22);
             this.tbTenNV.TabIndex = 14;
@@ -203,6 +206,13 @@ namespace QuanLySoTietKiem
             this.TTSbutton4.UseVisualStyleBackColor = true;
             this.TTSbutton4.Click += new System.EventHandler(this.TTSbutton4_Click);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(131, 13);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(151, 22);
+            this.tbSearch.TabIndex = 16;
+            // 
             // finformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,6 +220,7 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.TTSbutton4);
             this.Controls.Add(this.tbTenNV);
             this.Controls.Add(this.label6);
@@ -227,7 +238,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "finformation";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÔNG TIN SỔ";
             this.Load += new System.EventHandler(this.finformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -254,5 +265,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Button TTSbutton4;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }

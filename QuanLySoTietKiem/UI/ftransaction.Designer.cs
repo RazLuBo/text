@@ -47,11 +47,10 @@ namespace QuanLySoTietKiem
             this.StatusLabel_G = new System.Windows.Forms.Label();
             this.tbMaKH_G = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtNgayGui = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.GTbutton3 = new System.Windows.Forms.Button();
-            this.GTbutton2 = new System.Windows.Forms.Button();
+            this.btNhapLai_G = new System.Windows.Forms.Button();
             this.btGuiTien = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbMaNV_G = new System.Windows.Forms.TextBox();
@@ -60,44 +59,41 @@ namespace QuanLySoTietKiem
             this.label20 = new System.Windows.Forms.Label();
             this.tbTenKH_G = new System.Windows.Forms.TextBox();
             this.tbTienGui = new System.Windows.Forms.TextBox();
-            this.tbMaGui = new System.Windows.Forms.TextBox();
             this.tbMaSo_G = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.GDtabPage2 = new System.Windows.Forms.TabPage();
-            this.StatusLabel_R = new System.Windows.Forms.Label();
+            this.tbDay_R = new System.Windows.Forms.Label();
             this.tbMaKH_R = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtNgayRut = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.RTbutton3 = new System.Windows.Forms.Button();
-            this.RTbutton2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btExit = new System.Windows.Forms.Button();
+            this.btNhapLai_R = new System.Windows.Forms.Button();
             this.btRutTien = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tbMaNV_R = new System.Windows.Forms.TextBox();
             this.tbTenNV_R = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tbTenKH_R = new System.Windows.Forms.TextBox();
             this.tbTienRut = new System.Windows.Forms.TextBox();
-            this.tbMaRut = new System.Windows.Forms.TextBox();
             this.tbMaSo_R = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.StatusLabel_R = new System.Windows.Forms.Label();
+            this.tbDay_G = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.GDtabControl.SuspendLayout();
             this.GTtabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.GDtabPage2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -108,7 +104,6 @@ namespace QuanLySoTietKiem
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 19);
             this.label8.TabIndex = 11;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // MStextBox6
             // 
@@ -128,11 +123,10 @@ namespace QuanLySoTietKiem
             // 
             // MStextBox7
             // 
-            this.MStextBox7.Location = new System.Drawing.Point(167, 104);
+            this.MStextBox7.Location = new System.Drawing.Point(0, 0);
             this.MStextBox7.Name = "MStextBox7";
-            this.MStextBox7.Size = new System.Drawing.Size(211, 22);
-            this.MStextBox7.TabIndex = 14;
-            this.MStextBox7.TextChanged += new System.EventHandler(this.MStextBox7_TextChanged);
+            this.MStextBox7.Size = new System.Drawing.Size(100, 22);
+            this.MStextBox7.TabIndex = 0;
             // 
             // label10
             // 
@@ -211,7 +205,7 @@ namespace QuanLySoTietKiem
             this.MSbutton3.TabIndex = 2;
             this.MSbutton3.Text = "Thoát";
             this.MSbutton3.UseVisualStyleBackColor = true;
-            this.MSbutton3.Click += new System.EventHandler(this.MSbutton3_Click);
+            this.MSbutton3.Click += new System.EventHandler(this.btExit_Click);
             // 
             // GDtabControl
             // 
@@ -229,21 +223,19 @@ namespace QuanLySoTietKiem
             // 
             this.GTtabPage1.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.GTtabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GTtabPage1.Controls.Add(this.tbDay_G);
+            this.GTtabPage1.Controls.Add(this.label23);
             this.GTtabPage1.Controls.Add(this.StatusLabel_G);
             this.GTtabPage1.Controls.Add(this.tbMaKH_G);
             this.GTtabPage1.Controls.Add(this.label3);
-            this.GTtabPage1.Controls.Add(this.dtNgayGui);
             this.GTtabPage1.Controls.Add(this.label1);
             this.GTtabPage1.Controls.Add(this.panel5);
             this.GTtabPage1.Controls.Add(this.panel4);
             this.GTtabPage1.Controls.Add(this.tbTenKH_G);
             this.GTtabPage1.Controls.Add(this.tbTienGui);
-            this.GTtabPage1.Controls.Add(this.tbMaGui);
             this.GTtabPage1.Controls.Add(this.tbMaSo_G);
             this.GTtabPage1.Controls.Add(this.label18);
             this.GTtabPage1.Controls.Add(this.label16);
-            this.GTtabPage1.Controls.Add(this.label15);
-            this.GTtabPage1.Controls.Add(this.label14);
             this.GTtabPage1.Controls.Add(this.label13);
             this.GTtabPage1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GTtabPage1.Location = new System.Drawing.Point(4, 32);
@@ -265,36 +257,27 @@ namespace QuanLySoTietKiem
             // 
             // tbMaKH_G
             // 
-            this.tbMaKH_G.Location = new System.Drawing.Point(135, 392);
+            this.tbMaKH_G.Location = new System.Drawing.Point(141, 251);
             this.tbMaKH_G.Name = "tbMaKH_G";
-            this.tbMaKH_G.Size = new System.Drawing.Size(189, 30);
+            this.tbMaKH_G.Size = new System.Drawing.Size(113, 30);
             this.tbMaKH_G.TabIndex = 35;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 400);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 22);
+            this.label3.Size = new System.Drawing.Size(79, 23);
             this.label3.TabIndex = 34;
             this.label3.Text = "Mã KH:";
-            // 
-            // dtNgayGui
-            // 
-            this.dtNgayGui.CustomFormat = "\"dd-MM-yyyy\"";
-            this.dtNgayGui.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayGui.Location = new System.Drawing.Point(441, 106);
-            this.dtNgayGui.Name = "dtNgayGui";
-            this.dtNgayGui.Size = new System.Drawing.Size(293, 30);
-            this.dtNgayGui.TabIndex = 33;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(311, 200);
+            this.label1.Location = new System.Drawing.Point(319, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 23);
             this.label1.TabIndex = 32;
@@ -303,9 +286,9 @@ namespace QuanLySoTietKiem
             // panel5
             // 
             this.panel5.Controls.Add(this.GTbutton3);
-            this.panel5.Controls.Add(this.GTbutton2);
+            this.panel5.Controls.Add(this.btNhapLai_G);
             this.panel5.Controls.Add(this.btGuiTien);
-            this.panel5.Location = new System.Drawing.Point(401, 392);
+            this.panel5.Location = new System.Drawing.Point(401, 383);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(374, 113);
             this.panel5.TabIndex = 31;
@@ -319,17 +302,18 @@ namespace QuanLySoTietKiem
             this.GTbutton3.TabIndex = 2;
             this.GTbutton3.Text = "Thoát";
             this.GTbutton3.UseVisualStyleBackColor = true;
-            this.GTbutton3.Click += new System.EventHandler(this.GTbutton3_Click);
+            this.GTbutton3.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // GTbutton2
+            // btNhapLai_G
             // 
-            this.GTbutton2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
-            this.GTbutton2.Location = new System.Drawing.Point(130, 59);
-            this.GTbutton2.Name = "GTbutton2";
-            this.GTbutton2.Size = new System.Drawing.Size(105, 31);
-            this.GTbutton2.TabIndex = 1;
-            this.GTbutton2.Text = "Nhập lại";
-            this.GTbutton2.UseVisualStyleBackColor = true;
+            this.btNhapLai_G.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btNhapLai_G.Location = new System.Drawing.Point(130, 59);
+            this.btNhapLai_G.Name = "btNhapLai_G";
+            this.btNhapLai_G.Size = new System.Drawing.Size(105, 31);
+            this.btNhapLai_G.TabIndex = 1;
+            this.btNhapLai_G.Text = "Nhập lại";
+            this.btNhapLai_G.UseVisualStyleBackColor = true;
+            this.btNhapLai_G.Click += new System.EventHandler(this.btNhapLai_G_Click);
             // 
             // btGuiTien
             // 
@@ -348,21 +332,21 @@ namespace QuanLySoTietKiem
             this.panel4.Controls.Add(this.tbTenNV_G);
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.label20);
-            this.panel4.Location = new System.Drawing.Point(345, 264);
+            this.panel4.Location = new System.Drawing.Point(374, 228);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(389, 122);
+            this.panel4.Size = new System.Drawing.Size(366, 122);
             this.panel4.TabIndex = 30;
             // 
             // tbMaNV_G
             // 
-            this.tbMaNV_G.Location = new System.Drawing.Point(135, 3);
+            this.tbMaNV_G.Location = new System.Drawing.Point(136, 23);
             this.tbMaNV_G.Name = "tbMaNV_G";
             this.tbMaNV_G.Size = new System.Drawing.Size(113, 30);
             this.tbMaNV_G.TabIndex = 15;
             // 
             // tbTenNV_G
             // 
-            this.tbTenNV_G.Location = new System.Drawing.Point(135, 75);
+            this.tbTenNV_G.Location = new System.Drawing.Point(136, 73);
             this.tbTenNV_G.Name = "tbTenNV_G";
             this.tbTenNV_G.Size = new System.Drawing.Size(214, 30);
             this.tbTenNV_G.TabIndex = 14;
@@ -371,7 +355,7 @@ namespace QuanLySoTietKiem
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 10);
+            this.label19.Location = new System.Drawing.Point(5, 26);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(81, 23);
             this.label19.TabIndex = 13;
@@ -381,7 +365,7 @@ namespace QuanLySoTietKiem
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 83);
+            this.label20.Location = new System.Drawing.Point(4, 77);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 22);
             this.label20.TabIndex = 12;
@@ -389,28 +373,21 @@ namespace QuanLySoTietKiem
             // 
             // tbTenKH_G
             // 
-            this.tbTenKH_G.Location = new System.Drawing.Point(135, 342);
+            this.tbTenKH_G.Location = new System.Drawing.Point(141, 301);
             this.tbTenKH_G.Name = "tbTenKH_G";
-            this.tbTenKH_G.Size = new System.Drawing.Size(189, 30);
+            this.tbTenKH_G.Size = new System.Drawing.Size(214, 30);
             this.tbTenKH_G.TabIndex = 29;
             // 
             // tbTienGui
             // 
-            this.tbTienGui.Location = new System.Drawing.Point(135, 193);
+            this.tbTienGui.Location = new System.Drawing.Point(141, 151);
             this.tbTienGui.Name = "tbTienGui";
             this.tbTienGui.Size = new System.Drawing.Size(161, 30);
             this.tbTienGui.TabIndex = 26;
             // 
-            // tbMaGui
-            // 
-            this.tbMaGui.Location = new System.Drawing.Point(95, 109);
-            this.tbMaGui.Name = "tbMaGui";
-            this.tbMaGui.Size = new System.Drawing.Size(104, 30);
-            this.tbMaGui.TabIndex = 21;
-            // 
             // tbMaSo_G
             // 
-            this.tbMaSo_G.Location = new System.Drawing.Point(95, 16);
+            this.tbMaSo_G.Location = new System.Drawing.Point(141, 46);
             this.tbMaSo_G.Name = "tbMaSo_G";
             this.tbMaSo_G.Size = new System.Drawing.Size(104, 30);
             this.tbMaSo_G.TabIndex = 19;
@@ -419,7 +396,7 @@ namespace QuanLySoTietKiem
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(0, 350);
+            this.label18.Location = new System.Drawing.Point(8, 305);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 22);
             this.label18.TabIndex = 28;
@@ -429,37 +406,17 @@ namespace QuanLySoTietKiem
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(0, 196);
+            this.label16.Location = new System.Drawing.Point(8, 155);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(118, 22);
             this.label16.TabIndex = 24;
             this.label16.Text = "Số Tiền Gởi: ";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(348, 109);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 22);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Ngày Gởi: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(0, 116);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 23);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Mã Gởi: ";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(0, 23);
+            this.label13.Location = new System.Drawing.Point(8, 53);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 23);
             this.label13.TabIndex = 18;
@@ -470,22 +427,20 @@ namespace QuanLySoTietKiem
             this.GDtabPage2.BackColor = System.Drawing.Color.Transparent;
             this.GDtabPage2.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.GDtabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.GDtabPage2.Controls.Add(this.StatusLabel_R);
+            this.GDtabPage2.Controls.Add(this.tbDay_R);
             this.GDtabPage2.Controls.Add(this.tbMaKH_R);
-            this.GDtabPage2.Controls.Add(this.label4);
-            this.GDtabPage2.Controls.Add(this.dtNgayRut);
             this.GDtabPage2.Controls.Add(this.label2);
-            this.GDtabPage2.Controls.Add(this.panel6);
-            this.GDtabPage2.Controls.Add(this.panel7);
+            this.GDtabPage2.Controls.Add(this.label4);
+            this.GDtabPage2.Controls.Add(this.panel1);
+            this.GDtabPage2.Controls.Add(this.panel2);
             this.GDtabPage2.Controls.Add(this.tbTenKH_R);
             this.GDtabPage2.Controls.Add(this.tbTienRut);
-            this.GDtabPage2.Controls.Add(this.tbMaRut);
             this.GDtabPage2.Controls.Add(this.tbMaSo_R);
-            this.GDtabPage2.Controls.Add(this.label23);
-            this.GDtabPage2.Controls.Add(this.label25);
-            this.GDtabPage2.Controls.Add(this.label26);
-            this.GDtabPage2.Controls.Add(this.label27);
-            this.GDtabPage2.Controls.Add(this.label28);
+            this.GDtabPage2.Controls.Add(this.label7);
+            this.GDtabPage2.Controls.Add(this.label14);
+            this.GDtabPage2.Controls.Add(this.label17);
+            this.GDtabPage2.Controls.Add(this.label21);
+            this.GDtabPage2.Controls.Add(this.StatusLabel_R);
             this.GDtabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.GDtabPage2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GDtabPage2.Location = new System.Drawing.Point(4, 32);
@@ -495,82 +450,72 @@ namespace QuanLySoTietKiem
             this.GDtabPage2.TabIndex = 1;
             this.GDtabPage2.Text = "Rút Tiền";
             // 
-            // StatusLabel_R
+            // tbDay_R
             // 
-            this.StatusLabel_R.AutoSize = true;
-            this.StatusLabel_R.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel_R.Location = new System.Drawing.Point(6, 514);
-            this.StatusLabel_R.Name = "StatusLabel_R";
-            this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
-            this.StatusLabel_R.TabIndex = 49;
+            this.tbDay_R.AutoSize = true;
+            this.tbDay_R.Location = new System.Drawing.Point(414, 46);
+            this.tbDay_R.Name = "tbDay_R";
+            this.tbDay_R.Size = new System.Drawing.Size(0, 23);
+            this.tbDay_R.TabIndex = 63;
             // 
             // tbMaKH_R
             // 
-            this.tbMaKH_R.Location = new System.Drawing.Point(135, 392);
+            this.tbMaKH_R.Location = new System.Drawing.Point(140, 248);
             this.tbMaKH_R.Name = "tbMaKH_R";
-            this.tbMaKH_R.Size = new System.Drawing.Size(189, 30);
-            this.tbMaKH_R.TabIndex = 48;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 400);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 22);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Mã KH:";
-            // 
-            // dtNgayRut
-            // 
-            this.dtNgayRut.CustomFormat = "\"dd-MM-yyyy\"";
-            this.dtNgayRut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayRut.Location = new System.Drawing.Point(441, 106);
-            this.dtNgayRut.Name = "dtNgayRut";
-            this.dtNgayRut.Size = new System.Drawing.Size(293, 30);
-            this.dtNgayRut.TabIndex = 46;
+            this.tbMaKH_R.Size = new System.Drawing.Size(113, 30);
+            this.tbMaKH_R.TabIndex = 62;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 200);
+            this.label2.Location = new System.Drawing.Point(7, 252);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 23);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "VNĐ";
+            this.label2.Size = new System.Drawing.Size(79, 23);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Mã KH:";
             // 
-            // panel6
+            // label4
             // 
-            this.panel6.Controls.Add(this.RTbutton3);
-            this.panel6.Controls.Add(this.RTbutton2);
-            this.panel6.Controls.Add(this.btRutTien);
-            this.panel6.Location = new System.Drawing.Point(401, 392);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(374, 113);
-            this.panel6.TabIndex = 45;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(318, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 23);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "VNĐ";
             // 
-            // RTbutton3
+            // panel1
             // 
-            this.RTbutton3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
-            this.RTbutton3.Location = new System.Drawing.Point(252, 59);
-            this.RTbutton3.Name = "RTbutton3";
-            this.RTbutton3.Size = new System.Drawing.Size(105, 31);
-            this.RTbutton3.TabIndex = 2;
-            this.RTbutton3.Text = "Thoát";
-            this.RTbutton3.UseVisualStyleBackColor = true;
-            this.RTbutton3.Click += new System.EventHandler(this.RTbutton3_Click_1);
+            this.panel1.Controls.Add(this.btExit);
+            this.panel1.Controls.Add(this.btNhapLai_R);
+            this.panel1.Controls.Add(this.btRutTien);
+            this.panel1.Location = new System.Drawing.Point(400, 380);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 113);
+            this.panel1.TabIndex = 58;
             // 
-            // RTbutton2
+            // btExit
             // 
-            this.RTbutton2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
-            this.RTbutton2.Location = new System.Drawing.Point(129, 59);
-            this.RTbutton2.Name = "RTbutton2";
-            this.RTbutton2.Size = new System.Drawing.Size(105, 31);
-            this.RTbutton2.TabIndex = 1;
-            this.RTbutton2.Text = "Nhập lại";
-            this.RTbutton2.UseVisualStyleBackColor = true;
+            this.btExit.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btExit.Location = new System.Drawing.Point(253, 59);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(105, 31);
+            this.btExit.TabIndex = 2;
+            this.btExit.Text = "Thoát";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // btNhapLai_R
+            // 
+            this.btNhapLai_R.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btNhapLai_R.Location = new System.Drawing.Point(130, 59);
+            this.btNhapLai_R.Name = "btNhapLai_R";
+            this.btNhapLai_R.Size = new System.Drawing.Size(105, 31);
+            this.btNhapLai_R.TabIndex = 1;
+            this.btNhapLai_R.Text = "Nhập lại";
+            this.btNhapLai_R.UseVisualStyleBackColor = true;
             // 
             // btRutTien
             // 
@@ -583,128 +528,138 @@ namespace QuanLySoTietKiem
             this.btRutTien.UseVisualStyleBackColor = true;
             this.btRutTien.Click += new System.EventHandler(this.btRutTien_Click);
             // 
-            // panel7
+            // panel2
             // 
-            this.panel7.Controls.Add(this.tbMaNV_R);
-            this.panel7.Controls.Add(this.tbTenNV_R);
-            this.panel7.Controls.Add(this.label21);
-            this.panel7.Controls.Add(this.label22);
-            this.panel7.Location = new System.Drawing.Point(345, 264);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(389, 122);
-            this.panel7.TabIndex = 44;
+            this.panel2.Controls.Add(this.tbMaNV_R);
+            this.panel2.Controls.Add(this.tbTenNV_R);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(373, 225);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(366, 122);
+            this.panel2.TabIndex = 57;
             // 
             // tbMaNV_R
             // 
-            this.tbMaNV_R.Location = new System.Drawing.Point(135, 3);
+            this.tbMaNV_R.Location = new System.Drawing.Point(136, 23);
             this.tbMaNV_R.Name = "tbMaNV_R";
             this.tbMaNV_R.Size = new System.Drawing.Size(113, 30);
             this.tbMaNV_R.TabIndex = 15;
             // 
             // tbTenNV_R
             // 
-            this.tbTenNV_R.Location = new System.Drawing.Point(135, 75);
+            this.tbTenNV_R.Location = new System.Drawing.Point(136, 73);
             this.tbTenNV_R.Name = "tbTenNV_R";
             this.tbTenNV_R.Size = new System.Drawing.Size(214, 30);
             this.tbTenNV_R.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Mã NV: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 22);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Tên NV: ";
+            // 
+            // tbTenKH_R
+            // 
+            this.tbTenKH_R.Location = new System.Drawing.Point(140, 298);
+            this.tbTenKH_R.Name = "tbTenKH_R";
+            this.tbTenKH_R.Size = new System.Drawing.Size(214, 30);
+            this.tbTenKH_R.TabIndex = 56;
+            // 
+            // tbTienRut
+            // 
+            this.tbTienRut.Location = new System.Drawing.Point(140, 148);
+            this.tbTienRut.Name = "tbTienRut";
+            this.tbTienRut.Size = new System.Drawing.Size(161, 30);
+            this.tbTienRut.TabIndex = 54;
+            // 
+            // tbMaSo_R
+            // 
+            this.tbMaSo_R.Location = new System.Drawing.Point(140, 43);
+            this.tbMaSo_R.Name = "tbMaSo_R";
+            this.tbMaSo_R.Size = new System.Drawing.Size(104, 30);
+            this.tbMaSo_R.TabIndex = 51;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 22);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Tên KH: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 152);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(115, 22);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Số Tiền Rút: ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(313, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 22);
+            this.label17.TabIndex = 52;
+            this.label17.Text = "Ngày Rút: ";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 10);
+            this.label21.Location = new System.Drawing.Point(7, 50);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(81, 23);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "Mã NV: ";
+            this.label21.Size = new System.Drawing.Size(76, 23);
+            this.label21.TabIndex = 50;
+            this.label21.Text = "Mã Sổ: ";
             // 
-            // label22
+            // StatusLabel_R
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 83);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(82, 22);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "Tên NV: ";
+            this.StatusLabel_R.AutoSize = true;
+            this.StatusLabel_R.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel_R.Location = new System.Drawing.Point(6, 514);
+            this.StatusLabel_R.Name = "StatusLabel_R";
+            this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
+            this.StatusLabel_R.TabIndex = 49;
             // 
-            // tbTenKH_R
+            // tbDay_G
             // 
-            this.tbTenKH_R.Location = new System.Drawing.Point(135, 342);
-            this.tbTenKH_R.Name = "tbTenKH_R";
-            this.tbTenKH_R.Size = new System.Drawing.Size(189, 30);
-            this.tbTenKH_R.TabIndex = 43;
-            // 
-            // tbTienRut
-            // 
-            this.tbTienRut.Location = new System.Drawing.Point(135, 193);
-            this.tbTienRut.Name = "tbTienRut";
-            this.tbTienRut.Size = new System.Drawing.Size(161, 30);
-            this.tbTienRut.TabIndex = 40;
-            // 
-            // tbMaRut
-            // 
-            this.tbMaRut.Location = new System.Drawing.Point(95, 109);
-            this.tbMaRut.Name = "tbMaRut";
-            this.tbMaRut.Size = new System.Drawing.Size(104, 30);
-            this.tbMaRut.TabIndex = 35;
-            // 
-            // tbMaSo_R
-            // 
-            this.tbMaSo_R.Location = new System.Drawing.Point(95, 16);
-            this.tbMaSo_R.Name = "tbMaSo_R";
-            this.tbMaSo_R.Size = new System.Drawing.Size(104, 30);
-            this.tbMaSo_R.TabIndex = 33;
+            this.tbDay_G.AutoSize = true;
+            this.tbDay_G.Location = new System.Drawing.Point(420, 58);
+            this.tbDay_G.Name = "tbDay_G";
+            this.tbDay_G.Size = new System.Drawing.Size(0, 23);
+            this.tbDay_G.TabIndex = 65;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(0, 350);
+            this.label23.Location = new System.Drawing.Point(319, 54);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(84, 22);
-            this.label23.TabIndex = 42;
-            this.label23.Text = "Tên KH: ";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(0, 196);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(115, 22);
-            this.label25.TabIndex = 38;
-            this.label25.Text = "Số Tiền Rút: ";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(348, 109);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(95, 22);
-            this.label26.TabIndex = 36;
-            this.label26.Text = "Ngày Rút: ";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(0, 116);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(87, 23);
-            this.label27.TabIndex = 34;
-            this.label27.Text = "Mã Rút: ";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(0, 23);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(76, 23);
-            this.label28.TabIndex = 32;
-            this.label28.Text = "Mã Sổ: ";
+            this.label23.Size = new System.Drawing.Size(93, 22);
+            this.label23.TabIndex = 64;
+            this.label23.Text = "Ngày Gửi:";
             // 
             // ftransaction
             // 
@@ -715,7 +670,7 @@ namespace QuanLySoTietKiem
             this.ClientSize = new System.Drawing.Size(789, 573);
             this.Controls.Add(this.GDtabControl);
             this.Name = "ftransaction";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GIAO DỊCH";
             this.GDtabControl.ResumeLayout(false);
             this.GTtabPage1.ResumeLayout(false);
@@ -725,9 +680,9 @@ namespace QuanLySoTietKiem
             this.panel4.PerformLayout();
             this.GDtabPage2.ResumeLayout(false);
             this.GDtabPage2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -748,9 +703,15 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Button MSbutton3;
         private System.Windows.Forms.TabControl GDtabControl;
         private System.Windows.Forms.TabPage GTtabPage1;
+        private System.Windows.Forms.TabPage GDtabPage2;
+        private System.Windows.Forms.Label StatusLabel_G;
+        private System.Windows.Forms.Label StatusLabel_R;
+        private System.Windows.Forms.TextBox tbMaKH_G;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button GTbutton3;
-        private System.Windows.Forms.Button GTbutton2;
+        private System.Windows.Forms.Button btNhapLai_G;
         private System.Windows.Forms.Button btGuiTien;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbMaNV_G;
@@ -759,41 +720,31 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbTenKH_G;
         private System.Windows.Forms.TextBox tbTienGui;
-        private System.Windows.Forms.TextBox tbMaGui;
         private System.Windows.Forms.TextBox tbMaSo_G;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TabPage GDtabPage2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button RTbutton3;
-        private System.Windows.Forms.Button RTbutton2;
+        private System.Windows.Forms.TextBox tbMaKH_R;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button btNhapLai_R;
         private System.Windows.Forms.Button btRutTien;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbMaNV_R;
         private System.Windows.Forms.TextBox tbTenNV_R;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbTenKH_R;
         private System.Windows.Forms.TextBox tbTienRut;
-        private System.Windows.Forms.TextBox tbMaRut;
         private System.Windows.Forms.TextBox tbMaSo_R;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label tbDay_R;
+        private System.Windows.Forms.Label tbDay_G;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbMaKH_G;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtNgayGui;
-        private System.Windows.Forms.DateTimePicker dtNgayRut;
-        private System.Windows.Forms.TextBox tbMaKH_R;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label StatusLabel_G;
-        private System.Windows.Forms.Label StatusLabel_R;
     }
 }

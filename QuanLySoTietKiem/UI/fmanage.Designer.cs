@@ -56,7 +56,7 @@ namespace QuanLySoTietKiem
             this.button1.TabIndex = 0;
             this.button1.Text = "GIAO DỊCH";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.transaction_Click);
             // 
             // button2
             // 
@@ -72,7 +72,7 @@ namespace QuanLySoTietKiem
             this.button2.TabIndex = 1;
             this.button2.Text = "MỞ SỔ";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btopen_Click);
             // 
             // button3
             // 
@@ -88,7 +88,7 @@ namespace QuanLySoTietKiem
             this.button3.TabIndex = 2;
             this.button3.Text = "DANH SÁCH SỔ";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.btinformation_Click);
             // 
             // button4
             // 
@@ -104,7 +104,7 @@ namespace QuanLySoTietKiem
             this.button4.TabIndex = 3;
             this.button4.Text = "KHÁCH HÀNG";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.btcustomer_Click);
             // 
             // button5
             // 
@@ -121,7 +121,7 @@ namespace QuanLySoTietKiem
             this.button5.TabIndex = 4;
             this.button5.Text = "NHÂN VIÊN";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.btstaff_Click);
             // 
             // button6
             // 
@@ -137,7 +137,7 @@ namespace QuanLySoTietKiem
             this.button6.TabIndex = 5;
             this.button6.Text = "THAY ĐỔI";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.btchange_Click);
             // 
             // button9
             // 
@@ -153,7 +153,7 @@ namespace QuanLySoTietKiem
             this.button9.TabIndex = 7;
             this.button9.Text = "THOÁT";
             this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button8_Click);
+            this.button9.Click += new System.EventHandler(this.btExit_Click);
             // 
             // button7
             // 
@@ -169,7 +169,7 @@ namespace QuanLySoTietKiem
             this.button7.TabIndex = 8;
             this.button7.Text = "TÀI KHOẢN";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.btaccount_Click);
             // 
             // button8
             // 
@@ -186,7 +186,7 @@ namespace QuanLySoTietKiem
             this.button8.TabIndex = 9;
             this.button8.Text = "BÁO CÁO";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.button8.Click += new System.EventHandler(this.btreport_Click_1);
             // 
             // fmanage
             // 

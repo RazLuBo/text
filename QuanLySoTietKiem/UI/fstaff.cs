@@ -28,7 +28,7 @@ namespace QuanLySoTietKiem
         {
             dataGridView1.DataSource = listStaff;
             LoadListStaff();
-            BindingData();
+            AddBindingData();
         }
 
         private void LoadListStaff()
@@ -41,7 +41,7 @@ namespace QuanLySoTietKiem
 
         }
 
-        private void BindingData()
+        private void AddBindingData()
         {
             tbCmnd.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "CMNN_or_HoChieu", true, DataSourceUpdateMode.Never));
             tbDiaChi.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
@@ -85,12 +85,15 @@ namespace QuanLySoTietKiem
 
         private void btModify_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
-        {
-
+            if(DAO.StaffDAO.Instance.UpdateStaffInfo(tbID.Text, tbTenNV.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text))
+            {
+                MessageBox.Show("Sửa thông tin nhân viên thành công");
+                LoadListStaff();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa thông tin nhân viên");
+            }
         }
     }
 }

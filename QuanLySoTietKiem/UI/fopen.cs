@@ -83,5 +83,10 @@ namespace QuanLySoTietKiem
                     break;
             }
         }
+
+        private void fopen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

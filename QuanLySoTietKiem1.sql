@@ -1,11 +1,10 @@
 ﻿create database QuanLySoTietKiem1
 go
 
-
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  Table [dbo].[DANGNHAP]    Script Date: 6/10/2021 1:25:40 AM ******/
+/****** Object:  Table [dbo].[DANGNHAP]    Script Date: 6/11/2021 1:39:11 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -27,58 +26,7 @@ GO
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 6/10/2021 1:26:07 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[KHACHHANG](
-	[MaKH] [char](4) NOT NULL,
-	[HoTen] [varchar](50) NOT NULL,
-	[DiaChi] [varchar](100) NOT NULL,
-	[SDT] [varchar](20) NOT NULL,
-	[CMNN_or_HoChieu] [varchar](50) NOT NULL,
-	[SoDu] [money] NULL,
- CONSTRAINT [KhachHang_pk] PRIMARY KEY CLUSTERED 
-(
-	[MaKH] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-
-USE [QuanLySoTietKiem1]
-GO
-
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/11/2021 12:17:43 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[NHANVIEN](
-	[MaNV] [char](4) NOT NULL,
-	[HoTen] [varchar](50) NOT NULL,
-	[DiaChi] [varchar](100) NOT NULL,
-	[SDT] [varchar](20) NOT NULL,
-	[CMNN_or_HoChieu] [varchar](50) NOT NULL,
-	[LamViec] [bit] NULL,
- CONSTRAINT [NhanVien_pk] PRIMARY KEY CLUSTERED 
-(
-	[MaNV] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-
-
-USE [QuanLySoTietKiem1]
-GO
-
-/****** Object:  Table [dbo].[DOANHTHU]    Script Date: 6/10/2021 1:26:33 AM ******/
+/****** Object:  Table [dbo].[DOANHTHU]    Script Date: 6/11/2021 1:39:21 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -86,7 +34,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[DOANHTHU](
-	[MaLS] [char](4) NOT NULL,
+	[MaLS] int identity NOT NULL,
 	[LoaiSo] [varchar](50) NOT NULL,
 	[TongThu] [money] NULL,
 	[TongChi] [money] NULL,
@@ -105,48 +53,7 @@ GO
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  Table [dbo].[SOTIETKIEM]    Script Date: 6/10/2021 1:26:51 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[SOTIETKIEM](
-	[MaSo] [char](4) NOT NULL,
-	[MaNV] [char](4) NULL,
-	[MaKH] [char](4) NULL,
-	[MaLS] [char](4) NULL,
-	[LoaiSo] [varchar](50) NOT NULL,
-	[NgayMoSo] [smalldatetime] NOT NULL,
-	[NgayHetHan] [smalldatetime] NOT NULL,
-	[TienGoi] [money] NOT NULL,
- CONSTRAINT [SoTietKiem_pk] PRIMARY KEY CLUSTERED 
-(
-	[MaSo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaKH])
-REFERENCES [dbo].[KHACHHANG] ([MaKH])
-GO
-
-ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaLS])
-REFERENCES [dbo].[DOANHTHU] ([MaLS])
-GO
-
-ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaNV])
-REFERENCES [dbo].[NHANVIEN] ([MaNV])
-GO
-
-
-
-
-USE [QuanLySoTietKiem1]
-GO
-
-/****** Object:  Table [dbo].[GOITIEN]    Script Date: 6/10/2021 1:27:11 AM ******/
+/****** Object:  Table [dbo].[GOITIEN]    Script Date: 6/11/2021 1:39:29 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -154,10 +61,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[GOITIEN](
-	[MaGT] [char](4) NOT NULL,
-	[MaNV] [char](4) NULL,
-	[MaKH] [char](4) NULL,
-	[MaSo] [char](4) NULL,
+	[MaGT] int identity NOT NULL,
+	[MaNV] int NULL,
+	[MaKH] int NULL,
+	[MaSo] int NULL,
 	[NgayGoi] [smalldatetime] NOT NULL,
 	[TienGoi] [money] NOT NULL,
  CONSTRAINT [GoiTien_pk] PRIMARY KEY CLUSTERED 
@@ -179,12 +86,58 @@ ALTER TABLE [dbo].[GOITIEN]  WITH CHECK ADD FOREIGN KEY([MaSo])
 REFERENCES [dbo].[SOTIETKIEM] ([MaSo])
 GO
 
+USE [QuanLySoTietKiem1]
+GO
 
+/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 6/11/2021 1:39:57 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KHACHHANG](
+	[MaKH] int identity NOT NULL,
+	[HoTen] [varchar](50) NOT NULL,
+	[DiaChi] [varchar](100) NOT NULL,
+	[SDT] [varchar](20) NOT NULL,
+	[CMNN_or_HoChieu] [varchar](50) NOT NULL,
+	[SoDu] [money] NULL,
+ CONSTRAINT [KhachHang_pk] PRIMARY KEY CLUSTERED 
+(
+	[MaKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
 
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  Table [dbo].[RUTTIEN]    Script Date: 6/10/2021 1:27:46 AM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/11/2021 1:40:04 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NHANVIEN](
+	[MaNV] int identity NOT NULL,
+	[HoTen] [varchar](50) NOT NULL,
+	[DiaChi] [varchar](100) NOT NULL,
+	[SDT] [varchar](20) NOT NULL,
+	[CMNN_or_HoChieu] [varchar](50) NOT NULL,
+	[LamViec] [bit] NULL,
+ CONSTRAINT [NhanVien_pk] PRIMARY KEY CLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [QuanLySoTietKiem1]
+GO
+
+/****** Object:  Table [dbo].[RUTTIEN]    Script Date: 6/11/2021 1:40:12 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -192,10 +145,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[RUTTIEN](
-	[MaRT] [char](4) NOT NULL,
-	[MaNV] [char](4) NULL,
-	[MaKH] [char](4) NULL,
-	[MaSo] [char](4) NULL,
+	[MaRT] int identity NOT NULL,
+	[MaNV] int NULL,
+	[MaKH] int NULL,
+	[MaSo] int NULL,
 	[NgayRut] [smalldatetime] NOT NULL,
 	[TienRut] [money] NOT NULL,
  CONSTRAINT [RutTien_pk] PRIMARY KEY CLUSTERED 
@@ -217,16 +170,42 @@ ALTER TABLE [dbo].[RUTTIEN]  WITH CHECK ADD FOREIGN KEY([MaSo])
 REFERENCES [dbo].[SOTIETKIEM] ([MaSo])
 GO
 
-
-
 USE [QuanLySoTietKiem1]
 GO
 
-/****** Object:  StoredProcedure [dbo].[insertAccount]    Script Date: 6/9/2021 10:36:25 PM ******/
+/****** Object:  Table [dbo].[SOTIETKIEM]    Script Date: 6/11/2021 1:40:18 AM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[SOTIETKIEM](
+	[MaSo] int identity NOT NULL,
+	[MaNV] int NULL,
+	[MaKH] int NULL,
+	[MaLS] int NULL,
+	[LoaiSo] [varchar](50) NOT NULL,
+	[NgayMoSo] [smalldatetime] NOT NULL,
+	[NgayHetHan] [smalldatetime] NOT NULL,
+	[TienGoi] [money] NOT NULL,
+ CONSTRAINT [SoTietKiem_pk] PRIMARY KEY CLUSTERED 
+(
+	[MaSo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaKH])
+REFERENCES [dbo].[KHACHHANG] ([MaKH])
+GO
+
+ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaLS])
+REFERENCES [dbo].[DOANHTHU] ([MaLS])
+GO
+
+ALTER TABLE [dbo].[SOTIETKIEM]  WITH CHECK ADD FOREIGN KEY([MaNV])
+REFERENCES [dbo].[NHANVIEN] ([MaNV])
 GO
 
 USE [QuanLySoTietKiem1]
@@ -289,30 +268,16 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE proc [dbo].[insertCustomer]
-@maKH varchar(50), @hoTen varchar(50), @diaChi varchar(50), @sDT varchar(50), @cmnd varchar(50), @soDu money
+create proc [dbo].[insertCustomer]
+@hoTen varchar(50), @diaChi varchar(50), @sDT varchar(50), @cmnd varchar(50), @soDu money
 as
 begin
-	Declare @countCus int;
-	Declare @money money;
-
-	select @countCus = COUNT (*) from KHACHHANG k where k.MaKH = @maKH
-	select @money from KHACHHANG where MaKH = @maKH
-
-	if(@countCus = 0)
-	begin
-		insert into KHACHHANG(MaKH, HoTen, DiaChi, SDT, CMNN_or_HoChieu, SoDu)
-		values (
-			@maKH, @hoTen, @diaChi, @sDT, @cmnd, @soDu
-		);
-	end
-	else
-	begin
-		update KHACHHANG set SoDu = @money + @soDu
-	end
+	insert into KHACHHANG(HoTen, DiaChi, SDT, CMNN_or_HoChieu, SoDu)
+	values (
+		@hoTen, @diaChi, @sDT, @cmnd, @soDu
+	);
 end;
 GO
-
 
 
 USE [QuanLySoTietKiem1]
@@ -326,7 +291,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create proc [dbo].[searchCustomer]
-@maKH varchar(50)
+@maKH int
 as 
 begin 
 	select * from KHACHHANG where MaKH = @maKH
@@ -345,27 +310,21 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-alter proc [dbo].[insertSoTietKiem] 
-@maSo varchar(50), @maNV varchar(50), @maKH varchar(50), @maLS varchar(50), @loaiSo varchar(50), @ngayMoSo smallDatetime, @ngayHetHan smallDatetime, @tienGoi money
+create proc [dbo].[insertSoTietKiem] 
+@maNV varchar(50), @maKH varchar(50), @maLS varchar(50), @loaiSo varchar(50), @ngayMoSo smallDatetime, @ngayHetHan smallDatetime, @tienGoi money
 as
 begin 
-	Declare @countMaSo int
-	select @countMaSo = COUNT (*) from SOTIETKIEM where MaSo = @maSo
-	
-	if(@countMaSo = 0)
-	begin
-		insert into SOTIETKIEM(MaSo, MaNV, MaKH, MaLS, LoaiSo, NgayMoSo, NgayHetHan, TienGoi)
-		values (
-			@maSo, @maNV, @maKH, @maLS, @loaiSo, @ngayMoSo, @ngayHetHan, @tienGoi
-		)
-		update DOANHTHU
-		set SoMo = SoMo + 1, TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
-		where @maLS = MaLS
+	insert into SOTIETKIEM(MaNV, MaKH, MaLS, LoaiSo, NgayMoSo, NgayHetHan, TienGoi)
+	values (
+		@maNV, @maKH, @maLS, @loaiSo, @ngayMoSo, @ngayHetHan, @tienGoi
+	)
+	update DOANHTHU
+	set SoMo = SoMo + 1, TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
+	where @maLS = MaLS
 
-		update KHACHHANG
-		set SoDu = SoDu + @tienGoi
-		where @maKH = MaKH
-	end
+	update KHACHHANG
+	set SoDu = SoDu + @tienGoi
+	where @maKH = MaKH
 end;
 GO
 
@@ -379,7 +338,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-alter proc [dbo].[insertStaff] 
+create proc [dbo].[insertStaff] 
 @hoTen varchar(50), @diaChi varchar(50), @sdt varchar(50), @cmnd varchar(50)
 as
 begin
@@ -402,29 +361,42 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE proc [dbo].[insertGoiTien] 
-@maGT varchar(50), @maNV varchar(50), @maKH varchar(50), @maSo varchar(50), @ngayGoi smalldatetime, @tienGoi money
+alter proc [dbo].[insertGoiTien] 
+@maNV int, @maKH int, @maSo int, @ngayGoi smalldatetime, @tienGoi money
 as
 begin
-	declare @countGT int;
-	select @countGT = count(*) from GOITIEN where @maGT = MaGT
-
-	if(@countGT = 0)
-	begin
-		insert into GOITIEN (MaGT, MaNV, MaKH, MaSo, NgayGoi, TienGoi)
-		values (
-			@maGT, @maNV, @maKH, @maSo, @ngayGoi, @tienGoi
-		);
-		update KHACHHANG
-		set SoDu = SoDu + @tienGoi
-		where @maKH = MaKH
-
-		update DOANHTHU
-		set TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
-		where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
-	end
+	insert into GOITIEN (MaNV, MaKH, MaSo, NgayGoi, TienGoi)
+	values (
+		@maNV, @maKH, @maSo, @ngayGoi, @tienGoi
+	);
 end;
 GO
+
+create trigger TG_insertGoiTien
+on GOITIEN for insert
+as 
+begin
+	declare @maKH int
+	declare @tienGoi money
+	declare @maSo int
+
+	select @maKH = MaKH from inserted
+	select @maSo = MaSo from inserted
+	select @tienGoi = TienGoi from inserted
+
+	update KHACHHANG
+	set SoDu = SoDu + @tienGoi
+	where @maKH = MaKH
+
+	update SOTIETKIEM
+	set TienGoi = TienGoi + @tienGoi
+	where @maKH = MaKH and @maSo = MaSo
+
+	update DOANHTHU
+	set TongThu = TongThu + @tienGoi, ChenhLechThuChi = ChenhLechThuChi + @tienGoi
+	where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
+end
+go
 
 
 USE [QuanLySoTietKiem1]
@@ -438,21 +410,18 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE proc [dbo].[insertRutTien] 
-@maRT varchar(50), @maNV varchar(50), @maKH varchar(50), @maSo varchar(50), @ngayRut smalldatetime, @tienRut money
+@maNV varchar(50), @maKH varchar(50), @maSo varchar(50), @ngayRut smalldatetime, @tienRut money
 as
 begin
-	declare @countGT int;
 	declare @soDu money;
-
-	select @countGT = count(*) from RUTTIEN where @maRT = MaRT
 
 	select @soDu = SoDu from KHACHHANG where MaKH = @maKH
 
-	if(@countGT = 0 and @soDu - @tienRut > 0)
+	if(@soDu - @tienRut > 0)
 	begin
-		insert into RUTTIEN (MaRT, MaNV, MaKH, MaSo, NgayRut, TienRut)
+		insert into RUTTIEN (MaNV, MaKH, MaSo, NgayRut, TienRut)
 		values (
-			@maRT, @maNV, @maKH, @maSo, @ngayRut, @tienRut
+			@maNV, @maKH, @maSo, @ngayRut, @tienRut
 		);
 		update KHACHHANG
 		set SoDu = SoDu - @tienRut
@@ -477,7 +446,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create proc [dbo].[GetStaffInfo]
-@maNV varchar(50)
+@maNV int
 as 
 begin
 	select * from NHANVIEN where @maNV = MaNV
@@ -487,16 +456,16 @@ GO
 select * from DOANHTHU
 
 CREATE proc insertDoanhThu
-@maLS varchar(50), @loaiSo varchar(50), @ngay smalldatetime
+@loaiSo varchar(50), @ngay smalldatetime
 as
 begin
 	declare @count int
-	select @count = count(*) from DOANHTHU where @maLS = MaLS and @ngay = Ngay
+	select @count = count(*) from DOANHTHU where @ngay = Ngay
 	if(@count = 0)
 	begin
-		insert into DOANHTHU (MaLS, LoaiSo, TongThu, TongChi, ChenhLechThuChi, SoMo, SoDong, ChenhLechSoMD, Ngay)
+		insert into DOANHTHU (LoaiSo, TongThu, TongChi, ChenhLechThuChi, SoMo, SoDong, ChenhLechSoMD, Ngay)
 		values (
-			@maLS, @loaiSo, 0, 0, 0, 0, 0, 0, @ngay
+			@loaiSo, 0, 0, 0, 0, 0, 0, @ngay
 		)
 	end
 end;
@@ -516,4 +485,29 @@ begin
 end;
 go
 
+select * from KHACHHANG
+select * from NHANVIEN
+select * from SOTIETKIEM
 
+delete KHACHHANG where MaKH = 10
+
+USE [QuanLySoTietKiem1]
+GO
+
+SELECT MAX(MaKH) FROM [dbo].[KHACHHANG]
+GO
+
+
+insert into KHACHHANG(HoTen, DiaChi, SDT, CMNN_or_HoChieu)
+	values (
+		'a', 'a', 'a', 'a', 0
+	);
+
+USE [QuanLySoTietKiem1]
+GO
+
+update NHANVIEN set HoTen = N'', DiaChi = '', SDT = '', CMNN_or_HoChieu = '' where MaNV = 1
+
+delete NHANVIEN where MaNV = 1
+
+select count(*) from SOTIETKIEM where MaKH = '' and MaSo = ''

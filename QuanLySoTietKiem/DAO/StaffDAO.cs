@@ -22,12 +22,22 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertStaff(string hoten, string diachi, string sdt, string cmnd)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertStaff @hoTen , @diaChi , @sDT , @cmnd", new object[] {hoten, diachi, sdt, cmnd }) == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertStaff @hoTen , @diaChi , @sDT , @cmnd", new object[] {hoten, diachi, sdt, cmnd }) > 0;
         }
 
         public DataTable listNhanVien()
         {
             return ExecuteQuery.Instance.ExecuteReader("select * from NHANVIEN where LamViec = 1");
+        }
+
+        public bool DeleteStaff(string id)
+        {
+            return false;
+        }
+
+        public bool UpdateStaffInfo(string id, string Hoten, string DiaChi, string SDT, string Cmnd)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update NHANVIEN set HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMNN_or_HoChieu = '{3}' where MaNV = {4}", Hoten, DiaChi, SDT, Cmnd, id)) > 0;
         }
 
         public DataTable GetStaffInfor(string id)
@@ -37,7 +47,7 @@ namespace QuanLySoTietKiem.DAO
 
         public bool removeStaff(DTO.Staff staff)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("removeStaff @maNV", new object[] { staff.ID }) == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("removeStaff @maNV", new object[] { staff.ID }) > 0;
         }
     }
 }

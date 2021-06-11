@@ -47,6 +47,7 @@ namespace QuanLySoTietKiem
             this.label7 = new System.Windows.Forms.Label();
             this.tbCmnd = new System.Windows.Forms.TextBox();
             this.KHbutton4 = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@ namespace QuanLySoTietKiem
             this.KHSbutton3.TabIndex = 27;
             this.KHSbutton3.Text = "Xóa";
             this.KHSbutton3.UseVisualStyleBackColor = true;
+            this.KHSbutton3.Click += new System.EventHandler(this.KHSbutton3_Click);
             // 
             // KHSbutton2
             // 
@@ -92,8 +94,10 @@ namespace QuanLySoTietKiem
             // 
             this.tbSodu.Location = new System.Drawing.Point(582, 190);
             this.tbSodu.Name = "tbSodu";
+            this.tbSodu.ReadOnly = true;
             this.tbSodu.Size = new System.Drawing.Size(139, 22);
             this.tbSodu.TabIndex = 25;
+            this.tbSodu.TextChanged += new System.EventHandler(this.tbSodu_TextChanged);
             // 
             // label5
             // 
@@ -147,7 +151,7 @@ namespace QuanLySoTietKiem
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 78);
+            this.label2.Location = new System.Drawing.Point(12, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 19;
@@ -156,7 +160,7 @@ namespace QuanLySoTietKiem
             // KHSbutton1
             // 
             this.KHSbutton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KHSbutton1.Location = new System.Drawing.Point(320, 30);
+            this.KHSbutton1.Location = new System.Drawing.Point(340, 9);
             this.KHSbutton1.Name = "KHSbutton1";
             this.KHSbutton1.Size = new System.Drawing.Size(112, 30);
             this.KHSbutton1.TabIndex = 18;
@@ -166,8 +170,9 @@ namespace QuanLySoTietKiem
             // 
             // tbMaKH
             // 
-            this.tbMaKH.Location = new System.Drawing.Point(189, 35);
+            this.tbMaKH.Location = new System.Drawing.Point(189, 74);
             this.tbMaKH.Name = "tbMaKH";
+            this.tbMaKH.ReadOnly = true;
             this.tbMaKH.Size = new System.Drawing.Size(100, 22);
             this.tbMaKH.TabIndex = 17;
             // 
@@ -176,7 +181,7 @@ namespace QuanLySoTietKiem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Location = new System.Drawing.Point(15, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 23);
             this.label1.TabIndex = 16;
@@ -221,6 +226,13 @@ namespace QuanLySoTietKiem
             this.KHbutton4.UseVisualStyleBackColor = true;
             this.KHbutton4.Click += new System.EventHandler(this.KHbutton4_Click);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(126, 14);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(208, 22);
+            this.tbSearch.TabIndex = 33;
+            // 
             // fcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,6 +240,7 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 568);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.KHbutton4);
             this.Controls.Add(this.tbCmnd);
             this.Controls.Add(this.label7);
@@ -247,7 +260,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "fcustomer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KHÁCH HÀNG";
             this.Load += new System.EventHandler(this.fcustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -276,5 +289,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbCmnd;
         private System.Windows.Forms.Button KHbutton4;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }

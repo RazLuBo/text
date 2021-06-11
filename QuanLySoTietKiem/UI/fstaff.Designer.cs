@@ -49,6 +49,7 @@ namespace QuanLySoTietKiem
             this.btAdd = new System.Windows.Forms.Button();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tbSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +113,7 @@ namespace QuanLySoTietKiem
             // 
             // tbDiaChi
             // 
-            this.tbDiaChi.Location = new System.Drawing.Point(187, 165);
+            this.tbDiaChi.Location = new System.Drawing.Point(187, 166);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.Size = new System.Drawing.Size(184, 22);
             this.tbDiaChi.TabIndex = 40;
@@ -122,7 +123,7 @@ namespace QuanLySoTietKiem
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 165);
+            this.label4.Location = new System.Drawing.Point(12, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 39;
@@ -152,7 +153,7 @@ namespace QuanLySoTietKiem
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(12, 53);
+            this.label2.Location = new System.Drawing.Point(12, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 36;
@@ -161,7 +162,7 @@ namespace QuanLySoTietKiem
             // btSearch
             // 
             this.btSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearch.Location = new System.Drawing.Point(298, 6);
+            this.btSearch.Location = new System.Drawing.Point(398, 10);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(112, 30);
             this.btSearch.TabIndex = 35;
@@ -171,8 +172,9 @@ namespace QuanLySoTietKiem
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(165, 9);
+            this.tbID.Location = new System.Drawing.Point(187, 56);
             this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
             this.tbID.Size = new System.Drawing.Size(100, 22);
             this.tbID.TabIndex = 34;
             // 
@@ -181,7 +183,7 @@ namespace QuanLySoTietKiem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 33;
@@ -196,7 +198,6 @@ namespace QuanLySoTietKiem
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(796, 247);
             this.dataGridView1.TabIndex = 32;
-            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             // 
             // btExit
             // 
@@ -236,6 +237,13 @@ namespace QuanLySoTietKiem
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(119, 14);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(252, 22);
+            this.tbSearch.TabIndex = 52;
+            // 
             // fstaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,6 +251,7 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 563);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.btExit);
@@ -262,7 +271,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "fstaff";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NHÂN VIÊN";
             this.Load += new System.EventHandler(this.fstaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -292,5 +301,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }
