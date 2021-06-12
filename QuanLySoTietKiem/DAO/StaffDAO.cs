@@ -20,12 +20,12 @@ namespace QuanLySoTietKiem.DAO
             private set => instance = value; 
         }
 
-        public bool insertStaff(string hoten, string diachi, string sdt, string cmnd)
+        public bool InsertStaff(string hoten, string diachi, string sdt, string cmnd)
         {
             return ExecuteQuery.Instance.ExecuteNoneQuery("insertStaff @hoTen , @diaChi , @sDT , @cmnd", new object[] {hoten, diachi, sdt, cmnd }) > 0;
         }
 
-        public DataTable listNhanVien()
+        public DataTable ListNhanVien()
         {
             return ExecuteQuery.Instance.ExecuteReader("select * from NHANVIEN where LamViec = 1");
         }

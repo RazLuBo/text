@@ -31,27 +31,35 @@ namespace QuanLySoTietKiem
             this.Close();
         }
 
+        public void LoadReport()
+        {
+            LoadDoanhThuNgay();
+            if (cbLoaiSo.SelectedIndex != -1)
+                LoadDoanhThuThangLoaiSo();
+            else
+                LoadDoanhThuThang();
+        }
+
         private void LoadDoanhThuNgay()
         {
-            dataDay.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuNgay(dtDay.Value);
+            listReportDay.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuNgay(dtDay.Value);
         }
 
         private void LoadDoanhThuThang()
         {
-            dataMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThang(dtMonth.Value);
+            listReportMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThang(dtMonth.Value);
         }
 
         private void LoadDoanhThuThangLoaiSo()
         {
-            dataMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThangLoaiSo(dtMonth.Value, cbLoaiSo.SelectedIndex.ToString());
+            listReportMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThangLoaiSo(dtMonth.Value, cbLoaiSo.SelectedIndex.ToString());
         }
 
         private void freport_Load(object sender, EventArgs e)
         {
             dataDay.DataSource = listReportDay;
             dataMonth.DataSource = listReportMonth;
-            LoadDoanhThuNgay();
-            LoadDoanhThuThang();
+            LoadReport();
         }
 
         private void cbLoaiSo_SelectedIndexChanged(object sender, EventArgs e)

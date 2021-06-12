@@ -17,7 +17,7 @@ namespace QuanLySoTietKiem.DAO
         {
             return ExecuteQuery.Instance.ExecuteNoneQuery("insertSoTietKiem @maNV , @maKH , @maLS , @loaiSo , @ngayMoSo , @ngayHetHan , @tienGoi ", new object[] { idNV, idKH, idLS, loaiSo, ngayMo, ngayHetHan, tienGoi }) > 0;
         }
-        public bool DeleteCustomer(int id)
+        public bool DeleteSTKbyIdCus(int id)
         {
             return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE SOTIETKIEM where MaKH =" + id) > 0;
         }

@@ -84,9 +84,42 @@ namespace QuanLySoTietKiem
             }
         }
 
-        private void fopen_Load(object sender, EventArgs e)
+        private void tbMaKH_Leave(object sender, EventArgs e)
         {
+            if(tbMaKH.Text != "")
+            {
+                DTO.Customer customer = new DTO.Customer(DAO.CustomerDAO.Instance.GetCustomerInfo(tbMaKH.Text).Rows[0]);
+                tbTenKH.Text = customer.HoTen;
+                tbSdt.Text = customer.SDT;
+                tbDiaChi.Text = customer.DiaChi;
+                tbCmnd.Text = customer.Cmnd;
+                tbMaNV.Focus();
+            }
+        }
 
+        private void tbMaKH_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Return")
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void tbMaNV_Leave(object sender, EventArgs e)
+        {
+            if(tbMaNV.Text != "")
+            {
+                DTO.Staff staff = new DTO.Staff(DAO.StaffDAO.Instance.GetStaffInfor(tbMaNV.Text).Rows[0]);
+                tbTenNV.Text = staff.HoTen;
+            }
+        }
+
+        private void tbMaNV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Return")
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

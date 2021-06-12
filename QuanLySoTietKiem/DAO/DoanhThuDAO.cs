@@ -36,12 +36,12 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetDoanhThuThang(DateTime dt)
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { dt.Month, dt.Year });
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select * from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1}", dt.Month, dt.Year));
         }
 
         public DataTable GetDoanhThuThangLoaiSo(DateTime dt, string idLS)
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where MONTH(Ngay) = @thang and YEAR(Ngay) = @nam and MaLS = @idLS", new object[] { dt.Month, dt.Year, idLS });
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select * from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1} and MaLS = {2}", dt.Month, dt.Year, idLS));
         }
     }
 }

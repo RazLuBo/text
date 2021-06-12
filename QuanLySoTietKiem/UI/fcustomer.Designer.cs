@@ -32,7 +32,7 @@ namespace QuanLySoTietKiem
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.KHSbutton3 = new System.Windows.Forms.Button();
-            this.KHSbutton2 = new System.Windows.Forms.Button();
+            this.btModify = new System.Windows.Forms.Button();
             this.tbSodu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
@@ -80,15 +80,16 @@ namespace QuanLySoTietKiem
             this.KHSbutton3.UseVisualStyleBackColor = true;
             this.KHSbutton3.Click += new System.EventHandler(this.KHSbutton3_Click);
             // 
-            // KHSbutton2
+            // btModify
             // 
-            this.KHSbutton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KHSbutton2.Location = new System.Drawing.Point(399, 273);
-            this.KHSbutton2.Name = "KHSbutton2";
-            this.KHSbutton2.Size = new System.Drawing.Size(112, 30);
-            this.KHSbutton2.TabIndex = 26;
-            this.KHSbutton2.Text = "Sửa";
-            this.KHSbutton2.UseVisualStyleBackColor = true;
+            this.btModify.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btModify.Location = new System.Drawing.Point(399, 273);
+            this.btModify.Name = "btModify";
+            this.btModify.Size = new System.Drawing.Size(112, 30);
+            this.btModify.TabIndex = 26;
+            this.btModify.Text = "Sửa";
+            this.btModify.UseVisualStyleBackColor = true;
+            this.btModify.Click += new System.EventHandler(this.btModify_Click);
             // 
             // tbSodu
             // 
@@ -192,6 +193,7 @@ namespace QuanLySoTietKiem
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 318);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(796, 247);
@@ -247,7 +249,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.KHSbutton3);
-            this.Controls.Add(this.KHSbutton2);
+            this.Controls.Add(this.btModify);
             this.Controls.Add(this.tbSodu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbDiaChi);
@@ -274,7 +276,7 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button KHSbutton3;
-        private System.Windows.Forms.Button KHSbutton2;
+        private System.Windows.Forms.Button btModify;
         private System.Windows.Forms.TextBox tbSodu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbDiaChi;

@@ -18,6 +18,11 @@ namespace QuanLySoTietKiem.DAO
             return ExecuteQuery.Instance.ExecuteNoneQuery("insertCustomer @hoTen , @diaChi , @sDT , @cmnd , @soDu", new object[] { hoten, diachi, sdt, cmnd, sodu }) > 0;
         }
 
+        public bool UpdateCustomer(string HoTen, string DiaChi, string SDT, string Cmnd, int MaKH)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update KHACHHANG set HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMNN_or_HoChieu = '{3}' where MaKH = {4}", HoTen, DiaChi, SDT, Cmnd, MaKH)) > 0;
+        }
+
         public int GetIdNewCustomer()
         {
             return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaKH) FROM [dbo].[KHACHHANG]");

@@ -9,11 +9,11 @@ namespace QuanLySoTietKiem.DTO
 {
     public class Staff
     {
-        public String iD;
-        public String hoTen;
-        public String diaChi;
-        public String sDT;
-        public String cmnd;
+        private String iD;
+        private String hoTen;
+        private String diaChi;
+        private String sDT;
+        private String cmnd;
 
         public string ID { get => iD; set => iD = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
@@ -23,7 +23,7 @@ namespace QuanLySoTietKiem.DTO
 
         public Staff(DataRow row)
         {
-            this.ID = row["MaKH"].ToString();
+            this.ID = row["MaNV"].ToString();
             this.HoTen = row["HoTen"].ToString();
             this.DiaChi = row["DiaChi"].ToString();
             this.SDT = row["SDT"].ToString();

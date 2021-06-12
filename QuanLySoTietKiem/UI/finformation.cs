@@ -38,7 +38,7 @@ namespace QuanLySoTietKiem
             LoadSoTietKiem();
         }
 
-        private void LoadSoTietKiem()
+        public void LoadSoTietKiem()
         {
             dataGridView1.DataSource = DAO.SoTietKiemDAO.Instance.listSoTietKiem();
         }

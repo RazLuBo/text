@@ -25,7 +25,7 @@ namespace QuanLySoTietKiem.DTO
 
         public Customer(DataRow row)
         {
-            this.ID = row["MaNV"].ToString();
+            this.ID = row["MaKH"].ToString();
             this.HoTen = row["HoTen"].ToString();
             this.DiaChi = row["DiaChi"].ToString();
             this.SDT = row["SDT"].ToString();

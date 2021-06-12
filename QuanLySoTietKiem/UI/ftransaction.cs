@@ -19,6 +19,19 @@ namespace QuanLySoTietKiem
             tbDay_G.Text = DateTime.Today.ToString("dd/MM/yyyy");
         }
 
+        private event EventHandler guiTien;
+        public event EventHandler GuiTien
+        {
+            add => guiTien += value;
+            remove => guiTien -= value;
+        }
+        private event EventHandler rutTien;
+        public event EventHandler RutTien
+        {
+            add => rutTien += value;
+            remove => rutTien -= value;
+        }
+
 
         private void btExit_Click(object sender, EventArgs e)
         {
@@ -32,7 +45,8 @@ namespace QuanLySoTietKiem
             if (DAO.GuiTienDAO.Instance.insertGoiTien(tbMaNV_G.Text, tbMaKH_G.Text, tbMaSo_G.Text, DateTime.Today, Convert.ToDouble(tbTienGui.Text)))
             {
                 StatusLabel_G.Text = "";
-                this.Close();
+                if (guiTien != null)
+                    guiTien(this, new EventArgs());
             }
             else
             {
@@ -68,7 +82,8 @@ namespace QuanLySoTietKiem
             if (DAO.RutTienDAO.Instance.insertRutTien(tbMaNV_R.Text, tbMaKH_R.Text, tbMaSo_R.Text, DateTime.Today, Convert.ToDouble(tbTienRut.Text)))
             {
                 StatusLabel_R.Text = "";
-                this.Close();
+                if (rutTien != null)
+                    rutTien(this, new EventArgs());
             }
             else
             {

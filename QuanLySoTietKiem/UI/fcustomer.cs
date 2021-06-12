@@ -20,16 +20,6 @@ namespace QuanLySoTietKiem
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void GTbutton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void KHbutton4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,7 +42,7 @@ namespace QuanLySoTietKiem
             tbSodu.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "SoDu", true, DataSourceUpdateMode.Never));
         }
 
-        private void LoadCustomer()
+        public void LoadCustomer()
         {
             listCustomer.DataSource = DAO.CustomerDAO.Instance.GetAllCustomerInfo();
         }
@@ -67,7 +57,9 @@ namespace QuanLySoTietKiem
             int idCus;
             if(int.TryParse(tbMaKH.Text, out idCus))
             {
-                DAO.SoTietKiemDAO.Instance.DeleteCustomer(idCus);
+                DAO.SoTietKiemDAO.Instance.DeleteSTKbyIdCus(idCus);
+                DAO.GuiTienDAO.Instance.DeleteGoiTienByIdCus(idCus);
+                DAO.RutTienDAO.Instance.DeleteRutTienByIdCus(idCus);
                 if (DAO.CustomerDAO.Instance.DeleteCustomer(idCus))
                 {
                     MessageBox.Show("Xóa khách hàng thành công");
@@ -87,6 +79,27 @@ namespace QuanLySoTietKiem
             {
                 CultureInfo culture = new CultureInfo("vi-VN");
                 tbSodu.Text = Sodu.ToString("c", culture);
+            }
+        }
+
+        private void btModify_Click(object sender, EventArgs e)
+        {
+            if(tbMaKH.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                if(DAO.CustomerDAO.Instance.UpdateCustomer(tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, Convert.ToInt32(tbMaKH.Text)))
+                {
+                    MessageBox.Show("Chỉnh sửa thông tin khách hàng thành công");
+                    LoadCustomer();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi chỉnh sửa thông tin khách hàng");
+                    return;
+                }
             }
         }
     }

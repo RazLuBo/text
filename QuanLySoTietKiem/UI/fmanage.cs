@@ -12,14 +12,14 @@ namespace QuanLySoTietKiem
 {
     public partial class fmanage : Form
     {
-        ftransaction transaction = new ftransaction();
-        fopen open = new fopen();
-        finformation information = new finformation();
-        fcustomer customer = new fcustomer();
-        fstaff staff = new fstaff();
-        fchange change = new fchange();
-        faccount account = new faccount();
-        freport report = new freport();
+        ftransaction transaction;
+        fopen open;
+        finformation information;
+        fcustomer customer;
+        fstaff staff;
+        fchange change;
+        faccount account;
+        freport report;
 
         public fmanage()
         {
@@ -29,9 +29,18 @@ namespace QuanLySoTietKiem
 
         private void transaction_Click(object sender, EventArgs e)
         {
+            transaction = new ftransaction();
+            transaction.GuiTien += f_transaction;
+            transaction.RutTien += f_transaction;
             transaction.Show();
         }
 
+        private void f_transaction(object sender, EventArgs e)
+        {
+            if(customer != null) customer.LoadCustomer();
+            if (information != null) information.LoadSoTietKiem();
+            if (report != null) report.LoadReport();
+        }
 
         private void fmanage_Load(object sender, EventArgs e)
         {
@@ -45,36 +54,43 @@ namespace QuanLySoTietKiem
 
         private void btopen_Click(object sender, EventArgs e)
         {
+            open = new fopen();
             open.Show();
         }
 
         private void btinformation_Click(object sender, EventArgs e)
         {
+            information = new finformation();
             information.Show();
         }
 
         private void btcustomer_Click(object sender, EventArgs e)
         {
+            customer = new fcustomer();
             customer.Show();
         }
 
         private void btstaff_Click(object sender, EventArgs e)
         {
+            staff = new fstaff();
             staff.Show();
         }
 
         private void btchange_Click(object sender, EventArgs e)
         {
+            change = new fchange();
             change.Show();
         }
 
         private void btaccount_Click(object sender, EventArgs e)
         {
+            account = new faccount();
             account.Show();
         }
 
         private void btreport_Click_1(object sender, EventArgs e)
         {
+            report = new freport();
             report.Show();
         }
     }

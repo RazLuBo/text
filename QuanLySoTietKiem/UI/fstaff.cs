@@ -33,7 +33,7 @@ namespace QuanLySoTietKiem
 
         private void LoadListStaff()
         {
-            listStaff.DataSource = DAO.StaffDAO.Instance.listNhanVien();
+            listStaff.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
         }
 
         private void btSearch_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace QuanLySoTietKiem
             }
             else
             {
-                if(DAO.StaffDAO.Instance.insertStaff(tbTenNV.Text,tbDiaChi.Text, tbSdt.Text, tbCmnd.Text))
+                if(DAO.StaffDAO.Instance.InsertStaff(tbTenNV.Text,tbDiaChi.Text, tbSdt.Text, tbCmnd.Text))
                 {
                     MessageBox.Show("Thêm nhân viên thành công!");
                     LoadListStaff();

@@ -131,6 +131,7 @@ namespace QuanLySoTietKiem
             this.dataDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDay.Location = new System.Drawing.Point(0, 121);
             this.dataDay.Name = "dataDay";
+            this.dataDay.ReadOnly = true;
             this.dataDay.RowHeadersWidth = 51;
             this.dataDay.RowTemplate.Height = 24;
             this.dataDay.Size = new System.Drawing.Size(801, 299);
@@ -180,6 +181,7 @@ namespace QuanLySoTietKiem
             // 
             // BCTbutton2
             // 
+            this.BCTbutton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BCTbutton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCTbutton2.Location = new System.Drawing.Point(666, 96);
             this.BCTbutton2.Name = "BCTbutton2";
@@ -191,6 +193,7 @@ namespace QuanLySoTietKiem
             // 
             // BCTbutton1
             // 
+            this.BCTbutton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BCTbutton1.Location = new System.Drawing.Point(490, 96);
             this.BCTbutton1.Name = "BCTbutton1";
             this.BCTbutton1.Size = new System.Drawing.Size(122, 33);
@@ -220,9 +223,13 @@ namespace QuanLySoTietKiem
             // 
             // dataMonth
             // 
+            this.dataMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataMonth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataMonth.Location = new System.Drawing.Point(0, 153);
             this.dataMonth.Name = "dataMonth";
+            this.dataMonth.ReadOnly = true;
             this.dataMonth.RowHeadersWidth = 51;
             this.dataMonth.RowTemplate.Height = 24;
             this.dataMonth.Size = new System.Drawing.Size(801, 264);

@@ -510,4 +510,6 @@ update NHANVIEN set HoTen = N'', DiaChi = '', SDT = '', CMNN_or_HoChieu = '' whe
 
 delete NHANVIEN where MaNV = 1
 
-select count(*) from SOTIETKIEM where MaKH = '' and MaSo = ''
+select * from KHACHHANG
+
+update KHACHHANG set HoTen = 'a165', DiaChi = 'a', SDT = 'a', CMNN_or_HoChieu = 'a' where MaKH = 13

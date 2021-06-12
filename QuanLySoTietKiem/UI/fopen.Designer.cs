@@ -98,24 +98,26 @@ namespace QuanLySoTietKiem
             // 
             // tbMaNV
             // 
-            this.tbMaNV.Location = new System.Drawing.Point(591, 290);
+            this.tbMaNV.Location = new System.Drawing.Point(591, 237);
             this.tbMaNV.Name = "tbMaNV";
             this.tbMaNV.Size = new System.Drawing.Size(113, 22);
-            this.tbMaNV.TabIndex = 15;
+            this.tbMaNV.TabIndex = 7;
+            this.tbMaNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbMaNV_KeyDown);
+            this.tbMaNV.Leave += new System.EventHandler(this.tbMaNV_Leave);
             // 
             // tbTenNV
             // 
-            this.tbTenNV.Location = new System.Drawing.Point(591, 230);
+            this.tbTenNV.Location = new System.Drawing.Point(591, 290);
             this.tbTenNV.Name = "tbTenNV";
             this.tbTenNV.Size = new System.Drawing.Size(214, 22);
-            this.tbTenNV.TabIndex = 14;
+            this.tbTenNV.TabIndex = 8;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(496, 290);
+            this.label12.Location = new System.Drawing.Point(496, 237);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 23);
             this.label12.TabIndex = 13;
@@ -126,7 +128,7 @@ namespace QuanLySoTietKiem
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(496, 233);
+            this.label11.Location = new System.Drawing.Point(496, 293);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 12;
@@ -137,7 +139,7 @@ namespace QuanLySoTietKiem
             this.tbTienGoi.Location = new System.Drawing.Point(209, 174);
             this.tbTienGoi.Name = "tbTienGoi";
             this.tbTienGoi.Size = new System.Drawing.Size(164, 22);
-            this.tbTienGoi.TabIndex = 28;
+            this.tbTienGoi.TabIndex = 1;
             // 
             // label6
             // 
@@ -237,7 +239,7 @@ namespace QuanLySoTietKiem
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 232);
+            this.label8.Location = new System.Drawing.Point(36, 292);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 22);
             this.label8.TabIndex = 11;
@@ -246,10 +248,10 @@ namespace QuanLySoTietKiem
             // 
             // tbTenKH
             // 
-            this.tbTenKH.Location = new System.Drawing.Point(209, 233);
+            this.tbTenKH.Location = new System.Drawing.Point(209, 293);
             this.tbTenKH.Name = "tbTenKH";
             this.tbTenKH.Size = new System.Drawing.Size(245, 22);
-            this.tbTenKH.TabIndex = 12;
+            this.tbTenKH.TabIndex = 3;
             // 
             // label9
             // 
@@ -267,7 +269,7 @@ namespace QuanLySoTietKiem
             this.tbCmnd.Location = new System.Drawing.Point(209, 349);
             this.tbCmnd.Name = "tbCmnd";
             this.tbCmnd.Size = new System.Drawing.Size(245, 22);
-            this.tbCmnd.TabIndex = 14;
+            this.tbCmnd.TabIndex = 4;
             // 
             // label10
             // 
@@ -285,7 +287,7 @@ namespace QuanLySoTietKiem
             this.tbDiaChi.Location = new System.Drawing.Point(209, 415);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.Size = new System.Drawing.Size(245, 22);
-            this.tbDiaChi.TabIndex = 16;
+            this.tbDiaChi.TabIndex = 5;
             // 
             // label7
             // 
@@ -311,17 +313,19 @@ namespace QuanLySoTietKiem
             // 
             // tbMaKH
             // 
-            this.tbMaKH.Location = new System.Drawing.Point(209, 292);
+            this.tbMaKH.Location = new System.Drawing.Point(209, 239);
             this.tbMaKH.Name = "tbMaKH";
             this.tbMaKH.Size = new System.Drawing.Size(245, 22);
-            this.tbMaKH.TabIndex = 38;
+            this.tbMaKH.TabIndex = 2;
+            this.tbMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbMaKH_KeyDown);
+            this.tbMaKH.Leave += new System.EventHandler(this.tbMaKH_Leave);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(36, 291);
+            this.label16.Location = new System.Drawing.Point(36, 238);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(80, 22);
             this.label16.TabIndex = 40;
@@ -360,7 +364,7 @@ namespace QuanLySoTietKiem
             this.tbSdt.Location = new System.Drawing.Point(591, 415);
             this.tbSdt.Name = "tbSdt";
             this.tbSdt.Size = new System.Drawing.Size(171, 22);
-            this.tbSdt.TabIndex = 45;
+            this.tbSdt.TabIndex = 6;
             // 
             // label17
             // 
@@ -415,7 +419,6 @@ namespace QuanLySoTietKiem
             this.Name = "fopen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MỞ SỔ";
-            this.Load += new System.EventHandler(this.fopen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

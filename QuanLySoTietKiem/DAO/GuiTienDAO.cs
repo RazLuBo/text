@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,5 +18,14 @@ namespace QuanLySoTietKiem.DAO
             return ExecuteQuery.Instance.ExecuteNoneQuery("insertGoiTien @maNV , @maKH , @maSo , @ngayGoi , @tienGoi", new object[] { idNV, idKH, idMaSo, ngayGoi, tienGoi }) > 0;
         }
         
+        public DataTable getGoiTienByDay(DateTime date)
+        {
+            return ExecuteQuery.Instance.ExecuteReader("select * from GOITIEN where NgayGoi =" + date.ToString("MM/dd/yyyy"));
+        }
+
+        public bool DeleteGoiTienByIdCus(int id)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE GOITIEN where MaKH =" + id) > 0;
+        }
     }
 }
