@@ -236,7 +236,8 @@ end;
 GO
 
 
-select count(*) from dbo.DANGNHAP dn where dn.TenDN = 'admin' and dn.MatKhau = 'ISMvKXpXpadDiUoOSoAfww=='
+insert into DANGNHAP (TenDN, TenHienThi, MatKhau)
+values ('admin', 'admin', 'ISMvKXpXpadDiUoOSoAfww==')
 
 USE [QuanLySoTietKiem1]
 GO
@@ -361,7 +362,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-alter proc [dbo].[insertGoiTien] 
+create proc [dbo].[insertGoiTien] 
 @maNV int, @maKH int, @maSo int, @ngayGoi smalldatetime, @tienGoi money
 as
 begin
@@ -451,9 +452,7 @@ as
 begin
 	select * from NHANVIEN where @maNV = MaNV
 end;
-GO
-
-select * from DOANHTHU
+go
 
 CREATE proc insertDoanhThu
 @loaiSo varchar(50), @ngay smalldatetime
@@ -471,9 +470,6 @@ begin
 end;
 go
 
-select * from NHANVIEN
-
-delete from NHANVIEN where MaNV = '01'
 
 create proc removeStaff
 @maNV varchar(50)
@@ -484,32 +480,3 @@ begin
 	where MaNV = @maNV
 end;
 go
-
-select * from KHACHHANG
-select * from NHANVIEN
-select * from SOTIETKIEM
-
-delete KHACHHANG where MaKH = 10
-
-USE [QuanLySoTietKiem1]
-GO
-
-SELECT MAX(MaKH) FROM [dbo].[KHACHHANG]
-GO
-
-
-insert into KHACHHANG(HoTen, DiaChi, SDT, CMNN_or_HoChieu)
-	values (
-		'a', 'a', 'a', 'a', 0
-	);
-
-USE [QuanLySoTietKiem1]
-GO
-
-update NHANVIEN set HoTen = N'', DiaChi = '', SDT = '', CMNN_or_HoChieu = '' where MaNV = 1
-
-delete NHANVIEN where MaNV = 1
-
-select * from KHACHHANG
-
-update KHACHHANG set HoTen = 'a165', DiaChi = 'a', SDT = 'a', CMNN_or_HoChieu = 'a' where MaKH = 13
