@@ -34,7 +34,7 @@ namespace QuanLySoTietKiem
             this.label3 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.TKcomboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TKtextBox3 = new System.Windows.Forms.TextBox();
             this.TKbutton1 = new System.Windows.Forms.Button();
@@ -90,13 +90,16 @@ namespace QuanLySoTietKiem
             this.tbPassword.TabIndex = 1;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
-            // TKcomboBox1
+            // cbType
             // 
-            this.TKcomboBox1.FormattingEnabled = true;
-            this.TKcomboBox1.Location = new System.Drawing.Point(175, 249);
-            this.TKcomboBox1.Name = "TKcomboBox1";
-            this.TKcomboBox1.Size = new System.Drawing.Size(177, 24);
-            this.TKcomboBox1.TabIndex = 2;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Nhân viên",
+            "Giám đốc"});
+            this.cbType.Location = new System.Drawing.Point(175, 249);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(177, 24);
+            this.cbType.TabIndex = 2;
             // 
             // label4
             // 
@@ -161,7 +164,7 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.TKbutton1);
             this.Controls.Add(this.TKtextBox3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TKcomboBox1);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label3);
@@ -182,7 +185,7 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.ComboBox TKcomboBox1;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TKtextBox3;
         private System.Windows.Forms.Button TKbutton1;

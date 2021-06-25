@@ -37,12 +37,17 @@ namespace QuanLySoTietKiem.DAO
                 new object[] { Username, EncryptedOldPass, EncryptedNewPass });
         }
 
-        public bool insertAccount(string Username, string Password, string DisplayName = null, int Type = 1)
+        public bool insertAccount(string Username, string Password, int Type)
         {
             string EncryptedPass = Encrypt(Password);
-            if (DisplayName == null) DisplayName = Username;
-            int data = ExecuteQuery.Instance.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { DisplayName, Username, EncryptedPass, Type });
+            //if (DisplayName == null) DisplayName = Username;
+            int data = ExecuteQuery.Instance.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { Username, Username, EncryptedPass, Type });
             return data == 1;
+        }
+
+        public int getInfoAccount(string tendn)
+        {
+            return (int)ExecuteQuery.Instance.ExecuteScalar(String.Format("select Loai from DANGNHAP where TenDN = '{0}'", tendn));
         }
     }
 }

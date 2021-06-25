@@ -29,115 +29,116 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btTransaction = new System.Windows.Forms.Button();
+            this.btOpen = new System.Windows.Forms.Button();
+            this.btInfomation = new System.Windows.Forms.Button();
+            this.btCustomer = new System.Windows.Forms.Button();
+            this.btStaff = new System.Windows.Forms.Button();
+            this.btChange = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btAccount = new System.Windows.Forms.Button();
+            this.btReport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btTransaction
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(30, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "GIAO DỊCH";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.transaction_Click);
+            this.btTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btTransaction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btTransaction.FlatAppearance.BorderSize = 2;
+            this.btTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTransaction.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btTransaction.Location = new System.Drawing.Point(30, 48);
+            this.btTransaction.Name = "btTransaction";
+            this.btTransaction.Size = new System.Drawing.Size(128, 33);
+            this.btTransaction.TabIndex = 0;
+            this.btTransaction.Text = "GIAO DỊCH";
+            this.btTransaction.UseVisualStyleBackColor = false;
+            this.btTransaction.Click += new System.EventHandler(this.transaction_Click);
             // 
-            // button2
+            // btOpen
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(223, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 33);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "MỞ SỔ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btopen_Click);
+            this.btOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btOpen.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btOpen.FlatAppearance.BorderSize = 2;
+            this.btOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btOpen.Location = new System.Drawing.Point(223, 48);
+            this.btOpen.Name = "btOpen";
+            this.btOpen.Size = new System.Drawing.Size(128, 33);
+            this.btOpen.TabIndex = 1;
+            this.btOpen.Text = "MỞ SỔ";
+            this.btOpen.UseVisualStyleBackColor = false;
+            this.btOpen.Click += new System.EventHandler(this.btopen_Click);
             // 
-            // button3
+            // btInfomation
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(427, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "DANH SÁCH SỔ";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.btinformation_Click);
+            this.btInfomation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btInfomation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btInfomation.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btInfomation.FlatAppearance.BorderSize = 2;
+            this.btInfomation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btInfomation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btInfomation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInfomation.Location = new System.Drawing.Point(427, 48);
+            this.btInfomation.Name = "btInfomation";
+            this.btInfomation.Size = new System.Drawing.Size(128, 33);
+            this.btInfomation.TabIndex = 2;
+            this.btInfomation.Text = "DANH SÁCH SỔ";
+            this.btInfomation.UseVisualStyleBackColor = false;
+            this.btInfomation.Click += new System.EventHandler(this.btinformation_Click);
             // 
-            // button4
+            // btCustomer
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(621, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 33);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "KHÁCH HÀNG";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.btcustomer_Click);
+            this.btCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btCustomer.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btCustomer.FlatAppearance.BorderSize = 2;
+            this.btCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCustomer.Location = new System.Drawing.Point(621, 48);
+            this.btCustomer.Name = "btCustomer";
+            this.btCustomer.Size = new System.Drawing.Size(128, 33);
+            this.btCustomer.TabIndex = 3;
+            this.btCustomer.Text = "KHÁCH HÀNG";
+            this.btCustomer.UseVisualStyleBackColor = false;
+            this.btCustomer.Click += new System.EventHandler(this.btcustomer_Click);
             // 
-            // button5
+            // btStaff
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(802, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 33);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "NHÂN VIÊN";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.btstaff_Click);
+            this.btStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btStaff.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btStaff.FlatAppearance.BorderSize = 2;
+            this.btStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btStaff.Location = new System.Drawing.Point(802, 48);
+            this.btStaff.Name = "btStaff";
+            this.btStaff.Size = new System.Drawing.Size(128, 33);
+            this.btStaff.TabIndex = 4;
+            this.btStaff.Text = "NHÂN VIÊN";
+            this.btStaff.UseVisualStyleBackColor = false;
+            this.btStaff.Click += new System.EventHandler(this.btstaff_Click);
             // 
-            // button6
+            // btChange
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(427, 140);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 33);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "THAY ĐỔI";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.btchange_Click);
+            this.btChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btChange.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btChange.FlatAppearance.BorderSize = 2;
+            this.btChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btChange.Location = new System.Drawing.Point(427, 140);
+            this.btChange.Name = "btChange";
+            this.btChange.Size = new System.Drawing.Size(128, 33);
+            this.btChange.TabIndex = 5;
+            this.btChange.Text = "THAY ĐỔI";
+            this.btChange.UseVisualStyleBackColor = false;
+            this.btChange.Click += new System.EventHandler(this.btchange_Click);
             // 
             // button9
             // 
@@ -155,55 +156,56 @@ namespace QuanLySoTietKiem
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // button7
+            // btAccount
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.FlatAppearance.BorderSize = 2;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(621, 140);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(128, 33);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "TÀI KHOẢN";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.btaccount_Click);
+            this.btAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btAccount.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btAccount.FlatAppearance.BorderSize = 2;
+            this.btAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAccount.Location = new System.Drawing.Point(621, 140);
+            this.btAccount.Name = "btAccount";
+            this.btAccount.Size = new System.Drawing.Size(128, 33);
+            this.btAccount.TabIndex = 8;
+            this.btAccount.Text = "TÀI KHOẢN";
+            this.btAccount.UseVisualStyleBackColor = false;
+            this.btAccount.Click += new System.EventHandler(this.btaccount_Click);
             // 
-            // button8
+            // btReport
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.FlatAppearance.BorderSize = 2;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(802, 140);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(128, 33);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "BÁO CÁO";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.btreport_Click_1);
+            this.btReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btReport.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btReport.FlatAppearance.BorderSize = 2;
+            this.btReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btReport.Location = new System.Drawing.Point(802, 140);
+            this.btReport.Name = "btReport";
+            this.btReport.Size = new System.Drawing.Size(128, 33);
+            this.btReport.TabIndex = 9;
+            this.btReport.Text = "BÁO CÁO";
+            this.btReport.UseVisualStyleBackColor = false;
+            this.btReport.Click += new System.EventHandler(this.btreport_Click_1);
             // 
             // fmanage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.text;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(959, 528);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btReport);
+            this.Controls.Add(this.btAccount);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btChange);
+            this.Controls.Add(this.btStaff);
+            this.Controls.Add(this.btCustomer);
+            this.Controls.Add(this.btInfomation);
+            this.Controls.Add(this.btOpen);
+            this.Controls.Add(this.btTransaction);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -218,14 +220,14 @@ namespace QuanLySoTietKiem
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btTransaction;
+        private System.Windows.Forms.Button btOpen;
+        private System.Windows.Forms.Button btInfomation;
+        private System.Windows.Forms.Button btCustomer;
+        private System.Windows.Forms.Button btStaff;
+        private System.Windows.Forms.Button btChange;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btAccount;
+        private System.Windows.Forms.Button btReport;
     }
 }

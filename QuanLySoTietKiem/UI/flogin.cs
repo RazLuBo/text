@@ -53,7 +53,8 @@ namespace QuanLySoTietKiem
                 {
                     LoginButton.Focus();
                     StatusLabel.Text = "Đang đăng nhập...";
-                    fmanage f = new fmanage();
+                    int LoaiTk = DAO.Account.Instance.getInfoAccount(tbUsername.Text);
+                    fmanage f = new fmanage(LoaiTk);
                     this.Hide();
                     f.ShowDialog();
                     StatusLabel.Text = "";

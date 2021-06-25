@@ -20,10 +20,22 @@ namespace QuanLySoTietKiem
         fchange change;
         faccount account;
         freport report;
-
-        public fmanage()
+        //public int LoaiTk;
+        
+        public fmanage(int LoaiTk)
         {
             InitializeComponent();
+            switch (LoaiTk)
+            {
+                case 1: // Nhân viên
+                    btChange.Enabled = false;
+                    btAccount.Enabled = false;
+                    btStaff.Enabled = false;
+                    break;
+                case 2: // Giám đốc
+                    btAccount.Enabled = false;
+                    break;
+            }
         }
 
 
