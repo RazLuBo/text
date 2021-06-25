@@ -42,15 +42,22 @@ namespace QuanLySoTietKiem
         {
             if (!CheckInput(tbMaKH_G.Text, tbMaSo_G.Text, tbTienGui.Text))
                 return;
-            if (DAO.GuiTienDAO.Instance.insertGoiTien(tbMaNV_G.Text, tbMaKH_G.Text, tbMaSo_G.Text, DateTime.Today, Convert.ToDouble(tbTienGui.Text)))
+            Double tiengoi;
+            if (Double.TryParse(tbTienGui.Text, out tiengoi))
             {
-                StatusLabel_G.Text = "";
-                if (guiTien != null)
-                    guiTien(this, new EventArgs());
-            }
-            else
-            {
-                StatusLabel_G.Text = "Error";
+                if(tiengoi > 100000)
+                {
+                    if (DAO.GuiTienDAO.Instance.insertGoiTien(tbMaNV_G.Text, tbMaKH_G.Text, tbMaSo_G.Text, DateTime.Today, tiengoi))
+                    {
+                        StatusLabel_G.Text = "";
+                        if (guiTien != null)
+                            guiTien(this, new EventArgs());
+                    }
+                    else
+                    {
+                        StatusLabel_G.Text = "Error";
+                    }
+                }
             }
         }
 

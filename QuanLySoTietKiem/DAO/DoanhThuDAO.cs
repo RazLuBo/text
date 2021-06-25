@@ -15,7 +15,7 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertDoanhThu(string loai, DateTime day)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertDoanhThu @loaiSo , @ngay", new object[] { loai, day }) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into DOANHTHU (LoaiSo, TongThu, TongChi, ChenhLechThuChi, SoMo, SoDong, ChenhLechSoMD, Ngay)values (N'{0}', 0, 0, 0, 0, 0, 0, '{1}')", loai, day)) > 0;
         }
 
         public int GetIdNewLS()
@@ -23,10 +23,10 @@ namespace QuanLySoTietKiem.DAO
             return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaLS) FROM [dbo].[DOANHTHU]");
         }
 
-        public bool CheckDoanhThu(string id)
+        public bool CheckDoanhThu(string loaiso, DateTime date)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
-            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from DOANHTHU where MaLS = @maLS", new object[] { id }) == 1;
+            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from DOANHTHU where LoaiSo = @loaiso and Ngay = @ngay", new object[] { loaiso, date }) == 1;
         }
 
         public DataTable GetDoanhThuNgay(DateTime day)
@@ -36,7 +36,7 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetDoanhThuThang(DateTime dt)
         {
-            return ExecuteQuery.Instance.ExecuteReader(string.Format("select * from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1}", dt.Month, dt.Year));
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select MaLS [Mã loại sổ], LoaiSo [Loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], ChenhLechThuChi [Chênh lệch thu chi], SoMo [Sổ mở], SoDong [Sổ đóng], ChenhLechSoMD [Chênh lệch sổ] from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1}", dt.Month, dt.Year));
         }
 
         public DataTable GetDoanhThuThangLoaiSo(DateTime dt, string idLS)

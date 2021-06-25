@@ -48,22 +48,25 @@ namespace QuanLySoTietKiem
             this.tbCmnd = new System.Windows.Forms.TextBox();
             this.KHbutton4 = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbSdt
             // 
-            this.tbSdt.Location = new System.Drawing.Point(582, 134);
+            this.tbSdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSdt.Location = new System.Drawing.Point(964, 134);
             this.tbSdt.Name = "tbSdt";
             this.tbSdt.Size = new System.Drawing.Size(139, 22);
             this.tbSdt.TabIndex = 29;
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(421, 134);
+            this.label6.Location = new System.Drawing.Point(803, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 22);
             this.label6.TabIndex = 28;
@@ -71,8 +74,9 @@ namespace QuanLySoTietKiem
             // 
             // KHSbutton3
             // 
+            this.KHSbutton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.KHSbutton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KHSbutton3.Location = new System.Drawing.Point(536, 272);
+            this.KHSbutton3.Location = new System.Drawing.Point(918, 272);
             this.KHSbutton3.Name = "KHSbutton3";
             this.KHSbutton3.Size = new System.Drawing.Size(112, 30);
             this.KHSbutton3.TabIndex = 27;
@@ -82,8 +86,9 @@ namespace QuanLySoTietKiem
             // 
             // btModify
             // 
+            this.btModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btModify.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModify.Location = new System.Drawing.Point(399, 273);
+            this.btModify.Location = new System.Drawing.Point(781, 273);
             this.btModify.Name = "btModify";
             this.btModify.Size = new System.Drawing.Size(112, 30);
             this.btModify.TabIndex = 26;
@@ -93,7 +98,8 @@ namespace QuanLySoTietKiem
             // 
             // tbSodu
             // 
-            this.tbSodu.Location = new System.Drawing.Point(582, 190);
+            this.tbSodu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSodu.Location = new System.Drawing.Point(964, 190);
             this.tbSodu.Name = "tbSodu";
             this.tbSodu.ReadOnly = true;
             this.tbSodu.Size = new System.Drawing.Size(139, 22);
@@ -102,10 +108,11 @@ namespace QuanLySoTietKiem
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(421, 190);
+            this.label5.Location = new System.Drawing.Point(803, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 22);
             this.label5.TabIndex = 24;
@@ -190,13 +197,16 @@ namespace QuanLySoTietKiem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 318);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 247);
             this.dataGridView1.TabIndex = 15;
             // 
             // label7
@@ -219,8 +229,9 @@ namespace QuanLySoTietKiem
             // 
             // KHbutton4
             // 
+            this.KHbutton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.KHbutton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KHbutton4.Location = new System.Drawing.Point(666, 272);
+            this.KHbutton4.Location = new System.Drawing.Point(1048, 272);
             this.KHbutton4.Name = "KHbutton4";
             this.KHbutton4.Size = new System.Drawing.Size(112, 30);
             this.KHbutton4.TabIndex = 32;
@@ -235,13 +246,26 @@ namespace QuanLySoTietKiem
             this.tbSearch.Size = new System.Drawing.Size(208, 22);
             this.tbSearch.TabIndex = 33;
             // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(647, 273);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(112, 30);
+            this.btAdd.TabIndex = 34;
+            this.btAdd.Text = "Thêm";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
             // fcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 568);
+            this.ClientSize = new System.Drawing.Size(1182, 568);
+            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.KHbutton4);
             this.Controls.Add(this.tbCmnd);
@@ -292,5 +316,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.TextBox tbCmnd;
         private System.Windows.Forms.Button KHbutton4;
         private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btAdd;
     }
 }

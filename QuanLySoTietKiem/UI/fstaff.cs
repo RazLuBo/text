@@ -43,11 +43,11 @@ namespace QuanLySoTietKiem
 
         private void AddBindingData()
         {
-            tbCmnd.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "CMNN_or_HoChieu", true, DataSourceUpdateMode.Never));
-            tbDiaChi.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
-            tbSdt.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "SDT", true, DataSourceUpdateMode.Never));
-            tbTenNV.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "HoTen", true, DataSourceUpdateMode.Never));
-            tbID.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MaNV", true, DataSourceUpdateMode.Never));
+            tbCmnd.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "CMND", true, DataSourceUpdateMode.Never));
+            tbDiaChi.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never));
+            tbSdt.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Số điện thoại", true, DataSourceUpdateMode.Never));
+            tbTenNV.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Họ tên", true, DataSourceUpdateMode.Never));
+            tbID.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã nhân viên", true, DataSourceUpdateMode.Never));
         }
 
         private void btAdd_Click(object sender, EventArgs e)

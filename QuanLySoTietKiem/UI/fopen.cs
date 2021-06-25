@@ -35,13 +35,17 @@ namespace QuanLySoTietKiem
             else
                 idCus = Convert.ToInt32(tbMaKH.Text);
 
-            if (!DAO.DoanhThuDAO.Instance.CheckDoanhThu(idLS))
+            if (!DAO.DoanhThuDAO.Instance.CheckDoanhThu(idLS, dtMoSo.Value))
             {
                 DAO.DoanhThuDAO.Instance.insertDoanhThu(cbLoaiSo.SelectedItem.ToString(), dtMoSo.Value);
                 idLS = DAO.DoanhThuDAO.Instance.GetIdNewLS().ToString();
             }
 
-            if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(tbMaNV.Text, idCus.ToString(), idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
+            DataRowView rowView = (DataRowView)cbListNV.SelectedItem;
+
+            DTO.Staff staff = new DTO.Staff(rowView.Row);
+
+            if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID, idCus.ToString(), idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
             {
                 this.Close();
             }
@@ -88,12 +92,15 @@ namespace QuanLySoTietKiem
         {
             if(tbMaKH.Text != "")
             {
-                DTO.Customer customer = new DTO.Customer(DAO.CustomerDAO.Instance.GetCustomerInfo(tbMaKH.Text).Rows[0]);
-                tbTenKH.Text = customer.HoTen;
-                tbSdt.Text = customer.SDT;
-                tbDiaChi.Text = customer.DiaChi;
-                tbCmnd.Text = customer.Cmnd;
-                tbMaNV.Focus();
+                if(DAO.CustomerDAO.Instance.GetCustomerInfo(tbMaKH.Text) != null)
+                {
+                    DTO.Customer customer = new DTO.Customer(DAO.CustomerDAO.Instance.GetCustomerInfo(tbMaKH.Text).Rows[0]);
+                    tbTenKH.Text = customer.HoTen;
+                    tbSdt.Text = customer.SDT;
+                    tbDiaChi.Text = customer.DiaChi;
+                    tbCmnd.Text = customer.Cmnd;
+                    cbListNV.Focus();
+                }
             }
         }
 
@@ -107,10 +114,10 @@ namespace QuanLySoTietKiem
 
         private void tbMaNV_Leave(object sender, EventArgs e)
         {
-            if(tbMaNV.Text != "")
+            if(cbListNV.SelectedText != "")
             {
-                DTO.Staff staff = new DTO.Staff(DAO.StaffDAO.Instance.GetStaffInfor(tbMaNV.Text).Rows[0]);
-                tbTenNV.Text = staff.HoTen;
+                DTO.Staff staff = new DTO.Staff(DAO.StaffDAO.Instance.GetStaffInfor(cbListNV.SelectedText).Rows[0]);
+                cbTenNV.SelectedText = staff.HoTen;
             }
         }
 
@@ -120,6 +127,28 @@ namespace QuanLySoTietKiem
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void fopen_Load(object sender, EventArgs e)
+        {
+            cbListNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
+            cbListNV.DisplayMember = "MaNV";
+            cbTenNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
+            cbTenNV.DisplayMember = "HoTen";
+        }
+
+        private void cbListNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbTenNV.DataSource != null)
+                if(cbListNV.SelectedIndex != -1)
+                    cbTenNV.SelectedIndex = cbListNV.SelectedIndex;
+        }
+
+        private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbListNV.DataSource != null)
+                if (cbTenNV.SelectedIndex != -1)
+                    cbListNV.SelectedIndex = cbTenNV.SelectedIndex;
         }
     }
 }

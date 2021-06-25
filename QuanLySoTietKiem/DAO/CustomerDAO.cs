@@ -15,12 +15,12 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertCustomer(string hoten, string diachi, string sdt, string cmnd, double sodu)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertCustomer @hoTen , @diaChi , @sDT , @cmnd , @soDu", new object[] { hoten, diachi, sdt, cmnd, sodu }) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into KHACHHANG(HoTen, DiaChi, SDT, CMNN_or_HoChieu, SoDu)values(N'{0}', N'{1}', '{2}', '{3}', '{4}')",hoten, diachi, sdt, cmnd, sodu)) > 0;
         }
 
         public bool UpdateCustomer(string HoTen, string DiaChi, string SDT, string Cmnd, int MaKH)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update KHACHHANG set HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMNN_or_HoChieu = '{3}' where MaKH = {4}", HoTen, DiaChi, SDT, Cmnd, MaKH)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update KHACHHANG set HoTen = N'{0}', DiaChi = N'{1}', SDT = '{2}', CMNN_or_HoChieu = '{3}' where MaKH = {4}", HoTen, DiaChi, SDT, Cmnd, MaKH)) > 0;
         }
 
         public int GetIdNewCustomer()
@@ -47,7 +47,7 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetAllCustomerInfo()
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from KHACHHANG");
+            return ExecuteQuery.Instance.ExecuteReader("select MaKH [Mã Khách hàng], HoTen [Họ tên], DiaChi [Địa chỉ], SDT [Số điện thoại], CMNN_or_HoChieu [CMND], SoDu [Số dư] from KHACHHANG");
         }
     }
 }

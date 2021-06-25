@@ -32,8 +32,6 @@ namespace QuanLySoTietKiem
             this.btExit = new System.Windows.Forms.Button();
             this.MSbutton2 = new System.Windows.Forms.Button();
             this.btMoSo = new System.Windows.Forms.Button();
-            this.tbMaNV = new System.Windows.Forms.TextBox();
-            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tbTienGoi = new System.Windows.Forms.TextBox();
@@ -61,6 +59,8 @@ namespace QuanLySoTietKiem
             this.StatusLabel = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.cbListNV = new System.Windows.Forms.ComboBox();
+            this.cbTenNV = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btExit
@@ -95,22 +95,6 @@ namespace QuanLySoTietKiem
             this.btMoSo.Text = "Mở Sổ";
             this.btMoSo.UseVisualStyleBackColor = true;
             this.btMoSo.Click += new System.EventHandler(this.btMoSo_Click);
-            // 
-            // tbMaNV
-            // 
-            this.tbMaNV.Location = new System.Drawing.Point(591, 237);
-            this.tbMaNV.Name = "tbMaNV";
-            this.tbMaNV.Size = new System.Drawing.Size(113, 22);
-            this.tbMaNV.TabIndex = 7;
-            this.tbMaNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbMaNV_KeyDown);
-            this.tbMaNV.Leave += new System.EventHandler(this.tbMaNV_Leave);
-            // 
-            // tbTenNV
-            // 
-            this.tbTenNV.Location = new System.Drawing.Point(591, 290);
-            this.tbTenNV.Name = "tbTenNV";
-            this.tbTenNV.Size = new System.Drawing.Size(214, 22);
-            this.tbTenNV.TabIndex = 8;
             // 
             // label12
             // 
@@ -377,13 +361,34 @@ namespace QuanLySoTietKiem
             this.label17.TabIndex = 46;
             this.label17.Text = "SĐT:";
             // 
+            // cbListNV
+            // 
+            this.cbListNV.FormattingEnabled = true;
+            this.cbListNV.Location = new System.Drawing.Point(591, 238);
+            this.cbListNV.Name = "cbListNV";
+            this.cbListNV.Size = new System.Drawing.Size(121, 24);
+            this.cbListNV.TabIndex = 47;
+            this.cbListNV.SelectedIndexChanged += new System.EventHandler(this.cbListNV_SelectedIndexChanged);
+            // 
+            // cbTenNV
+            // 
+            this.cbTenNV.FormattingEnabled = true;
+            this.cbTenNV.Location = new System.Drawing.Point(591, 294);
+            this.cbTenNV.Name = "cbTenNV";
+            this.cbTenNV.Size = new System.Drawing.Size(214, 24);
+            this.cbTenNV.TabIndex = 48;
+            this.cbTenNV.SelectedIndexChanged += new System.EventHandler(this.cbTenNV_SelectedIndexChanged);
+            // 
             // fopen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 594);
+            this.Controls.Add(this.cbTenNV);
+            this.Controls.Add(this.cbListNV);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.StatusLabel);
@@ -394,12 +399,10 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btExit);
-            this.Controls.Add(this.tbMaNV);
             this.Controls.Add(this.MSbutton2);
             this.Controls.Add(this.tbDiaChi);
             this.Controls.Add(this.btMoSo);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.tbTenNV);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tbCmnd);
@@ -416,9 +419,11 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label2);
             this.Controls.Add(this.MStextBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "fopen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MỞ SỔ";
+            this.Load += new System.EventHandler(this.fopen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,8 +433,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button MSbutton2;
         private System.Windows.Forms.Button btMoSo;
-        private System.Windows.Forms.TextBox tbMaNV;
-        private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbTienGoi;
@@ -457,5 +460,7 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbListNV;
+        private System.Windows.Forms.ComboBox cbTenNV;
     }
 }

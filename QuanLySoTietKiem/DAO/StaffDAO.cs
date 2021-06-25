@@ -22,12 +22,12 @@ namespace QuanLySoTietKiem.DAO
 
         public bool InsertStaff(string hoten, string diachi, string sdt, string cmnd)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertStaff @hoTen , @diaChi , @sDT , @cmnd", new object[] {hoten, diachi, sdt, cmnd }) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into NHANVIEN(HoTen, DiaChi, SDT, CMNN_or_HoChieu, LamViec)values (N'{0}', N'{1}', '{2}', '{3}', 1)", hoten, diachi, sdt, cmnd)) > 0;
         }
 
         public DataTable ListNhanVien()
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from NHANVIEN where LamViec = 1");
+            return ExecuteQuery.Instance.ExecuteReader("select MaNV [Mã nhân viên], HoTen [Họ tên], DiaChi [Địa chỉ], SDT [Số điện thoại], CMNN_or_HoChieu [CMND] from NHANVIEN where LamViec = 1");
         }
 
         public bool DeleteStaff(string id)

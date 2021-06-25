@@ -51,13 +51,16 @@ namespace QuanLySoTietKiem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 313);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 284);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -140,10 +143,11 @@ namespace QuanLySoTietKiem
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(421, 183);
+            this.label5.Location = new System.Drawing.Point(803, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 22);
             this.label5.TabIndex = 9;
@@ -151,7 +155,8 @@ namespace QuanLySoTietKiem
             // 
             // tbSoDu
             // 
-            this.tbSoDu.Location = new System.Drawing.Point(582, 183);
+            this.tbSoDu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSoDu.Location = new System.Drawing.Point(964, 183);
             this.tbSoDu.Name = "tbSoDu";
             this.tbSoDu.ReadOnly = true;
             this.tbSoDu.Size = new System.Drawing.Size(139, 22);
@@ -159,8 +164,9 @@ namespace QuanLySoTietKiem
             // 
             // TTSbutton2
             // 
+            this.TTSbutton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TTSbutton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton2.Location = new System.Drawing.Point(373, 265);
+            this.TTSbutton2.Location = new System.Drawing.Point(755, 265);
             this.TTSbutton2.Name = "TTSbutton2";
             this.TTSbutton2.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton2.TabIndex = 11;
@@ -169,8 +175,9 @@ namespace QuanLySoTietKiem
             // 
             // TTSbutton3
             // 
+            this.TTSbutton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TTSbutton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton3.Location = new System.Drawing.Point(511, 266);
+            this.TTSbutton3.Location = new System.Drawing.Point(893, 266);
             this.TTSbutton3.Name = "TTSbutton3";
             this.TTSbutton3.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton3.TabIndex = 12;
@@ -180,10 +187,11 @@ namespace QuanLySoTietKiem
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(421, 121);
+            this.label6.Location = new System.Drawing.Point(803, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 22);
             this.label6.TabIndex = 13;
@@ -191,15 +199,17 @@ namespace QuanLySoTietKiem
             // 
             // tbTenNV
             // 
-            this.tbTenNV.Location = new System.Drawing.Point(582, 121);
+            this.tbTenNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTenNV.Location = new System.Drawing.Point(964, 121);
             this.tbTenNV.Name = "tbTenNV";
             this.tbTenNV.Size = new System.Drawing.Size(139, 22);
             this.tbTenNV.TabIndex = 14;
             // 
             // TTSbutton4
             // 
+            this.TTSbutton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TTSbutton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TTSbutton4.Location = new System.Drawing.Point(646, 265);
+            this.TTSbutton4.Location = new System.Drawing.Point(1028, 265);
             this.TTSbutton4.Name = "TTSbutton4";
             this.TTSbutton4.Size = new System.Drawing.Size(112, 30);
             this.TTSbutton4.TabIndex = 15;
@@ -220,7 +230,7 @@ namespace QuanLySoTietKiem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(1182, 600);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.TTSbutton4);
             this.Controls.Add(this.tbTenNV);

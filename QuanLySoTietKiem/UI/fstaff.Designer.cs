@@ -91,8 +91,9 @@ namespace QuanLySoTietKiem
             // 
             // btRemove
             // 
+            this.btRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btRemove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemove.Location = new System.Drawing.Point(531, 266);
+            this.btRemove.Location = new System.Drawing.Point(913, 266);
             this.btRemove.Name = "btRemove";
             this.btRemove.Size = new System.Drawing.Size(112, 30);
             this.btRemove.TabIndex = 44;
@@ -102,8 +103,9 @@ namespace QuanLySoTietKiem
             // 
             // btModify
             // 
+            this.btModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btModify.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModify.Location = new System.Drawing.Point(398, 266);
+            this.btModify.Location = new System.Drawing.Point(780, 266);
             this.btModify.Name = "btModify";
             this.btModify.Size = new System.Drawing.Size(112, 30);
             this.btModify.TabIndex = 43;
@@ -191,19 +193,23 @@ namespace QuanLySoTietKiem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 314);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 247);
             this.dataGridView1.TabIndex = 32;
             // 
             // btExit
             // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.Location = new System.Drawing.Point(666, 266);
+            this.btExit.Location = new System.Drawing.Point(1048, 266);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(112, 30);
             this.btExit.TabIndex = 49;
@@ -213,8 +219,9 @@ namespace QuanLySoTietKiem
             // 
             // btAdd
             // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(259, 266);
+            this.btAdd.Location = new System.Drawing.Point(641, 266);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(112, 30);
             this.btAdd.TabIndex = 50;
@@ -251,7 +258,7 @@ namespace QuanLySoTietKiem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 563);
+            this.ClientSize = new System.Drawing.Size(1182, 563);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.btAdd);

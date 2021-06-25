@@ -44,6 +44,8 @@ namespace QuanLySoTietKiem
             this.MSbutton3 = new System.Windows.Forms.Button();
             this.GDtabControl = new System.Windows.Forms.TabControl();
             this.GTtabPage1 = new System.Windows.Forms.TabPage();
+            this.tbDay_G = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.StatusLabel_G = new System.Windows.Forms.Label();
             this.tbMaKH_G = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@ namespace QuanLySoTietKiem
             this.label17 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.StatusLabel_R = new System.Windows.Forms.Label();
-            this.tbDay_G = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.GDtabControl.SuspendLayout();
             this.GTtabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -245,6 +245,24 @@ namespace QuanLySoTietKiem
             this.GTtabPage1.TabIndex = 0;
             this.GTtabPage1.Text = "Gởi Tiền";
             this.GTtabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbDay_G
+            // 
+            this.tbDay_G.AutoSize = true;
+            this.tbDay_G.Location = new System.Drawing.Point(420, 58);
+            this.tbDay_G.Name = "tbDay_G";
+            this.tbDay_G.Size = new System.Drawing.Size(0, 23);
+            this.tbDay_G.TabIndex = 65;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(319, 54);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(93, 22);
+            this.label23.TabIndex = 64;
+            this.label23.Text = "Ngày Gửi:";
             // 
             // StatusLabel_G
             // 
@@ -643,28 +661,11 @@ namespace QuanLySoTietKiem
             this.StatusLabel_R.Size = new System.Drawing.Size(0, 22);
             this.StatusLabel_R.TabIndex = 49;
             // 
-            // tbDay_G
-            // 
-            this.tbDay_G.AutoSize = true;
-            this.tbDay_G.Location = new System.Drawing.Point(420, 58);
-            this.tbDay_G.Name = "tbDay_G";
-            this.tbDay_G.Size = new System.Drawing.Size(0, 23);
-            this.tbDay_G.TabIndex = 65;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(319, 54);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(93, 22);
-            this.label23.TabIndex = 64;
-            this.label23.Text = "Ngày Gửi:";
-            // 
             // ftransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 573);

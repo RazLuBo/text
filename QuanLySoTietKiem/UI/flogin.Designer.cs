@@ -47,6 +47,7 @@ namespace QuanLySoTietKiem
             // 
             // DangNhap
             // 
+            this.DangNhap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.DangNhap.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.text;
             this.DangNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DangNhap.Controls.Add(this.StatusLabel);

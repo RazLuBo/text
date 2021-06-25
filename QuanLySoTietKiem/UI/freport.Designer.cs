@@ -62,7 +62,7 @@ namespace QuanLySoTietKiem
             this.tabControl1.Location = new System.Drawing.Point(-4, -3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 453);
+            this.tabControl1.Size = new System.Drawing.Size(1191, 453);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -152,7 +152,7 @@ namespace QuanLySoTietKiem
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 417);
+            this.tabPage2.Size = new System.Drawing.Size(1183, 417);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "THÁNG";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace QuanLySoTietKiem
             // 
             this.BCTbutton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BCTbutton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCTbutton2.Location = new System.Drawing.Point(666, 96);
+            this.BCTbutton2.Location = new System.Drawing.Point(1048, 96);
             this.BCTbutton2.Name = "BCTbutton2";
             this.BCTbutton2.Size = new System.Drawing.Size(122, 33);
             this.BCTbutton2.TabIndex = 9;
@@ -194,7 +194,7 @@ namespace QuanLySoTietKiem
             // BCTbutton1
             // 
             this.BCTbutton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BCTbutton1.Location = new System.Drawing.Point(490, 96);
+            this.BCTbutton1.Location = new System.Drawing.Point(872, 96);
             this.BCTbutton1.Name = "BCTbutton1";
             this.BCTbutton1.Size = new System.Drawing.Size(122, 33);
             this.BCTbutton1.TabIndex = 8;
@@ -232,7 +232,7 @@ namespace QuanLySoTietKiem
             this.dataMonth.ReadOnly = true;
             this.dataMonth.RowHeadersWidth = 51;
             this.dataMonth.RowTemplate.Height = 24;
-            this.dataMonth.Size = new System.Drawing.Size(801, 264);
+            this.dataMonth.Size = new System.Drawing.Size(1183, 264);
             this.dataMonth.TabIndex = 0;
             // 
             // freport
@@ -241,7 +241,7 @@ namespace QuanLySoTietKiem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1182, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "freport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

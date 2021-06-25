@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,14 +11,14 @@ namespace QuanLySoTietKiem.DAO
 {
     public class ExecuteQuery
     {
+        private string connectionSTR = ConnectionString.Instance.connectionString; //ConfigurationManager.ConnectionStrings["QuanLySTK"].ToString();
         private static ExecuteQuery instance;
-
         public static ExecuteQuery Instance { get { if (instance == null) instance = new ExecuteQuery(); return instance; } set => instance = value; }
 
         public DataTable ExecuteReader(string Query, object[] ParamList = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(Query, connection);
@@ -29,7 +30,7 @@ namespace QuanLySoTietKiem.DAO
         }
         public int ExecuteNoneQuery(string Query, object[] ParamList = null)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(Query, connection);
@@ -40,7 +41,7 @@ namespace QuanLySoTietKiem.DAO
         public object ExecuteScalar(string Query, object[] ParamList = null)
         {
             object data = new object();
-            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(Query, connection);
