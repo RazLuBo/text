@@ -41,17 +41,27 @@ namespace QuanLySoTietKiem
                 idLS = DAO.DoanhThuDAO.Instance.GetIdNewLS().ToString();
             }
 
-            DataRowView rowView = (DataRowView)cbListNV.SelectedItem;
+            DataRowView rowView = (DataRowView)cbIdNV.SelectedItem;
 
             DTO.Staff staff = new DTO.Staff(rowView.Row);
-
-            if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID, idCus.ToString(), idLS, dtMoSo.Value, dtHetHan.Value, Convert.ToDouble(tbTienGoi.Text), cbLoaiSo.SelectedItem.ToString()))
+            Double tiengoi;
+            if(Double.TryParse(tbTienGoi.Text, out tiengoi))
             {
-                this.Close();
-            }
-            else
-            {
-                StatusLabel.Text = "Error";
+                if(tiengoi > 1000000)
+                {
+                    if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID, idCus.ToString(), idLS, dtMoSo.Value, dtHetHan.Value, tiengoi, cbLoaiSo.SelectedItem.ToString()))
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        StatusLabel.Text = "Error";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tiền gửi tối thiểu là 1000000");
+                }
             }
         }
 
@@ -99,7 +109,7 @@ namespace QuanLySoTietKiem
                     tbSdt.Text = customer.SDT;
                     tbDiaChi.Text = customer.DiaChi;
                     tbCmnd.Text = customer.Cmnd;
-                    cbListNV.Focus();
+                    cbIdNV.Focus();
                 }
             }
         }
@@ -114,9 +124,9 @@ namespace QuanLySoTietKiem
 
         private void tbMaNV_Leave(object sender, EventArgs e)
         {
-            if(cbListNV.SelectedText != "")
+            if(cbIdNV.SelectedText != "")
             {
-                DTO.Staff staff = new DTO.Staff(DAO.StaffDAO.Instance.GetStaffInfor(cbListNV.SelectedText).Rows[0]);
+                DTO.Staff staff = new DTO.Staff(DAO.StaffDAO.Instance.GetStaffInfor(cbIdNV.SelectedText).Rows[0]);
                 cbTenNV.SelectedText = staff.HoTen;
             }
         }
@@ -131,24 +141,24 @@ namespace QuanLySoTietKiem
 
         private void fopen_Load(object sender, EventArgs e)
         {
-            cbListNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbListNV.DisplayMember = "MaNV";
+            cbIdNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
+            cbIdNV.DisplayMember = "Mã nhân viên";
             cbTenNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbTenNV.DisplayMember = "HoTen";
+            cbTenNV.DisplayMember = "Họ tên";
         }
 
         private void cbListNV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbTenNV.DataSource != null)
-                if(cbListNV.SelectedIndex != -1)
-                    cbTenNV.SelectedIndex = cbListNV.SelectedIndex;
+                if(cbIdNV.SelectedIndex != -1)
+                    cbTenNV.SelectedIndex = cbIdNV.SelectedIndex;
         }
 
         private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbListNV.DataSource != null)
+            if(cbIdNV.DataSource != null)
                 if (cbTenNV.SelectedIndex != -1)
-                    cbListNV.SelectedIndex = cbTenNV.SelectedIndex;
+                    cbIdNV.SelectedIndex = cbTenNV.SelectedIndex;
         }
     }
 }

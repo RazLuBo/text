@@ -31,7 +31,7 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetDoanhThuNgay(DateTime day)
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from DOANHTHU where DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
+            return ExecuteQuery.Instance.ExecuteReader("select MaLS [Mã loại sổ], LoaiSo [Loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], ChenhLechThuChi [Chênh lệch thu chi], SoMo [Sổ mở], SoDong [Sổ đóng], ChenhLechSoMD [Chênh lệch sổ] from DOANHTHU where DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
         }
 
         public DataTable GetDoanhThuThang(DateTime dt)

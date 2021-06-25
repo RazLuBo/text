@@ -55,9 +55,9 @@ namespace QuanLySoTietKiem
             this.btNhapLai_G = new System.Windows.Forms.Button();
             this.btGuiTien = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbMaNV_G = new System.Windows.Forms.TextBox();
-            this.tbTenNV_G = new System.Windows.Forms.TextBox();
+            this.cbTenNV = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.cbIdNV = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tbTenKH_G = new System.Windows.Forms.TextBox();
             this.tbTienGui = new System.Windows.Forms.TextBox();
@@ -75,8 +75,8 @@ namespace QuanLySoTietKiem
             this.btNhapLai_R = new System.Windows.Forms.Button();
             this.btRutTien = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbMaNV_R = new System.Windows.Forms.TextBox();
-            this.tbTenNV_R = new System.Windows.Forms.TextBox();
+            this.cbTenNV2 = new System.Windows.Forms.ComboBox();
+            this.cbIdNV2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbTenKH_R = new System.Windows.Forms.TextBox();
@@ -279,6 +279,7 @@ namespace QuanLySoTietKiem
             this.tbMaKH_G.Name = "tbMaKH_G";
             this.tbMaKH_G.Size = new System.Drawing.Size(113, 30);
             this.tbMaKH_G.TabIndex = 35;
+            this.tbMaKH_G.TextChanged += new System.EventHandler(this.tbMaKH_G_TextChanged);
             // 
             // label3
             // 
@@ -346,28 +347,23 @@ namespace QuanLySoTietKiem
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tbMaNV_G);
-            this.panel4.Controls.Add(this.tbTenNV_G);
+            this.panel4.Controls.Add(this.cbTenNV);
             this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.cbIdNV);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Location = new System.Drawing.Point(374, 228);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(366, 122);
             this.panel4.TabIndex = 30;
             // 
-            // tbMaNV_G
+            // cbTenNV
             // 
-            this.tbMaNV_G.Location = new System.Drawing.Point(136, 23);
-            this.tbMaNV_G.Name = "tbMaNV_G";
-            this.tbMaNV_G.Size = new System.Drawing.Size(113, 30);
-            this.tbMaNV_G.TabIndex = 15;
-            // 
-            // tbTenNV_G
-            // 
-            this.tbTenNV_G.Location = new System.Drawing.Point(136, 73);
-            this.tbTenNV_G.Name = "tbTenNV_G";
-            this.tbTenNV_G.Size = new System.Drawing.Size(214, 30);
-            this.tbTenNV_G.TabIndex = 14;
+            this.cbTenNV.FormattingEnabled = true;
+            this.cbTenNV.Location = new System.Drawing.Point(106, 73);
+            this.cbTenNV.Name = "cbTenNV";
+            this.cbTenNV.Size = new System.Drawing.Size(214, 31);
+            this.cbTenNV.TabIndex = 67;
+            this.cbTenNV.SelectedIndexChanged += new System.EventHandler(this.cbTenNV_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -378,6 +374,15 @@ namespace QuanLySoTietKiem
             this.label19.Size = new System.Drawing.Size(81, 23);
             this.label19.TabIndex = 13;
             this.label19.Text = "Mã NV: ";
+            // 
+            // cbIdNV
+            // 
+            this.cbIdNV.FormattingEnabled = true;
+            this.cbIdNV.Location = new System.Drawing.Point(106, 24);
+            this.cbIdNV.Name = "cbIdNV";
+            this.cbIdNV.Size = new System.Drawing.Size(121, 31);
+            this.cbIdNV.TabIndex = 66;
+            this.cbIdNV.SelectedIndexChanged += new System.EventHandler(this.cbListNV_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -482,6 +487,7 @@ namespace QuanLySoTietKiem
             this.tbMaKH_R.Name = "tbMaKH_R";
             this.tbMaKH_R.Size = new System.Drawing.Size(113, 30);
             this.tbMaKH_R.TabIndex = 62;
+            this.tbMaKH_R.Leave += new System.EventHandler(this.tbMaKH_R_Leave);
             // 
             // label2
             // 
@@ -548,8 +554,8 @@ namespace QuanLySoTietKiem
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tbMaNV_R);
-            this.panel2.Controls.Add(this.tbTenNV_R);
+            this.panel2.Controls.Add(this.cbTenNV2);
+            this.panel2.Controls.Add(this.cbIdNV2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(373, 225);
@@ -557,19 +563,23 @@ namespace QuanLySoTietKiem
             this.panel2.Size = new System.Drawing.Size(366, 122);
             this.panel2.TabIndex = 57;
             // 
-            // tbMaNV_R
+            // cbTenNV2
             // 
-            this.tbMaNV_R.Location = new System.Drawing.Point(136, 23);
-            this.tbMaNV_R.Name = "tbMaNV_R";
-            this.tbMaNV_R.Size = new System.Drawing.Size(113, 30);
-            this.tbMaNV_R.TabIndex = 15;
+            this.cbTenNV2.FormattingEnabled = true;
+            this.cbTenNV2.Location = new System.Drawing.Point(117, 73);
+            this.cbTenNV2.Name = "cbTenNV2";
+            this.cbTenNV2.Size = new System.Drawing.Size(214, 31);
+            this.cbTenNV2.TabIndex = 69;
+            this.cbTenNV2.SelectedIndexChanged += new System.EventHandler(this.cbTenNV2_SelectedIndexChanged);
             // 
-            // tbTenNV_R
+            // cbIdNV2
             // 
-            this.tbTenNV_R.Location = new System.Drawing.Point(136, 73);
-            this.tbTenNV_R.Name = "tbTenNV_R";
-            this.tbTenNV_R.Size = new System.Drawing.Size(214, 30);
-            this.tbTenNV_R.TabIndex = 14;
+            this.cbIdNV2.FormattingEnabled = true;
+            this.cbIdNV2.Location = new System.Drawing.Point(117, 24);
+            this.cbIdNV2.Name = "cbIdNV2";
+            this.cbIdNV2.Size = new System.Drawing.Size(121, 31);
+            this.cbIdNV2.TabIndex = 68;
+            this.cbIdNV2.SelectedIndexChanged += new System.EventHandler(this.cbListNV2_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -673,6 +683,7 @@ namespace QuanLySoTietKiem
             this.Name = "ftransaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GIAO DỊCH";
+            this.Load += new System.EventHandler(this.ftransaction_Load);
             this.GDtabControl.ResumeLayout(false);
             this.GTtabPage1.ResumeLayout(false);
             this.GTtabPage1.PerformLayout();
@@ -715,8 +726,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Button btNhapLai_G;
         private System.Windows.Forms.Button btGuiTien;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox tbMaNV_G;
-        private System.Windows.Forms.TextBox tbTenNV_G;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbTenKH_G;
@@ -733,8 +742,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Button btNhapLai_R;
         private System.Windows.Forms.Button btRutTien;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbMaNV_R;
-        private System.Windows.Forms.TextBox tbTenNV_R;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbTenKH_R;
@@ -747,5 +754,9 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label tbDay_R;
         private System.Windows.Forms.Label tbDay_G;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cbTenNV;
+        private System.Windows.Forms.ComboBox cbIdNV;
+        private System.Windows.Forms.ComboBox cbTenNV2;
+        private System.Windows.Forms.ComboBox cbIdNV2;
     }
 }

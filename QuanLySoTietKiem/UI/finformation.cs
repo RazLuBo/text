@@ -12,6 +12,7 @@ namespace QuanLySoTietKiem
 {
     public partial class finformation : Form
     {
+        BindingSource listSTK = new BindingSource();
         public finformation()
         {
             InitializeComponent();
@@ -35,12 +36,23 @@ namespace QuanLySoTietKiem
 
         private void finformation_Load(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = listSTK;
             LoadSoTietKiem();
+            AddBindingData();
+        }
+
+        private void AddBindingData()
+        {
+            tbLoaiSo.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Loại sổ", true, DataSourceUpdateMode.Never));
+            tbMaSo.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã sổ", true, DataSourceUpdateMode.Never));
+            tbMaNV.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã nhân viên", true, DataSourceUpdateMode.Never));
+            tbSoDu.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Tiền gửi", true, DataSourceUpdateMode.Never));
+            tbMaKH.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.Never));
         }
 
         public void LoadSoTietKiem()
         {
-            dataGridView1.DataSource = DAO.SoTietKiemDAO.Instance.listSoTietKiem();
+            listSTK.DataSource = DAO.SoTietKiemDAO.Instance.listSoTietKiem();
         }
 
         private void TTSbutton1_Click(object sender, EventArgs e)

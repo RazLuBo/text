@@ -59,7 +59,7 @@ namespace QuanLySoTietKiem
             this.StatusLabel = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.cbListNV = new System.Windows.Forms.ComboBox();
+            this.cbIdNV = new System.Windows.Forms.ComboBox();
             this.cbTenNV = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -361,14 +361,14 @@ namespace QuanLySoTietKiem
             this.label17.TabIndex = 46;
             this.label17.Text = "SĐT:";
             // 
-            // cbListNV
+            // cbIdNV
             // 
-            this.cbListNV.FormattingEnabled = true;
-            this.cbListNV.Location = new System.Drawing.Point(591, 238);
-            this.cbListNV.Name = "cbListNV";
-            this.cbListNV.Size = new System.Drawing.Size(121, 24);
-            this.cbListNV.TabIndex = 47;
-            this.cbListNV.SelectedIndexChanged += new System.EventHandler(this.cbListNV_SelectedIndexChanged);
+            this.cbIdNV.FormattingEnabled = true;
+            this.cbIdNV.Location = new System.Drawing.Point(591, 238);
+            this.cbIdNV.Name = "cbIdNV";
+            this.cbIdNV.Size = new System.Drawing.Size(121, 24);
+            this.cbIdNV.TabIndex = 47;
+            this.cbIdNV.SelectedIndexChanged += new System.EventHandler(this.cbListNV_SelectedIndexChanged);
             // 
             // cbTenNV
             // 
@@ -388,7 +388,7 @@ namespace QuanLySoTietKiem
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 594);
             this.Controls.Add(this.cbTenNV);
-            this.Controls.Add(this.cbListNV);
+            this.Controls.Add(this.cbIdNV);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.StatusLabel);
@@ -460,7 +460,7 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbListNV;
+        private System.Windows.Forms.ComboBox cbIdNV;
         private System.Windows.Forms.ComboBox cbTenNV;
     }
 }
