@@ -22,20 +22,18 @@ namespace QuanLySoTietKiem
         freport report;
         //public int LoaiTk;
         
-        public fmanage(int LoaiTk)
+        public fmanage(DTO.Account account)
         {
             InitializeComponent();
-            switch (LoaiTk)
-            {
-                case 1: // Nhân viên
-                    btChange.Enabled = false;
-                    btAccount.Enabled = false;
-                    btStaff.Enabled = false;
-                    break;
-                case 2: // Giám đốc
-                    btAccount.Enabled = false;
-                    break;
-            }
+            DTO.LoaiTK loaiTK = new DTO.LoaiTK(DAO.Account.Instance.GetPhanQuyen(account.LoaiTK));
+            btChange.Enabled = loaiTK.ThayDoi;
+            btAccount.Enabled = loaiTK.CapTK;
+            btCustomer.Enabled = loaiTK.ListKH;
+            btStaff.Enabled = loaiTK.ListNV;
+            btTransaction.Enabled = loaiTK.GiaoDich;
+            btReport.Enabled = loaiTK.BaoCao;
+            btOpen.Enabled = loaiTK.MoSo;
+            btInfomation.Enabled = loaiTK.ListSTK;
         }
 
 

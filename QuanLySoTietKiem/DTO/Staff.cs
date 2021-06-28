@@ -9,13 +9,13 @@ namespace QuanLySoTietKiem.DTO
 {
     public class Staff
     {
-        private String iD;
+        private int iD;
         private String hoTen;
         private String diaChi;
         private String sDT;
         private String cmnd;
 
-        public string ID { get => iD; set => iD = value; }
+        public int ID { get => iD; set => iD = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string SDT { get => sDT; set => sDT = value; }
@@ -23,11 +23,11 @@ namespace QuanLySoTietKiem.DTO
 
         public Staff(DataRow row)
         {
-            this.ID = row["MaNV"].ToString();
+            this.ID = Convert.ToInt32(row["MaNV"]);
             this.HoTen = row["HoTen"].ToString();
             this.DiaChi = row["DiaChi"].ToString();
             this.SDT = row["SDT"].ToString();
-            this.Cmnd = row["CMNN_or_HoChieu"].ToString();
+            this.Cmnd = row["Cmnd"].ToString();
         }
     }
 }

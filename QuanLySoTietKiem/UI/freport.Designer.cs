@@ -58,7 +58,7 @@ namespace QuanLySoTietKiem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-4, -3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -74,10 +74,10 @@ namespace QuanLySoTietKiem
             this.tabPage1.Controls.Add(this.BCnbutton2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dataDay);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1049, 417);
+            this.tabPage1.Size = new System.Drawing.Size(1049, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NGÀY";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@ namespace QuanLySoTietKiem
             this.dataDay.ReadOnly = true;
             this.dataDay.RowHeadersWidth = 51;
             this.dataDay.RowTemplate.Height = 24;
-            this.dataDay.Size = new System.Drawing.Size(1046, 299);
+            this.dataDay.Size = new System.Drawing.Size(1046, 300);
             this.dataDay.TabIndex = 0;
             // 
             // tabPage2

@@ -26,7 +26,7 @@ namespace QuanLySoTietKiem.DAO
         public bool Login(string Username, string Password)
         {
             string EncryptedPass = Encrypt(Password);
-            int data = (int)ExecuteQuery.Instance.ExecuteScalar("searchAccount @tenDN , @matKhau", new object[] { Username, EncryptedPass });
+            int data = (int)ExecuteQuery.Instance.ExecuteScalar(String.Format("select count(*) from DANGNHAP where TenDN = '{0}' and MatKhau = '{1}'", Username, EncryptedPass));
             return data == 1;
         }
         public int ChangePassword(string Username, string oldPass, string newPass)
@@ -37,17 +37,27 @@ namespace QuanLySoTietKiem.DAO
                 new object[] { Username, EncryptedOldPass, EncryptedNewPass });
         }
 
-        public bool insertAccount(string Username, string Password, int Type)
+        public DataRow GetInfoAcc(string username)
+        {
+            return ExecuteQuery.Instance.ExecuteReader(String.Format("select * from DANGNHAP where TenDN = '{0}'", username)).Rows[0];
+        }
+
+        public bool InsertAccount(string Username, string Password, int Type)
         {
             string EncryptedPass = Encrypt(Password);
             //if (DisplayName == null) DisplayName = Username;
-            int data = ExecuteQuery.Instance.ExecuteNoneQuery("insertAccount @tenHienThi , @tenDN , @matKhau , @loai", new object[] { Username, Username, EncryptedPass, Type });
-            return data == 1;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[DANGNHAP]([TenDN],[MatKhau],[TenHienThi],[LoaiTK])VALUES ('{0}','{1},'{2}',{3})", Username, EncryptedPass, Username, Type)) > 0;
         }
 
-        public int getInfoAccount(string tendn)
+        public DataRow GetPhanQuyen(int loai)
         {
-            return (int)ExecuteQuery.Instance.ExecuteScalar(String.Format("select Loai from DANGNHAP where TenDN = '{0}'", tendn));
+            return ExecuteQuery.Instance.ExecuteReader("select * from PHANQUYEN where Loai =" + loai).Rows[0];
         }
+
+        public int GetTypeAccount(string tendn)
+        {
+            return (int)ExecuteQuery.Instance.ExecuteScalar(String.Format("select LoaiTK from DANGNHAP where TenDN = '{0}'", tendn));
+        }
+
     }
 }

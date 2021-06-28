@@ -13,9 +13,9 @@ namespace QuanLySoTietKiem.DAO
 
         public static SoTietKiemDAO Instance { get { if (instance == null) instance = new SoTietKiemDAO();  return instance; } set => instance = value; }
 
-        public bool insertSoTietKiem(string idNV, string idKH, string idLS, DateTime ngayMo, DateTime ngayHetHan, double tienGoi, string loaiSo = null)
+        public bool insertSoTietKiem(string idNV, string idKH, double idLS, DateTime ngayMo, double tienGoi)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into SOTIETKIEM(MaNV, MaKH, MaLS, LoaiSo, NgayMoSo, NgayHetHan, TienGoi)values ({0}, {1}, {2}, N'{3}', '{4}', '{5}', {6})", idNV, idKH, idLS, loaiSo, ngayMo, ngayHetHan, tienGoi)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[SOTIETKIEM]([MaLS],[MaKH],[MaNV],[NgayMo],[TienGui])VALUES({0},{1},{2},'{3}',{4})", idLS, idKH, idNV, ngayMo, tienGoi)) > 0;
         }
         public bool DeleteSTKbyIdCus(int id)
         {
@@ -31,7 +31,12 @@ namespace QuanLySoTietKiem.DAO
         }
         public DataTable listSoTietKiem()
         {
-            return ExecuteQuery.Instance.ExecuteReader("select MaSo [Mã sổ], MaNV [Mã nhân viên], MaKH [Mã khách hàng], MaLS [Mã loại sổ], LoaiSo [Loại sổ], NgayMoSo [Ngày mở], NgayHetHan [Ngày đóng], TienGoi [Tiền gửi] from SOTIETKIEM");
+            return ExecuteQuery.Instance.ExecuteReader("select MaSo [Mã sổ], MaNV [Mã nhân viên], MaKH [Mã khách hàng], LOAISO.TenLS [Loại sổ], NgayMo [Ngày mở], TienGui [Tiền gửi] from SOTIETKIEM, LOAISO where SOTIETKIEM.MaLS = LOAISO.MaLS");
         }
+
+        //public DataTable getSTKbyID(String id)
+        //{
+        //    return 
+        //}
     }
 }

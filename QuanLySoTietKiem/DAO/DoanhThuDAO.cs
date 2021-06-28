@@ -13,35 +13,35 @@ namespace QuanLySoTietKiem.DAO
 
         public static DoanhThuDAO Instance { get { if (instance == null) instance = new DoanhThuDAO(); return instance; } set => instance = value; }
 
-        public bool insertDoanhThu(string loai, DateTime day)
+        public bool InsertDoanhThu(double loai, DateTime day)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into DOANHTHU (LoaiSo, TongThu, TongChi, ChenhLechThuChi, SoMo, SoDong, ChenhLechSoMD, Ngay)values (N'{0}', 0, 0, 0, 0, 0, 0, '{1}')", loai, day)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[BAOCAO] ([Ngay],[MaLS],[TongThu],[TongChi],[SoMo],[SoDong],[ChenhLech]) VALUES ('{0}',{1},0,0,0,0,0)", day, loai)) > 0;
         }
 
         public int GetIdNewLS()
         {
-            return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaLS) FROM [dbo].[DOANHTHU]");
+            return (int)ExecuteQuery.Instance.ExecuteScalar("SELECT MAX(MaLS) FROM [dbo].[BAOCAO]");
         }
 
-        public bool CheckDoanhThu(string loaiso, DateTime date)
+        public bool CheckDoanhThu(double loaiso, DateTime date)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
-            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from DOANHTHU where LoaiSo = @loaiso and Ngay = @ngay", new object[] { loaiso, date }) == 1;
+            return (int)ExecuteQuery.Instance.ExecuteScalar("select count (*) from BAOCAO where MaLS = @maLS and DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { loaiso, date.Day, date.Month, date.Year }) == 1;
         }
 
         public DataTable GetDoanhThuNgay(DateTime day)
         {
-            return ExecuteQuery.Instance.ExecuteReader("select MaLS [Mã loại sổ], LoaiSo [Loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], ChenhLechThuChi [Chênh lệch thu chi], SoMo [Sổ mở], SoDong [Sổ đóng], ChenhLechSoMD [Chênh lệch sổ] from DOANHTHU where DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
+            return ExecuteQuery.Instance.ExecuteReader("select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and DAY(Ngay) = @ngay and MONTH(Ngay) = @thang and YEAR(Ngay) = @nam", new object[] { day.Day, day.Month, day.Year});
         }
 
         public DataTable GetDoanhThuThang(DateTime dt)
         {
-            return ExecuteQuery.Instance.ExecuteReader(string.Format("select MaLS [Mã loại sổ], LoaiSo [Loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], ChenhLechThuChi [Chênh lệch thu chi], SoMo [Sổ mở], SoDong [Sổ đóng], ChenhLechSoMD [Chênh lệch sổ] from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1}", dt.Month, dt.Year));
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = {0} and YEAR(Ngay) = {1}", dt.Month, dt.Year));
         }
 
         public DataTable GetDoanhThuThangLoaiSo(DateTime dt, string idLS)
         {
-            return ExecuteQuery.Instance.ExecuteReader(string.Format("select * from DOANHTHU where MONTH(Ngay) = {0} and YEAR(Ngay) = {1} and MaLS = {2}", dt.Month, dt.Year, idLS));
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = {0} and YEAR(Ngay) = {1} and MaLS = {2}", dt.Month, dt.Year, idLS));
         }
     }
 }

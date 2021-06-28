@@ -29,24 +29,24 @@ namespace QuanLySoTietKiem
         /// </summary>
         private void InitializeComponent()
         {
-            this.TKcomboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.TKtextBox1 = new System.Windows.Forms.TextBox();
+            this.tbTenKyHan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TKtextBox2 = new System.Windows.Forms.TextBox();
-            this.TKcomboBox2 = new System.Windows.Forms.ComboBox();
+            this.tbKyHan = new System.Windows.Forms.TextBox();
+            this.cbKyHan = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TKtextBox4 = new System.Windows.Forms.TextBox();
+            this.tbLaiSuat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TKtextBox3 = new System.Windows.Forms.TextBox();
+            this.tbThoiGianTT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TKcomboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbThoiGianTT = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TKtextBox5 = new System.Windows.Forms.TextBox();
+            this.tbTienMoTT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.TKtextBox6 = new System.Windows.Forms.TextBox();
+            this.tbTienGuiTT = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,15 +54,15 @@ namespace QuanLySoTietKiem
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // TKcomboBox1
+            // cbLoaiSo
             // 
-            this.TKcomboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.TKcomboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TKcomboBox1.FormattingEnabled = true;
-            this.TKcomboBox1.Location = new System.Drawing.Point(181, 19);
-            this.TKcomboBox1.Name = "TKcomboBox1";
-            this.TKcomboBox1.Size = new System.Drawing.Size(154, 24);
-            this.TKcomboBox1.TabIndex = 0;
+            this.cbLoaiSo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbLoaiSo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbLoaiSo.FormattingEnabled = true;
+            this.cbLoaiSo.Location = new System.Drawing.Point(181, 19);
+            this.cbLoaiSo.Name = "cbLoaiSo";
+            this.cbLoaiSo.Size = new System.Drawing.Size(154, 24);
+            this.cbLoaiSo.TabIndex = 0;
             // 
             // label1
             // 
@@ -84,6 +84,7 @@ namespace QuanLySoTietKiem
             this.button1.TabIndex = 2;
             this.button1.Text = "Kiểm Tra";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -96,12 +97,12 @@ namespace QuanLySoTietKiem
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên Kỳ Hạn: ";
             // 
-            // TKtextBox1
+            // tbTenKyHan
             // 
-            this.TKtextBox1.Location = new System.Drawing.Point(181, 100);
-            this.TKtextBox1.Name = "TKtextBox1";
-            this.TKtextBox1.Size = new System.Drawing.Size(154, 22);
-            this.TKtextBox1.TabIndex = 0;
+            this.tbTenKyHan.Location = new System.Drawing.Point(181, 100);
+            this.tbTenKyHan.Name = "tbTenKyHan";
+            this.tbTenKyHan.Size = new System.Drawing.Size(154, 22);
+            this.tbTenKyHan.TabIndex = 0;
             // 
             // label3
             // 
@@ -114,24 +115,24 @@ namespace QuanLySoTietKiem
             this.label3.TabIndex = 5;
             this.label3.Text = "Kỳ Hạn: ";
             // 
-            // TKtextBox2
+            // tbKyHan
             // 
-            this.TKtextBox2.Location = new System.Drawing.Point(181, 187);
-            this.TKtextBox2.Name = "TKtextBox2";
-            this.TKtextBox2.Size = new System.Drawing.Size(100, 22);
-            this.TKtextBox2.TabIndex = 6;
+            this.tbKyHan.Location = new System.Drawing.Point(181, 187);
+            this.tbKyHan.Name = "tbKyHan";
+            this.tbKyHan.Size = new System.Drawing.Size(100, 22);
+            this.tbKyHan.TabIndex = 6;
             // 
-            // TKcomboBox2
+            // cbKyHan
             // 
-            this.TKcomboBox2.FormattingEnabled = true;
-            this.TKcomboBox2.Items.AddRange(new object[] {
+            this.cbKyHan.FormattingEnabled = true;
+            this.cbKyHan.Items.AddRange(new object[] {
             "Ngày",
             "Tháng",
             "Năm"});
-            this.TKcomboBox2.Location = new System.Drawing.Point(319, 187);
-            this.TKcomboBox2.Name = "TKcomboBox2";
-            this.TKcomboBox2.Size = new System.Drawing.Size(81, 24);
-            this.TKcomboBox2.TabIndex = 7;
+            this.cbKyHan.Location = new System.Drawing.Point(319, 187);
+            this.cbKyHan.Name = "cbKyHan";
+            this.cbKyHan.Size = new System.Drawing.Size(81, 24);
+            this.cbKyHan.TabIndex = 7;
             // 
             // label4
             // 
@@ -145,12 +146,12 @@ namespace QuanLySoTietKiem
             this.label4.Text = "Lãi Suất: ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // TKtextBox4
+            // tbLaiSuat
             // 
-            this.TKtextBox4.Location = new System.Drawing.Point(181, 358);
-            this.TKtextBox4.Name = "TKtextBox4";
-            this.TKtextBox4.Size = new System.Drawing.Size(66, 22);
-            this.TKtextBox4.TabIndex = 9;
+            this.tbLaiSuat.Location = new System.Drawing.Point(181, 358);
+            this.tbLaiSuat.Name = "tbLaiSuat";
+            this.tbLaiSuat.Size = new System.Drawing.Size(66, 22);
+            this.tbLaiSuat.TabIndex = 9;
             // 
             // label5
             // 
@@ -163,13 +164,13 @@ namespace QuanLySoTietKiem
             this.label5.TabIndex = 10;
             this.label5.Text = "TG Gởi Tối Thiểu: ";
             // 
-            // TKtextBox3
+            // tbThoiGianTT
             // 
-            this.TKtextBox3.Location = new System.Drawing.Point(181, 269);
-            this.TKtextBox3.Name = "TKtextBox3";
-            this.TKtextBox3.Size = new System.Drawing.Size(100, 22);
-            this.TKtextBox3.TabIndex = 11;
-            this.TKtextBox3.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.tbThoiGianTT.Location = new System.Drawing.Point(181, 269);
+            this.tbThoiGianTT.Name = "tbThoiGianTT";
+            this.tbThoiGianTT.Size = new System.Drawing.Size(100, 22);
+            this.tbThoiGianTT.TabIndex = 11;
+            this.tbThoiGianTT.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 
@@ -182,18 +183,18 @@ namespace QuanLySoTietKiem
             this.label6.TabIndex = 12;
             this.label6.Text = "% ";
             // 
-            // TKcomboBox3
+            // cbThoiGianTT
             // 
-            this.TKcomboBox3.FormattingEnabled = true;
-            this.TKcomboBox3.Items.AddRange(new object[] {
+            this.cbThoiGianTT.FormattingEnabled = true;
+            this.cbThoiGianTT.Items.AddRange(new object[] {
             "Ngày ",
             "Tháng",
             "Năm"});
-            this.TKcomboBox3.Location = new System.Drawing.Point(319, 269);
-            this.TKcomboBox3.Name = "TKcomboBox3";
-            this.TKcomboBox3.Size = new System.Drawing.Size(81, 24);
-            this.TKcomboBox3.TabIndex = 13;
-            this.TKcomboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cbThoiGianTT.Location = new System.Drawing.Point(319, 269);
+            this.cbThoiGianTT.Name = "cbThoiGianTT";
+            this.cbThoiGianTT.Size = new System.Drawing.Size(81, 24);
+            this.cbThoiGianTT.TabIndex = 13;
+            this.cbThoiGianTT.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -206,12 +207,12 @@ namespace QuanLySoTietKiem
             this.label7.TabIndex = 14;
             this.label7.Text = "Tiền Mở Sổ Tối Thiểu: ";
             // 
-            // TKtextBox5
+            // tbTienMoTT
             // 
-            this.TKtextBox5.Location = new System.Drawing.Point(729, 99);
-            this.TKtextBox5.Name = "TKtextBox5";
-            this.TKtextBox5.Size = new System.Drawing.Size(122, 22);
-            this.TKtextBox5.TabIndex = 15;
+            this.tbTienMoTT.Location = new System.Drawing.Point(729, 99);
+            this.tbTienMoTT.Name = "tbTienMoTT";
+            this.tbTienMoTT.Size = new System.Drawing.Size(122, 22);
+            this.tbTienMoTT.TabIndex = 15;
             // 
             // label8
             // 
@@ -224,12 +225,12 @@ namespace QuanLySoTietKiem
             this.label8.TabIndex = 16;
             this.label8.Text = "Tiền Gởi Tối Thiểu: ";
             // 
-            // TKtextBox6
+            // tbTienGuiTT
             // 
-            this.TKtextBox6.Location = new System.Drawing.Point(729, 187);
-            this.TKtextBox6.Name = "TKtextBox6";
-            this.TKtextBox6.Size = new System.Drawing.Size(122, 22);
-            this.TKtextBox6.TabIndex = 17;
+            this.tbTienGuiTT.Location = new System.Drawing.Point(729, 187);
+            this.tbTienGuiTT.Name = "tbTienGuiTT";
+            this.tbTienGuiTT.Size = new System.Drawing.Size(122, 22);
+            this.tbTienGuiTT.TabIndex = 17;
             // 
             // label9
             // 
@@ -272,6 +273,7 @@ namespace QuanLySoTietKiem
             this.button3.TabIndex = 21;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -297,27 +299,28 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.TKtextBox6);
+            this.Controls.Add(this.tbTienGuiTT);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.TKtextBox5);
+            this.Controls.Add(this.tbTienMoTT);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.TKcomboBox3);
+            this.Controls.Add(this.cbThoiGianTT);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TKtextBox3);
+            this.Controls.Add(this.tbThoiGianTT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TKtextBox4);
+            this.Controls.Add(this.tbLaiSuat);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TKcomboBox2);
-            this.Controls.Add(this.TKtextBox2);
+            this.Controls.Add(this.cbKyHan);
+            this.Controls.Add(this.tbKyHan);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TKtextBox1);
+            this.Controls.Add(this.tbTenKyHan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TKcomboBox1);
+            this.Controls.Add(this.cbLoaiSo);
             this.Name = "fchange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fchange";
+            this.Load += new System.EventHandler(this.fchange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,24 +328,24 @@ namespace QuanLySoTietKiem
 
         #endregion
 
-        private System.Windows.Forms.ComboBox TKcomboBox1;
+        private System.Windows.Forms.ComboBox cbLoaiSo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TKtextBox1;
+        private System.Windows.Forms.TextBox tbTenKyHan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TKtextBox2;
-        private System.Windows.Forms.ComboBox TKcomboBox2;
+        private System.Windows.Forms.TextBox tbKyHan;
+        private System.Windows.Forms.ComboBox cbKyHan;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TKtextBox4;
+        private System.Windows.Forms.TextBox tbLaiSuat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TKtextBox3;
+        private System.Windows.Forms.TextBox tbThoiGianTT;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox TKcomboBox3;
+        private System.Windows.Forms.ComboBox cbThoiGianTT;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TKtextBox5;
+        private System.Windows.Forms.TextBox tbTienMoTT;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TKtextBox6;
+        private System.Windows.Forms.TextBox tbTienGuiTT;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;

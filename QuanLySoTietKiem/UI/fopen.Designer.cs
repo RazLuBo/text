@@ -36,7 +36,6 @@ namespace QuanLySoTietKiem
             this.label11 = new System.Windows.Forms.Label();
             this.tbTienGoi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@ namespace QuanLySoTietKiem
             this.tbMaKH = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dtMoSo = new System.Windows.Forms.DateTimePicker();
-            this.dtHetHan = new System.Windows.Forms.DateTimePicker();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -136,17 +134,6 @@ namespace QuanLySoTietKiem
             this.label6.TabIndex = 27;
             this.label6.Text = "Số Tiền Gởi: ";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(496, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 22);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Ngày Hết Hạn: ";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -161,10 +148,6 @@ namespace QuanLySoTietKiem
             // cbLoaiSo
             // 
             this.cbLoaiSo.FormattingEnabled = true;
-            this.cbLoaiSo.Items.AddRange(new object[] {
-            "Kì hạn 3 tháng",
-            "Kì hạn 6 tháng",
-            "Không kỳ hạn"});
             this.cbLoaiSo.Location = new System.Drawing.Point(209, 46);
             this.cbLoaiSo.Name = "cbLoaiSo";
             this.cbLoaiSo.Size = new System.Drawing.Size(262, 24);
@@ -324,15 +307,6 @@ namespace QuanLySoTietKiem
             this.dtMoSo.Size = new System.Drawing.Size(164, 22);
             this.dtMoSo.TabIndex = 41;
             // 
-            // dtHetHan
-            // 
-            this.dtHetHan.CustomFormat = "\"dd-MM-yyyy\"";
-            this.dtHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHetHan.Location = new System.Drawing.Point(641, 114);
-            this.dtHetHan.Name = "dtHetHan";
-            this.dtHetHan.Size = new System.Drawing.Size(167, 22);
-            this.dtHetHan.TabIndex = 42;
-            // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
@@ -392,7 +366,6 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tbSdt);
             this.Controls.Add(this.StatusLabel);
-            this.Controls.Add(this.dtHetHan);
             this.Controls.Add(this.dtMoSo);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tbMaKH);
@@ -411,7 +384,6 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbTienGoi);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbLoaiSo);
             this.Controls.Add(this.label3);
@@ -437,7 +409,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbTienGoi;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbLoaiSo;
         private System.Windows.Forms.Label label3;
@@ -456,7 +427,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.TextBox tbMaKH;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dtMoSo;
-        private System.Windows.Forms.DateTimePicker dtHetHan;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label17;

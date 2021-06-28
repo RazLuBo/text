@@ -13,14 +13,14 @@ namespace QuanLySoTietKiem.DAO
 
         public static CustomerDAO Instance { get { if (instance == null) instance = new CustomerDAO(); return instance; } set => instance = value; }
 
-        public bool insertCustomer(string hoten, string diachi, string sdt, string cmnd, double sodu)
+        public bool InsertCustomer(string hoten, string diachi, string sdt, string cmnd, double sodu)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into KHACHHANG(HoTen, DiaChi, SDT, CMNN_or_HoChieu, SoDu)values(N'{0}', N'{1}', '{2}', '{3}', '{4}')",hoten, diachi, sdt, cmnd, sodu)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("insert into KHACHHANG(HoTen, DiaChi, SDT, Cmnd, SoDu)values(N'{0}', N'{1}', '{2}', '{3}', {4})",hoten, diachi, sdt, cmnd, sodu)) > 0;
         }
 
         public bool UpdateCustomer(string HoTen, string DiaChi, string SDT, string Cmnd, int MaKH)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update KHACHHANG set HoTen = N'{0}', DiaChi = N'{1}', SDT = '{2}', CMNN_or_HoChieu = '{3}' where MaKH = {4}", HoTen, DiaChi, SDT, Cmnd, MaKH)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("update KHACHHANG set HoTen = N'{0}', DiaChi = N'{1}', SDT = '{2}', Cmnd = '{3}' where MaKH = {4}", HoTen, DiaChi, SDT, Cmnd, MaKH)) > 0;
         }
 
         public int GetIdNewCustomer()
@@ -36,7 +36,7 @@ namespace QuanLySoTietKiem.DAO
         public DataTable GetCustomerInfo(string id)
         {
             ///return Name, birthday, PhoneNumber, Sex, IdentityNumber, Passport, Addr, Note, ArrivalDate
-            return ExecuteQuery.Instance.ExecuteReader("searchCustomer @maKH", new object[] { id });
+            return ExecuteQuery.Instance.ExecuteReader("select * from KHACHHANG where MaKH = "+ id );
         }
 
         public bool CheckCustomer(string id)
@@ -47,7 +47,7 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetAllCustomerInfo()
         {
-            return ExecuteQuery.Instance.ExecuteReader("select MaKH [Mã Khách hàng], HoTen [Họ tên], DiaChi [Địa chỉ], SDT [Số điện thoại], CMNN_or_HoChieu [CMND], SoDu [Số dư] from KHACHHANG");
+            return ExecuteQuery.Instance.ExecuteReader("select MaKH [Mã Khách hàng], HoTen [Họ tên], DiaChi [Địa chỉ], SDT [Số điện thoại], Cmnd [CMND], SoDu [Số dư] from KHACHHANG");
         }
     }
 }

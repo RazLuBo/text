@@ -57,8 +57,8 @@ namespace QuanLySoTietKiem
             int idCus;
             if(int.TryParse(tbMaKH.Text, out idCus))
             {
-                DAO.GuiTienDAO.Instance.DeleteGoiTienByIdCus(idCus);
-                DAO.RutTienDAO.Instance.DeleteRutTienByIdCus(idCus);
+                //DAO.GuiTienDAO.Instance.DeleteGoiTienByIdCus(idCus);
+                //DAO.RutTienDAO.Instance.DeleteRutTienByIdCus(idCus);
                 DAO.SoTietKiemDAO.Instance.DeleteSTKbyIdCus(idCus);
 
                 if (DAO.CustomerDAO.Instance.DeleteCustomer(idCus))
@@ -108,7 +108,7 @@ namespace QuanLySoTietKiem
         {
             if(tbTenKH.Text != "" && tbCmnd.Text != "")
             {
-                DAO.CustomerDAO.Instance.insertCustomer(tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, 0);
+                DAO.CustomerDAO.Instance.InsertCustomer(tbTenKH.Text, tbDiaChi.Text, tbSdt.Text, tbCmnd.Text, 0);
                 LoadCustomer();
             }
         }

@@ -480,3 +480,5 @@ begin
 	where MaNV = @maNV
 end;
 go
+
+--select Loai from DANGNHAP where TenDN = 'admin'

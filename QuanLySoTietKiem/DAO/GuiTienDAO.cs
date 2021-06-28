@@ -20,12 +20,12 @@ namespace QuanLySoTietKiem.DAO
         
         public DataTable getGoiTienByDay(DateTime date)
         {
-            return ExecuteQuery.Instance.ExecuteReader("select * from GOITIEN where NgayGoi =" + date.ToString("MM/dd/yyyy"));
+            return ExecuteQuery.Instance.ExecuteReader("select MaGui [Mã gửi], TienGui [Tiền gửi], MaSo [Mã sổ], MaNV [Mã nhân viên], NgayGui [Ngày gửi] from GUITIEN where NgayGui =" + date.ToString("MM/dd/yyyy"));
         }
 
         public bool DeleteGoiTienByIdCus(int id)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE GOITIEN where MaKH =" + id) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE GUITIEN where MaKH =" + id) > 0;
         }
     }
 }

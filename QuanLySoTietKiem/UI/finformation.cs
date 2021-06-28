@@ -37,13 +37,15 @@ namespace QuanLySoTietKiem
         private void finformation_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = listSTK;
+            cbLoaiSo.DataSource = DAO.LoaiSoDAO.Instance.GetListLoaiSo();
             LoadSoTietKiem();
             AddBindingData();
         }
 
         private void AddBindingData()
         {
-            tbLoaiSo.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Loại sổ", true, DataSourceUpdateMode.Never));
+            cbLoaiSo.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Loại sổ", true, DataSourceUpdateMode.Never));
+            cbLoaiSo.DisplayMember = "TenLS";
             tbMaSo.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã sổ", true, DataSourceUpdateMode.Never));
             tbMaNV.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Mã nhân viên", true, DataSourceUpdateMode.Never));
             tbSoDu.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Tiền gửi", true, DataSourceUpdateMode.Never));
@@ -58,6 +60,12 @@ namespace QuanLySoTietKiem
         private void TTSbutton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbMaSo_TextChanged(object sender, EventArgs e)
+        {
+            //DataGridViewRow data = dataGridView1.SelectedRows[0];
+            //data.
         }
     }
 }

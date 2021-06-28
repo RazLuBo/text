@@ -42,6 +42,7 @@ namespace QuanLySoTietKiem
         {
             if (!CheckInput(tbMaKH_G.Text, tbMaSo_G.Text, tbTienGui.Text))
                 return;
+
             Double tiengoi;
             if (Double.TryParse(tbTienGui.Text, out tiengoi))
             {
@@ -50,7 +51,7 @@ namespace QuanLySoTietKiem
                     DataRowView rowView = (DataRowView)cbIdNV.SelectedItem;
 
                     DTO.Staff staff = new DTO.Staff(rowView.Row);
-                    if (DAO.GuiTienDAO.Instance.insertGoiTien(staff.ID, tbMaKH_G.Text, tbMaSo_G.Text, DateTime.Today, tiengoi))
+                    if (DAO.GuiTienDAO.Instance.insertGoiTien(staff.ID.ToString(), tbMaKH_G.Text, tbMaSo_G.Text, DateTime.Today, tiengoi))
                     {
                         StatusLabel_G.Text = "";
                         if (guiTien != null)
@@ -102,7 +103,7 @@ namespace QuanLySoTietKiem
                     DataRowView rowView = (DataRowView)cbIdNV2.SelectedItem;
 
                     DTO.Staff staff = new DTO.Staff(rowView.Row);
-                    if (DAO.RutTienDAO.Instance.insertRutTien(staff.ID, tbMaKH_R.Text, tbMaSo_R.Text, DateTime.Today, Convert.ToDouble(tbTienRut.Text)))
+                    if (DAO.RutTienDAO.Instance.insertRutTien(staff.ID.ToString(), tbMaKH_R.Text, tbMaSo_R.Text, DateTime.Today, Convert.ToDouble(tbTienRut.Text)))
                     {
                         StatusLabel_R.Text = "";
                         if (rutTien != null)
@@ -154,14 +155,14 @@ namespace QuanLySoTietKiem
 
         private void ftransaction_Load(object sender, EventArgs e)
         {
-            cbIdNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbIdNV.DisplayMember = "Mã nhân viên";
-            cbTenNV.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbTenNV.DisplayMember = "Họ tên";
-            cbIdNV2.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbIdNV2.DisplayMember = "Mã nhân viên";
-            cbTenNV2.DataSource = DAO.StaffDAO.Instance.ListNhanVien();
-            cbTenNV2.DisplayMember = "Họ tên";
+            cbIdNV.DataSource = DAO.StaffDAO.Instance.GetList();
+            cbIdNV.DisplayMember = "MaNV";
+            cbTenNV.DataSource = DAO.StaffDAO.Instance.GetList();
+            cbTenNV.DisplayMember = "HoTen";
+            cbIdNV2.DataSource = DAO.StaffDAO.Instance.GetList();
+            cbIdNV2.DisplayMember = "MaNV";
+            cbTenNV2.DataSource = DAO.StaffDAO.Instance.GetList();
+            cbTenNV2.DisplayMember = "HoTen";
         }
 
         private void tbMaKH_R_Leave(object sender, EventArgs e)

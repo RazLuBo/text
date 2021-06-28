@@ -53,11 +53,15 @@
     <Compile Include="DAO\DoanhThuDAO.cs" />
     <Compile Include="DAO\ExecuteQuery.cs" />
     <Compile Include="DAO\GuiTienDAO.cs" />
+    <Compile Include="DAO\LoaiSoDAO.cs" />
     <Compile Include="DAO\RutTienDAO.cs" />
     <Compile Include="DAO\SoTietKiemDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DTO\GoiTien.cs" />
+    <Compile Include="DTO\LoaiSo.cs" />
+    <Compile Include="DTO\LoaiTK.cs" />
     <Compile Include="DTO\RutTien.cs" />
     <Compile Include="DTO\SoTietKiem.cs" />
     <Compile Include="DTO\Staff.cs" />

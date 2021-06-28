@@ -37,7 +37,6 @@ namespace QuanLySoTietKiem
             this.label3 = new System.Windows.Forms.Label();
             this.tbMaKH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbLoaiSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbSoDu = new System.Windows.Forms.TextBox();
             this.TTSbutton2 = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@ namespace QuanLySoTietKiem
             this.tbMaNV = new System.Windows.Forms.TextBox();
             this.TTSbutton4 = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
+            this.cbLoaiSo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@ namespace QuanLySoTietKiem
             this.tbMaSo.ReadOnly = true;
             this.tbMaSo.Size = new System.Drawing.Size(100, 22);
             this.tbMaSo.TabIndex = 2;
+            this.tbMaSo.TextChanged += new System.EventHandler(this.tbMaSo_TextChanged);
             // 
             // TTSbutton1
             // 
@@ -132,14 +133,6 @@ namespace QuanLySoTietKiem
             this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 7;
             this.label4.Text = "Loại Sổ: ";
-            // 
-            // tbLoaiSo
-            // 
-            this.tbLoaiSo.Location = new System.Drawing.Point(131, 183);
-            this.tbLoaiSo.Name = "tbLoaiSo";
-            this.tbLoaiSo.Size = new System.Drawing.Size(184, 22);
-            this.tbLoaiSo.TabIndex = 8;
-            this.tbLoaiSo.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -224,6 +217,14 @@ namespace QuanLySoTietKiem
             this.tbSearch.Size = new System.Drawing.Size(151, 22);
             this.tbSearch.TabIndex = 16;
             // 
+            // cbLoaiSo
+            // 
+            this.cbLoaiSo.FormattingEnabled = true;
+            this.cbLoaiSo.Location = new System.Drawing.Point(131, 184);
+            this.cbLoaiSo.Name = "cbLoaiSo";
+            this.cbLoaiSo.Size = new System.Drawing.Size(184, 24);
+            this.cbLoaiSo.TabIndex = 17;
+            // 
             // finformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,6 +232,7 @@ namespace QuanLySoTietKiem
             this.BackgroundImage = global::QuanLySoTietKiem.Properties.Resources.hinh_nen_may_tinh_don_gian;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 600);
+            this.Controls.Add(this.cbLoaiSo);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.TTSbutton4);
             this.Controls.Add(this.tbMaNV);
@@ -239,7 +241,6 @@ namespace QuanLySoTietKiem
             this.Controls.Add(this.TTSbutton2);
             this.Controls.Add(this.tbSoDu);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbLoaiSo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMaKH);
             this.Controls.Add(this.label3);
@@ -268,7 +269,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbMaKH;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbLoaiSo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbSoDu;
         private System.Windows.Forms.Button TTSbutton2;
@@ -277,5 +277,6 @@ namespace QuanLySoTietKiem
         private System.Windows.Forms.TextBox tbMaNV;
         private System.Windows.Forms.Button TTSbutton4;
         private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.ComboBox cbLoaiSo;
     }
 }

@@ -11,7 +11,7 @@ namespace QuanLySoTietKiem
     {
         private static ConnectionString instance;
 
-        public string connectionString = @"Data Source=DESKTOP-R3JFTAQ;Initial Catalog=QuanLySoTietKiem1;Integrated Security=True";
+        public string connectionString = @"Data Source=DESKTOP-R3JFTAQ;Initial Catalog=QuanLySTK;Integrated Security=True";
 
         public static ConnectionString Instance { get { if (instance == null) instance = new ConnectionString(); return instance; } private set => instance = value; }
     }
