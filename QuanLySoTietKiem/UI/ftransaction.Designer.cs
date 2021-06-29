@@ -414,6 +414,7 @@ namespace QuanLySoTietKiem
             this.tbMaSo_G.Name = "tbMaSo_G";
             this.tbMaSo_G.Size = new System.Drawing.Size(104, 30);
             this.tbMaSo_G.TabIndex = 19;
+            this.tbMaSo_G.TextChanged += new System.EventHandler(this.tbMaSo_G_TextChanged);
             // 
             // label18
             // 
@@ -621,6 +622,7 @@ namespace QuanLySoTietKiem
             this.tbMaSo_R.Name = "tbMaSo_R";
             this.tbMaSo_R.Size = new System.Drawing.Size(104, 30);
             this.tbMaSo_R.TabIndex = 51;
+            this.tbMaSo_R.Leave += new System.EventHandler(this.tbMaSo_R_Leave);
             // 
             // label7
             // 

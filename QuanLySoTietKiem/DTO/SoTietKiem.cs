@@ -9,44 +9,37 @@ namespace QuanLySoTietKiem.DTO
 {
     public class SoTietKiem
     {
-        string iD;
-        string iDNhanVien;
-        string iDKhachHang;
-        string iDLS;
-        string type;
+        double iD;
+        double iDNhanVien;
+        double iDKhachHang;
+        double iDLS;
         DateTime ngayMoSo;
-        DateTime ngayHetHan;
         double tienGoi;
 
-        public string ID { get => iD; set => iD = value; }
-        public string IDNhanVien { get => iDNhanVien; set => iDNhanVien = value; }
-        public string IDKhachHang { get => iDKhachHang; set => iDKhachHang = value; }
-        public string IDLS { get => iDLS; set => iDLS = value; }
-        public string Type { get => type; set => type = value; }
+        public double ID { get => iD; set => iD = value; }
+        public double IDNhanVien { get => iDNhanVien; set => iDNhanVien = value; }
+        public double IDKhachHang { get => iDKhachHang; set => iDKhachHang = value; }
+        public double IDLS { get => iDLS; set => iDLS = value; }
         public DateTime NgayMoSo { get => ngayMoSo; set => ngayMoSo = value; }
-        public DateTime NgayHetHan { get => ngayHetHan; set => ngayHetHan = value; }
         public double TienGoi { get => tienGoi; set => tienGoi = value; }
 
         public SoTietKiem(DataRow row)
         {
-            this.ID = row["MaSo"].ToString();
-            this.IDNhanVien = row["MaNV"].ToString();
-            this.IDKhachHang = row["MaKH"].ToString();
-            this.IDLS = row["MaLS"].ToString();
-            this.Type = row["LoaiSo"].ToString();
-            this.NgayMoSo = (DateTime)row["NgayMoSo"];
-            this.NgayHetHan = (DateTime)row["NgayHetHan"];
+            this.ID = Convert.ToDouble(row["MaSo"]);
+            this.IDNhanVien = Convert.ToDouble(row["MaNV"]);
+            this.IDKhachHang = Convert.ToDouble(row["MaKH"]);
+            this.IDLS = Convert.ToDouble(row["MaLS"]);
+            this.NgayMoSo = (DateTime)row["NgayMo"];
+            this.tienGoi = Convert.ToDouble(row["TienGui"]);
         }
 
-        public SoTietKiem(string id, string idNv, string idKh, string idLs, string type, DateTime ngaymo, DateTime ngayhethan, double tiengoi)
+        public SoTietKiem(double id, double idNv, double idKh, double idLs, DateTime ngaymo, double tiengoi)
         {
             this.ID = id;
             this.IDNhanVien = idNv;
             this.IDKhachHang = idKh;
             this.IDLS = idLs;
-            this.Type = type;
             this.NgayMoSo = ngaymo;
-            this.NgayHetHan = ngayhethan;
             this.TienGoi = tiengoi;
         }
     }

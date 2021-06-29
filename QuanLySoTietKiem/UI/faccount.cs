@@ -36,13 +36,22 @@ namespace QuanLySoTietKiem
                 tbPassword.Focus();
                 return;
             }
-            if(DAO.Account.Instance.InsertAccount(tbUsername.Text, tbPassword.Text, cbType.SelectedIndex + 1))
+            DataRowView data = (DataRowView)cbType.SelectedItem;
+            DTO.LoaiTK loai = new DTO.LoaiTK(data.Row);
+
+            if(DAO.Account.Instance.InsertAccount(tbUsername.Text, tbPassword.Text, loai.Loai))
                 this.Close();
             else
             {
                 StatusLabel.Text = "Tên đăng nhập bị trùng";
                 return;
-            }    
+            }   
+        }
+
+        private void faccount_Load(object sender, EventArgs e)
+        {
+            cbType.DataSource = DAO.Account.Instance.GetListPhanQuyen();
+            cbType.DisplayMember = "TenLoai";
         }
     }
 }

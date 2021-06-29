@@ -59,6 +59,7 @@
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\DoanhThu.cs" />
     <Compile Include="DTO\GoiTien.cs" />
     <Compile Include="DTO\LoaiSo.cs" />
     <Compile Include="DTO\LoaiTK.cs" />

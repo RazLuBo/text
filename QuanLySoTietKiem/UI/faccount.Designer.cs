@@ -173,6 +173,7 @@ namespace QuanLySoTietKiem
             this.Name = "faccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÀI KHOẢN";
+            this.Load += new System.EventHandler(this.faccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

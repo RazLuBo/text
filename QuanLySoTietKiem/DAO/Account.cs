@@ -46,12 +46,17 @@ namespace QuanLySoTietKiem.DAO
         {
             string EncryptedPass = Encrypt(Password);
             //if (DisplayName == null) DisplayName = Username;
-            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[DANGNHAP]([TenDN],[MatKhau],[TenHienThi],[LoaiTK])VALUES ('{0}','{1},'{2}',{3})", Username, EncryptedPass, Username, Type)) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[DANGNHAP]([TenDN],[MatKhau],[TenHienThi],[LoaiTK])VALUES ('{0}','{1}','{2}',{3})", Username, EncryptedPass, Username, Type)) > 0;
         }
 
         public DataRow GetPhanQuyen(int loai)
         {
             return ExecuteQuery.Instance.ExecuteReader("select * from PHANQUYEN where Loai =" + loai).Rows[0];
+        }
+
+        public DataTable GetListPhanQuyen()
+        {
+            return ExecuteQuery.Instance.ExecuteReader("select * from PHANQUYEN");
         }
 
         public int GetTypeAccount(string tendn)

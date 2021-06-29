@@ -54,7 +54,7 @@ namespace QuanLySoTietKiem
             DataRowView data = (DataRowView)cbLoaiSo.SelectedItem;
             loai = new DTO.LoaiSo(data.Row);
             tbTenKyHan.Text = loai.TenLS;
-            tbLaiSuat.Text = (loai.LaiSuat * 100).ToString();
+            tbLaiSuat.Text = (loai.LaiSuat * 100).ToString("0.00");
 
             if(loai.ThoiHan < 30)
             {

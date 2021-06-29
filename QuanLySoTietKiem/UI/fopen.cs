@@ -44,7 +44,7 @@ namespace QuanLySoTietKiem
                 Double tiengoi;
                 if (Double.TryParse(tbTienGoi.Text, out tiengoi))
                 {
-                    if (tiengoi > loai.ToiThieu)
+                    if (tiengoi >= loai.ToiThieu)
                     {
                         if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID.ToString(), tbMaKH.Text, loai.MaLS, dtMoSo.Value, tiengoi))
                         {

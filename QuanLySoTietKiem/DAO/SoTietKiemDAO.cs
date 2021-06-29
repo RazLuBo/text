@@ -21,17 +21,26 @@ namespace QuanLySoTietKiem.DAO
         {
             return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE SOTIETKIEM where MaKH =" + id) > 0;
         }
+        public bool DeleteSTK(double id)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery("DELETE SOTIETKIEM where MaSo =" + id) > 0;
+        }
         public int GetIdNewSoTietKiem()
         {
             return (int)ExecuteQuery.Instance.ExecuteScalar("select MAX(MaSo) from SOTIETKIEM");
         }
-        public bool GetIdSTKbyIdCus(string id, string maSo)
+        public bool GetIdSTKbyIdCus(string maSo)
         {
-            return (int)ExecuteQuery.Instance.ExecuteScalar(string.Format("select count(*) from SOTIETKIEM where MaKH = {0} and MaSo = {1}", id, maSo)) > 0;
+            return (int)ExecuteQuery.Instance.ExecuteScalar(string.Format("select count(*) from SOTIETKIEM where MaSo = {0}", maSo)) > 0;
         }
         public DataTable listSoTietKiem()
         {
             return ExecuteQuery.Instance.ExecuteReader("select MaSo [Mã sổ], MaNV [Mã nhân viên], MaKH [Mã khách hàng], LOAISO.TenLS [Loại sổ], NgayMo [Ngày mở], TienGui [Tiền gửi] from SOTIETKIEM, LOAISO where SOTIETKIEM.MaLS = LOAISO.MaLS");
+        }
+
+        public DataRow GetSTKbyID(double id)
+        {
+            return ExecuteQuery.Instance.ExecuteReader("select * from SOTIETKIEM where MaSo = " + id).Rows[0];
         }
 
         //public DataTable getSTKbyID(String id)

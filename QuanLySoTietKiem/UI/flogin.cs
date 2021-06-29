@@ -58,8 +58,8 @@ namespace QuanLySoTietKiem
                     f.ShowDialog();
                     StatusLabel.Text = "";
                     this.Show();
-                    tbUsername.ReadOnly = true;
-                    tbPassword.ReadOnly = true;
+                    //tbUsername.ReadOnly = true;
+                    //tbPassword.ReadOnly = true;
                 }
                 else
                 {

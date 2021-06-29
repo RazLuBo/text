@@ -72,9 +72,9 @@ namespace QuanLySoTietKiem
         private bool CheckInput(string MaKH, string MaSo, string Tien)
         {
             
-            if (!DAO.SoTietKiemDAO.Instance.GetIdSTKbyIdCus(MaKH, MaSo))
+            if (!DAO.SoTietKiemDAO.Instance.GetIdSTKbyIdCus(MaSo))
             {
-                MessageBox.Show("Khách hàng chưa mở sổ tiết kiệm này");
+                MessageBox.Show("Sổ không tồn tại");
                 return false;
             }
             else
@@ -90,33 +90,71 @@ namespace QuanLySoTietKiem
             }
         }
 
+        DTO.SoTietKiem stk;
+        DTO.LoaiSo loaiSo;
+
+
         private void btRutTien_Click(object sender, EventArgs e)
         {
             if (!CheckInput(tbMaKH_R.Text, tbMaSo_R.Text, tbTienRut.Text))
                 return;
+            
 
-            Double tienrut;
-            if (Double.TryParse(tbTienGui.Text, out tienrut))
+            if (loaiSo.ThoiHan == 0)
             {
-                if (tienrut > 100000)
+                if (stk.NgayMoSo.AddDays(loaiSo.ThoiHanTT) <= DateTime.Now)
                 {
-                    DataRowView rowView = (DataRowView)cbIdNV2.SelectedItem;
+                    Double tienrut;
+                    if (Double.TryParse(tbTienGui.Text, out tienrut))
+                    {
+                        if(tienrut <= stk.TienGoi)
+                        {
+                            DataRowView rowView = (DataRowView)cbIdNV2.SelectedItem;
 
-                    DTO.Staff staff = new DTO.Staff(rowView.Row);
-                    if (DAO.RutTienDAO.Instance.insertRutTien(staff.ID.ToString(), tbMaKH_R.Text, tbMaSo_R.Text, DateTime.Today, Convert.ToDouble(tbTienRut.Text)))
-                    {
-                        StatusLabel_R.Text = "";
-                        if (rutTien != null)
-                            rutTien(this, new EventArgs());
-                    }
-                    else
-                    {
-                        StatusLabel_R.Text = "Error";
+                            DTO.Staff staff = new DTO.Staff(rowView.Row);
+                            if (DAO.RutTienDAO.Instance.insertRutTien(staff.ID.ToString(), tbMaKH_R.Text, tbMaSo_R.Text, DateTime.Today, Convert.ToDouble(tbTienRut.Text)))
+                            {
+                                StatusLabel_R.Text = "";
+                                if (rutTien != null)
+                                    rutTien(this, new EventArgs());
+                            }
+                            else
+                            {
+                                StatusLabel_R.Text = "Error";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số dư không đủ");
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tiền rút phải >= 100.000VND");
+                    MessageBox.Show(String.Format("Chưa đủ {0} ngày gửi tiết kiệm", loaiSo.ThoiHanTT));
+                }
+            }
+            else
+            {
+                if(stk.NgayMoSo.AddDays(loaiSo.ThoiHan) <= DateTime.Now)
+                {
+                    // DAO.SoTietKiemDAO.Instance.DeleteSTKbyIdCus();
+                    DAO.SoTietKiemDAO.Instance.DeleteSTK(stk.ID);
+                    if (!DAO.DoanhThuDAO.Instance.CheckDoanhThu(loaiSo.MaLS, DateTime.Now))
+                        DAO.DoanhThuDAO.Instance.InsertDoanhThu(loaiSo.MaLS, DateTime.Now);
+
+                    DTO.DoanhThu doanhThu = new DTO.DoanhThu(DAO.DoanhThuDAO.Instance.GetDoanhThu(loaiSo.MaLS, DateTime.Now));
+
+                    doanhThu.TongChi += Convert.ToDouble(tbTienRut.Text);
+                    doanhThu.SoDong++;
+
+                    DAO.DoanhThuDAO.Instance.UpdateDoanhThu(doanhThu);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Chưa đến kỳ hạn rút tiền");
                 }
             }
         }
@@ -194,6 +232,50 @@ namespace QuanLySoTietKiem
                 {
                     MessageBox.Show("Thông tin khách hàng không có trong database");
                 }
+            }
+        }
+
+        private void tbMaSo_R_Leave(object sender, EventArgs e)
+        {
+            if (DAO.SoTietKiemDAO.Instance.GetIdSTKbyIdCus(tbMaSo_R.Text))
+            {
+                stk = new DTO.SoTietKiem(DAO.SoTietKiemDAO.Instance.GetSTKbyID(Convert.ToDouble(tbMaSo_R.Text)));
+
+                loaiSo = new DTO.LoaiSo(DAO.LoaiSoDAO.Instance.GetLoaiSoById(stk.IDLS));
+
+                if (loaiSo.ThoiHan != 0)
+                {
+                    tbTienRut.ReadOnly = true;
+                    double money = stk.TienGoi;
+                    int day = ToIntDate(DateTime.Now) - ToIntDate(stk.NgayMoSo);
+                    int ls = (int)(day / loaiSo.ThoiHan);
+                    if (ls > 0)
+                    {
+                        double LaiSuatKkh = Convert.ToDouble(DAO.LoaiSoDAO.Instance.GetKhongKyHan()["LaiSuat"]) ;
+                        money *= (1.0 + loaiSo.LaiSuat);
+                        money += (day - loaiSo.ThoiHan) / 30 * LaiSuatKkh * money;
+                    }
+                    tbTienRut.Text = money.ToString("0.0");
+                }
+                else
+                {
+                    tbTienRut.ReadOnly = false;
+                }
+            }
+        }
+
+        private int ToIntDate(DateTime date)
+        {
+            return date.Month * 30 + date.Year * 365 + date.Day;
+        }
+
+        private void tbMaSo_G_TextChanged(object sender, EventArgs e)
+        {
+            if (DAO.SoTietKiemDAO.Instance.GetIdSTKbyIdCus(tbMaSo_G.Text))
+            {
+                stk = new DTO.SoTietKiem(DAO.SoTietKiemDAO.Instance.GetSTKbyID(Convert.ToDouble(tbMaSo_G.Text)));
+
+                loaiSo = new DTO.LoaiSo(DAO.LoaiSoDAO.Instance.GetLoaiSoById(stk.IDLS));
             }
         }
     }

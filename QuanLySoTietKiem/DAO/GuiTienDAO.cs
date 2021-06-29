@@ -15,7 +15,7 @@ namespace QuanLySoTietKiem.DAO
 
         public bool insertGoiTien(string idNV, string idKH, string idMaSo, DateTime ngayGoi, double tienGoi)
         {
-            return ExecuteQuery.Instance.ExecuteNoneQuery("insertGoiTien @maNV , @maKH , @maSo , @ngayGoi , @tienGoi", new object[] { idNV, idKH, idMaSo, ngayGoi, tienGoi }) > 0;
+            return ExecuteQuery.Instance.ExecuteNoneQuery("insertGoiTien @maNV , @maSo , @ngayGoi , @tienGoi", new object[] { idNV, idMaSo, ngayGoi, tienGoi }) > 0;
         }
         
         public DataTable getGoiTienByDay(DateTime date)
