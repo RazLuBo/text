@@ -5,12 +5,43 @@ use QuanLySTK
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[DANGNHAP]    Script Date: 6/28/2021 10:01:02 AM ******/
+/****** Object:  Table [dbo].[DANGNHAP]    Script Date: 6/29/2021 6:53:53 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
+USE [QuanLySTK]
+GO
+
+/****** Object:  Table [dbo].[PHANQUYEN]    Script Date: 6/29/2021 6:54:40 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PHANQUYEN](
+	[Loai] [int] IDENTITY(1,1) NOT NULL,
+	[TenLoai] [nvarchar](50) NULL,
+	[GiaoDich] [bit] NULL,
+	[MoSo] [bit] NULL,
+	[BaoCao] [bit] NULL,
+	[ListNV] [bit] NULL,
+	[ListKH] [bit] NULL,
+	[CapTK] [bit] NULL,
+	[ListSTK] [bit] NULL,
+	[ThayDoi] [bit] NULL,
+	[PhanQuyen] [bit] NULL,
+ CONSTRAINT [PK_PHANQUYEN] PRIMARY KEY CLUSTERED 
+(
+	[Loai] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
 
 CREATE TABLE [dbo].[DANGNHAP](
 	[TenDN] [varchar](50) NOT NULL,
@@ -34,7 +65,30 @@ GO
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 6/28/2021 10:01:10 AM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/29/2021 6:54:08 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NHANVIEN](
+	[MaNV] [int] IDENTITY(1,1) NOT NULL,
+	[HoTen] [nvarchar](50) NULL,
+	[DiaChi] [nvarchar](50) NULL,
+	[Cmnd] [varchar](50) NULL,
+	[SDT] [varchar](50) NULL,
+ CONSTRAINT [PK_NHANVIEN] PRIMARY KEY CLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [QuanLySTK]
+GO
+
+/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 6/29/2021 6:54:15 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -58,27 +112,24 @@ GO
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[PHANQUYEN]    Script Date: 6/28/2021 10:01:24 AM ******/
+/****** Object:  Table [dbo].[LOAISO]    Script Date: 6/29/2021 6:54:27 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[PHANQUYEN](
-	[Loai] [int] IDENTITY(1,1) NOT NULL,
-	[TenLoai] [nvarchar](50) NULL,
-	[GiaoDich] [bit] NULL,
-	[MoSo] [bit] NULL,
-	[BaoCao] [bit] NULL,
-	[ListNV] [bit] NULL,
-	[ListKH] [bit] NULL,
-	[CapTK] [bit] NULL,
-	[ListSTK] [bit] NULL,
-	[ThayDoi] [bit] NULL,
- CONSTRAINT [PK_PHANQUYEN] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[LOAISO](
+	[MaLS] [int] IDENTITY(1,1) NOT NULL,
+	[TenLS] [nvarchar](50) NULL,
+	[ToiThieu] [money] NULL,
+	[ThoiHan] [int] NULL,
+	[LaiSuat] [real] NULL,
+	[TienGuiTT] [money] NULL,
+	[ThoiGianTT] [int] NULL,
+ CONSTRAINT [PK_LOAISO] PRIMARY KEY CLUSTERED 
 (
-	[Loai] ASC
+	[MaLS] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -86,30 +137,17 @@ GO
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 6/28/2021 10:02:15 AM ******/
+/****** Object:  Table [dbo].[GUITIEN]    Script Date: 6/29/2021 6:55:01 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[NHANVIEN](
-	[MaNV] [int] IDENTITY(1,1) NOT NULL,
-	[HoTen] [nvarchar](50) NULL,
-	[DiaChi] [nvarchar](50) NULL,
-	[Cmnd] [varchar](50) NULL,
-	[SDT] [varchar](50) NULL,
- CONSTRAINT [PK_NHANVIEN] PRIMARY KEY CLUSTERED 
-(
-	[MaNV] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[SOTIETKIEM]    Script Date: 6/28/2021 10:05:03 AM ******/
+/****** Object:  Table [dbo].[SOTIETKIEM]    Script Date: 6/29/2021 6:57:37 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -153,16 +191,6 @@ GO
 
 
 
-USE [QuanLySTK]
-GO
-
-/****** Object:  Table [dbo].[GUITIEN]    Script Date: 6/28/2021 10:02:45 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 CREATE TABLE [dbo].[GUITIEN](
 	[MaGui] [int] IDENTITY(1,1) NOT NULL,
 	[TienGui] [money] NULL,
@@ -193,7 +221,7 @@ GO
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[RUTTIEN]    Script Date: 6/28/2021 10:05:17 AM ******/
+/****** Object:  Table [dbo].[RUTTIEN]    Script Date: 6/29/2021 6:55:08 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -230,7 +258,7 @@ GO
 USE [QuanLySTK]
 GO
 
-/****** Object:  Table [dbo].[BAOCAO]    Script Date: 6/28/2021 10:05:29 AM ******/
+/****** Object:  Table [dbo].[BAOCAO]    Script Date: 6/29/2021 6:55:20 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -245,6 +273,7 @@ CREATE TABLE [dbo].[BAOCAO](
 	[TongChi] [money] NULL,
 	[SoMo] [int] NULL,
 	[SoDong] [int] NULL,
+	[ChenhLech] [money] NULL,
  CONSTRAINT [PK_BAOCAO] PRIMARY KEY CLUSTERED 
 (
 	[MaBC] ASC
@@ -259,6 +288,8 @@ GO
 ALTER TABLE [dbo].[BAOCAO] CHECK CONSTRAINT [FK_BAOCAO_LOAISO]
 GO
 
+
+
 USE [QuanLySTK]
 GO
 
@@ -271,7 +302,7 @@ INSERT INTO [dbo].[LOAISO] ([TenLS],[ToiThieu],[ThoiHan],[LaiSuat],[TienGuiTT],[
 GO
 
 INSERT INTO [dbo].[LOAISO] ([TenLS],[ToiThieu],[ThoiHan],[LaiSuat],[TienGuiTT],[ThoiGianTT])
-     VALUES (N'Không kỳ hạn', 1000000, 0, 0.005, 100000, 0)
+     VALUES (N'Không kỳ hạn', 1000000, 0, 0.005, 100000, 15)
 GO
 
 USE [QuanLySTK]
@@ -294,7 +325,7 @@ INSERT INTO [dbo].[PHANQUYEN]
            ,[ListSTK]
            ,[ThayDoi])
      VALUES
-           ('admin',1,1,1,1,1,1,1,1)
+           ('Admin',1,1,1,1,1,1,1,1)
 GO
 
 USE [QuanLySTK]
@@ -350,15 +381,16 @@ GO
 
 select * from PHANQUYEN
 select * from DANGNHAP
+go
 
-select count(*) from DANGNHAP where TenDN = 'admin'
+--select count(*) from DANGNHAP where TenDN = 'admin'
 
-select MaSo [Mã sổ], MaNV [Mã nhân viên], MaKH [Mã khách hàng], LOAISO.TenLS [Loại sổ], NgayMo [Ngày mở], TienGui [Tiền gửi] from SOTIETKIEM, LOAISO where SOTIETKIEM.MaLS = LOAISO.MaLS
+--select MaSo [Mã sổ], MaNV [Mã nhân viên], MaKH [Mã khách hàng], LOAISO.TenLS [Loại sổ], NgayMo [Ngày mở], TienGui [Tiền gửi] from SOTIETKIEM, LOAISO where SOTIETKIEM.MaLS = LOAISO.MaLS
 
 --select count (*) from BAOCAO where MaLS = 1 and DAY(Ngay) = and MONTH(Ngay) = YEAR(Ngay) = 
 
-select * from KHACHHANG where MaKH = 1
-go
+--select * from KHACHHANG where MaKH = 1
+--go
 
 create trigger TRG_deleteSTK
 on SOTIETKIEM
@@ -374,3 +406,40 @@ end
 go
 
 --update LOAISO set TenLS = N'{0}', ToiThieu = {1}, ThoiHan = {2}, LaiSuat = {3}, TienGuiTT = {4}, ThoiGianTT = {5} where MaLS = {6}
+
+create trigger TG_insertGoiTien
+on GUITIEN for insert
+as 
+begin
+	declare @maKH int
+	declare @tienGoi money
+	declare @maSo int
+
+	select @maKH = MaKH from inserted,SOTIETKIEM where inserted.MaSo = SOTIETKIEM.MaSo
+	select @maSo = MaSo from inserted
+	select @tienGoi = TienGui from inserted
+
+	update KHACHHANG
+	set SoDu = SoDu + @tienGoi
+	where @maKH = MaKH
+
+	update SOTIETKIEM
+	set TienGui = TienGui + @tienGoi
+	where @maKH = MaKH and @maSo = MaSo
+
+	update BAOCAO
+	set TongThu = TongThu + @tienGoi, ChenhLech = ChenhLech + @tienGoi
+	where MaLS in (select stk.MaLS from SOTIETKIEM stk where stk.MaSo = @maSo)
+end
+go
+
+create proc [dbo].[insertGoiTien] 
+@maNV int, @maSo int, @ngayGoi smalldatetime, @tienGoi money
+as
+begin
+	insert into GUITIEN (MaNV, MaSo, NgayGui, TienGui)
+	values (
+		@maNV, @maSo, @ngayGoi, @tienGoi
+	);
+end;
+GO
