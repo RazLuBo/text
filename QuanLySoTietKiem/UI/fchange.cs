@@ -61,14 +61,14 @@ namespace QuanLySoTietKiem
                 tbKyHan.Text = loai.ThoiHan.ToString();
                 cbKyHan.SelectedIndex = 0;
             }
-            else if(loai.ThoiHan < 365)
+            else if(loai.ThoiHan < 360)
             {
-                tbKyHan.Text = (loai.ThoiHan / 30).ToString();
+                tbKyHan.Text = ((int)(loai.ThoiHan / 30)).ToString();
                 cbKyHan.SelectedIndex = 1;
             }
             else
             {
-                tbKyHan.Text = (loai.ThoiHan / 365).ToString();
+                tbKyHan.Text = ((int)(loai.ThoiHan / 360)).ToString();
                 cbKyHan.SelectedIndex = 2;
             }
             tbTienGuiTT.Text = loai.TienGuiTT.ToString();
@@ -79,14 +79,14 @@ namespace QuanLySoTietKiem
                 tbThoiGianTT.Text = loai.ThoiHanTT.ToString();
                 cbThoiGianTT.SelectedIndex = 0;
             }
-            else if (loai.ThoiHan < 365)
+            else if (loai.ThoiHanTT < 360)
             {
-                tbThoiGianTT.Text = (loai.ThoiHanTT / 30).ToString();
+                tbThoiGianTT.Text = ((int)(loai.ThoiHanTT / 30)).ToString();
                 cbThoiGianTT.SelectedIndex = 1;
             }
             else
             {
-                tbThoiGianTT.Text = (loai.ThoiHanTT / 365).ToString();
+                tbThoiGianTT.Text = ((int)(loai.ThoiHanTT / 360)).ToString();
                 cbThoiGianTT.SelectedIndex = 2;
             }
         }
@@ -111,7 +111,7 @@ namespace QuanLySoTietKiem
                             so.ThoiHan = b * 30;
                             break;
                         case 2:
-                            so.ThoiHan = b * 365;
+                            so.ThoiHan = b * 360;
                             break;
                         default:
                             return;
@@ -138,7 +138,7 @@ namespace QuanLySoTietKiem
                             so.ThoiHanTT = b * 30;
                             break;
                         case 2:
-                            so.ThoiHanTT = b * 365;
+                            so.ThoiHanTT = b * 360;
                             break;
                         default:
                             return;
@@ -151,6 +151,57 @@ namespace QuanLySoTietKiem
                 LoadCb();
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double thoihan, laisuat, tienguiTT, thoigianTT, tienmoTT;
+            string ten = tbTenKyHan.Text;
+            if(double.TryParse(tbTienGuiTT.Text, out tienguiTT)
+                && double.TryParse(tbTienMoTT.Text, out tienmoTT)
+                && double.TryParse(tbLaiSuat.Text, out laisuat)
+                && double.TryParse(tbKyHan.Text, out thoihan)
+                && double.TryParse(tbThoiGianTT.Text, out thoigianTT))
+            {
+                switch (cbThoiGianTT.SelectedIndex)
+                {
+                    case 0:
+                        //so.ThoiHanTT = thoigianTT;
+                        break;
+                    case 1:
+                        thoigianTT *= 30;
+                        break;
+                    case 2:
+                        thoigianTT *= 360;
+                        break;
+                    default:
+                        return;
+                }
+
+                switch (cbKyHan.SelectedIndex)
+                {
+                    case 0:
+                        //thoihan = b;
+                        break;
+                    case 1:
+                        thoihan *= 30;
+                        break;
+                    case 2:
+                        thoihan *= 360;
+                        break;
+                    default:
+                        return;
+                }
+
+                DTO.LoaiSo loai = new DTO.LoaiSo(0, thoihan, tienmoTT, laisuat / 100, ten, tienguiTT, thoigianTT);
+                DAO.LoaiSoDAO.Instance.Insert(loai);
+                MessageBox.Show("Thêm thành công");
+                LoadCb();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

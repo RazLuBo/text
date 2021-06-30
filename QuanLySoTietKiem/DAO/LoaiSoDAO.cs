@@ -23,6 +23,11 @@ namespace QuanLySoTietKiem.DAO
             return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("update LOAISO set TenLS = N'{0}', ToiThieu = {1}, ThoiHan = {2}, LaiSuat = {3}, TienGuiTT = {4}, ThoiGianTT = {5} where MaLS = {6}", loai.TenLS, loai.ToiThieu, loai.ThoiHan, loai.LaiSuat, loai.TienGuiTT, loai.ThoiHanTT, loai.MaLS)) > 0;
         }
 
+        public bool Insert(DTO.LoaiSo loai)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("INSERT INTO [dbo].[LOAISO]([TenLS],[ToiThieu],[ThoiHan],[LaiSuat],[TienGuiTT],[ThoiGianTT])VALUES(N'{0}',{1},'{2}',{3},{4},{5})", loai.TenLS, loai.ToiThieu, loai.ThoiHan, loai.LaiSuat, loai.TienGuiTT, loai.ThoiHanTT)) > 0;
+        }
+
         public DataRow GetLoaiSoById(double id)
         {
             return ExecuteQuery.Instance.ExecuteReader("select * from LOAISO where MaLS = " + id).Rows[0];

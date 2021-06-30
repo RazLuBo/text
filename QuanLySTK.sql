@@ -314,18 +314,7 @@ GO
 USE [QuanLySTK]
 GO
 
-INSERT INTO [dbo].[PHANQUYEN]
-           ([TenLoai]
-           ,[GiaoDich]
-           ,[MoSo]
-           ,[BaoCao]
-           ,[ListNV]
-           ,[ListKH]
-           ,[CapTK]
-           ,[ListSTK]
-           ,[ThayDoi])
-     VALUES
-           ('Admin',1,1,1,1,1,1,1,1)
+INSERT INTO [dbo].[PHANQUYEN]([TenLoai],[GiaoDich],[MoSo],[BaoCao],[ListNV],[ListKH],[CapTK],[ListSTK],[ThayDoi],[PhanQuyen])VALUES('Admin',1,1,1,1,1,1,1,1,1)
 GO
 
 USE [QuanLySTK]
@@ -443,3 +432,19 @@ begin
 	);
 end;
 GO
+
+INSERT INTO [dbo].[SOTIETKIEM]([MaLS],[MaKH],[MaNV],[NgayMo],[TienGui])VALUES(1,1,1,'6/29/2021',1000000)
+
+select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = 6 and YEAR(Ngay) = 2021
+
+USE [QuanLySTK]
+GO
+
+INSERT INTO [dbo].[LOAISO]([TenLS],[ToiThieu],[ThoiHan],[LaiSuat],[TienGuiTT],[ThoiGianTT])VALUES(N'{0}',{1},'{2}',{3},{4},{5})
+GO
+
+select * from LOAISO
+
+select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] 
+from BAOCAO, LOAISO 
+where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = 6 and YEAR(Ngay) = 2021 and LOAISO.MaLS = 2

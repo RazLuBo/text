@@ -52,7 +52,7 @@ namespace QuanLySoTietKiem.DAO
 
         public DataTable GetDoanhThuThangLoaiSo(DateTime dt, string idLS)
         {
-            return ExecuteQuery.Instance.ExecuteReader(string.Format("select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = {0} and YEAR(Ngay) = {1} and MaLS = {2}", dt.Month, dt.Year, idLS));
+            return ExecuteQuery.Instance.ExecuteReader(string.Format("select LOAISO.MaLS [Mã loại sổ], TongThu [Tổng thu], TongChi [Tổng chi], SoMo [Sổ mở], SoDong [Sổ đóng], LOAISO.TenLS [Tên loại sổ] from BAOCAO, LOAISO where LOAISO.MaLS = BAOCAO.MaLS and MONTH(Ngay) = {0} and YEAR(Ngay) = {1} and LOAISO.MaLS = {2}", dt.Month, dt.Year, idLS));
         }
     }
 }

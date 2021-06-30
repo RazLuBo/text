@@ -59,6 +59,12 @@ namespace QuanLySoTietKiem.DAO
             return ExecuteQuery.Instance.ExecuteReader("select * from PHANQUYEN");
         }
 
+        public bool InsertPhanQuyen(DTO.LoaiTK loai)
+        {
+            return ExecuteQuery.Instance.ExecuteNoneQuery(string.Format("INSERT INTO [dbo].[PHANQUYEN]([TenLoai],[GiaoDich],[MoSo],[BaoCao],[ListNV],[ListKH],[CapTK],[ListSTK],[ThayDoi],[PhanQuyen])VALUES('{0}',{1},{2},{3},{4},{5},{6},{7},{8},{9})",
+                loai.TenLoai,loai.GiaoDich, loai.MoSo, loai.BaoCao, loai.ListNV, loai.ListKH, loai.CapTK, loai.ThayDoi, loai.PhanQuyen)) > 0;
+        }
+
         public int GetTypeAccount(string tendn)
         {
             return (int)ExecuteQuery.Instance.ExecuteScalar(String.Format("select LoaiTK from DANGNHAP where TenDN = '{0}'", tendn));

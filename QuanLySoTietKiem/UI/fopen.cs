@@ -38,6 +38,7 @@ namespace QuanLySoTietKiem
                 }
 
                 DataRowView rowView = (DataRowView)cbIdNV.SelectedItem;
+               
 
                 DTO.Staff staff = new DTO.Staff(rowView.Row);
 
@@ -46,7 +47,7 @@ namespace QuanLySoTietKiem
                 {
                     if (tiengoi >= loai.ToiThieu)
                     {
-                        if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID.ToString(), tbMaKH.Text, loai.MaLS, dtMoSo.Value, tiengoi))
+                        if (DAO.SoTietKiemDAO.Instance.insertSoTietKiem(staff.ID.ToString(), tbMaKH.Text, loai.MaLS, dtMoSo.Value.ToShortDateString(), tiengoi))
                         {
                             this.Close();
                         }

@@ -52,11 +52,15 @@ namespace QuanLySoTietKiem
 
         private void LoadDoanhThuThangLoaiSo()
         {
-            listReportMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThangLoaiSo(dtMonth.Value, cbLoaiSo.SelectedIndex.ToString());
+            DataRowView data = (DataRowView)cbLoaiSo.SelectedItem;
+            DTO.LoaiSo loaiSo = new DTO.LoaiSo(data.Row);
+            listReportMonth.DataSource = DAO.DoanhThuDAO.Instance.GetDoanhThuThangLoaiSo(dtMonth.Value, loaiSo.MaLS.ToString());
         }
 
         private void freport_Load(object sender, EventArgs e)
         {
+            cbLoaiSo.DataSource = DAO.LoaiSoDAO.Instance.GetListLoaiSo();
+            cbLoaiSo.DisplayMember = "TenLS";
             dataDay.DataSource = listReportDay;
             dataMonth.DataSource = listReportMonth;
             LoadReport();
@@ -68,6 +72,21 @@ namespace QuanLySoTietKiem
                 LoadDoanhThuThangLoaiSo();
             else
                 LoadDoanhThuThang();
+        }
+
+        private void BCnbutton2_Click(object sender, EventArgs e)
+        {
+            LoadReport();
+        }
+
+        private void dtDay_ValueChanged(object sender, EventArgs e)
+        {
+            LoadReport();
+        }
+
+        private void dtMonth_ValueChanged(object sender, EventArgs e)
+        {
+            LoadReport();
         }
     }
 }

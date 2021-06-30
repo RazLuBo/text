@@ -218,7 +218,7 @@ namespace QuanLySoTietKiem
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(160, 22);
             this.label7.TabIndex = 30;
-            this.label7.Text = "CMNN/Hộ Chiếu: ";
+            this.label7.Text = "CMND/Hộ Chiếu: ";
             // 
             // tbCmnd
             // 

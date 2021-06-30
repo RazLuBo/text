@@ -13,7 +13,7 @@ namespace QuanLySoTietKiem.DAO
 
         public static SoTietKiemDAO Instance { get { if (instance == null) instance = new SoTietKiemDAO();  return instance; } set => instance = value; }
 
-        public bool insertSoTietKiem(string idNV, string idKH, double idLS, DateTime ngayMo, double tienGoi)
+        public bool insertSoTietKiem(string idNV, string idKH, double idLS, string ngayMo, double tienGoi)
         {
             return ExecuteQuery.Instance.ExecuteNoneQuery(String.Format("INSERT INTO [dbo].[SOTIETKIEM]([MaLS],[MaKH],[MaNV],[NgayMo],[TienGui])VALUES({0},{1},{2},'{3}',{4})", idLS, idKH, idNV, ngayMo, tienGoi)) > 0;
         }
